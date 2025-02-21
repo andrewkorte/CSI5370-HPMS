@@ -10,7 +10,7 @@ public class HPMSEndpoints {
 
     //localhost:8080/search
 
-    @GetMapping("/search")
+    @GetMapping("/search/{accountNumber}")
     public ResponseEntity<Integer> someMethod(){
         //do stuff
     }
