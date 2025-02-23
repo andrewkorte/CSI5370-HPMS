@@ -4,6 +4,8 @@ package com.CSI5370.HomePurchaseManagementSystem;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class HPMSEndpoints {
@@ -11,8 +13,8 @@ public class HPMSEndpoints {
     //localhost:8080/search
 
     @GetMapping("/search/{accountNumber}")
-    public ResponseEntity<Integer> someMethod(){
+    public ResponseEntity<Integer> someMethod(@PathVariable @Pattern(regexp = "fdasdf") String accountNumber,
+                                              @RequestParam){
         //do stuff
-        return null;
     }
 }
