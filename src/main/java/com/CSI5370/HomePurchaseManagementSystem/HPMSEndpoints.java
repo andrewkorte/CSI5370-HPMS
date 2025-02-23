@@ -15,6 +15,15 @@ public class HPMSEndpoints {
     public ResponseEntity<Integer> createCustomer(@RequestBody @Pattern(regexp = "readf") String firstName,
                                                   @RequestBody @Pattern(regexp = "readfds") String lastName,
                                                   @RequestBody @Pattern(regexp = "fdasgd") String ssn,
+                                                  @RequestBody @Pattern(regexp = "fdasfa") float income){
+
+        return null;
+    }
+
+    @PostMapping("/purchase/create")
+    public ResponseEntity<Integer> createpurchase(@RequestBody @Pattern(regexp = "readf") String firstName,
+                                                  @RequestBody @Pattern(regexp = "readfds") String lastName,
+                                                  @RequestBody @Pattern(regexp = "fdasgd") String ssn,
                                                   @RequestBody @Pattern(regexp = "fdasfa") int income){
 
         return null;
