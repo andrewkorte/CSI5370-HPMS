@@ -13,5 +13,6 @@ public class HPMSEndpoints {
     @GetMapping("/search/{accountNumber}")
     public ResponseEntity<Integer> someMethod(){
         //do stuff
+        return null;
     }
 }
