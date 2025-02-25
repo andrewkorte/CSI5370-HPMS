@@ -6,7 +6,7 @@ import java.sql.*;
 @Service
 public class RealtorService {
 
-    String URL = "localhost:5432";
+    String URL = "jdbc:postgresql://localhost:5432/HMPS";
 
     String USER = "csi5370";
 
