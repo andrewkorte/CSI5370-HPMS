@@ -21,10 +21,11 @@ public class HPMSEndpoints {
     }
 
     @PostMapping("/purchase/create")
-    public ResponseEntity<Integer> createPurchase(@RequestBody @Pattern(regexp = "readf") String firstName,
-                                                  @RequestBody @Pattern(regexp = "readfds") String lastName,
-                                                  @RequestBody @Pattern(regexp = "fdasgd") String ssn,
-                                                  @RequestBody @Pattern(regexp = "fdasfa") int income){
+    public ResponseEntity<Integer> createPurchase(@RequestBody @Pattern(regexp = "readf") int customerId,
+                                                  @RequestBody @Pattern(regexp = "readfds") int realtorId,
+                                                  @RequestBody @Pattern(regexp = "fdasgd") int homeId,
+                                                  @RequestBody @Pattern(regexp = "fdasfa") float loan,
+                                                  @RequestBody @Pattern(regexp = "fdas") float downPayment){
 
         return null;
     }
