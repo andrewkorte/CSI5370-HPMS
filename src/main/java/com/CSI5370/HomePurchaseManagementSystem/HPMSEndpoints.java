@@ -21,7 +21,7 @@ public class HPMSEndpoints {
     }
 
     @PostMapping("/purchase/create")
-    public ResponseEntity<Integer> createpurchase(@RequestBody @Pattern(regexp = "readf") String firstName,
+    public ResponseEntity<Integer> createPurchase(@RequestBody @Pattern(regexp = "readf") String firstName,
                                                   @RequestBody @Pattern(regexp = "readfds") String lastName,
                                                   @RequestBody @Pattern(regexp = "fdasgd") String ssn,
                                                   @RequestBody @Pattern(regexp = "fdasfa") int income){
@@ -29,11 +29,24 @@ public class HPMSEndpoints {
         return null;
     }
 
+    @PostMapping("/realtor/create")
+    public ResponseEntity<Integer> createRealtor(@RequestBody @Pattern(regexp = "fdasgd") int employeenum,
+                                                  @RequestBody @Pattern(regexp = "readf") String firstName,
+                                                  @RequestBody @Pattern(regexp = "readfds") String lastName,
+                                                  @RequestBody @Pattern(regexp = "fdasfa") float commissionRate){
 
-//    @GetMapping("/search/{accountNumber}")
-//    public ResponseEntity<Integer> someMethod(@PathVariable @Pattern(regexp = "fdasdf") String accountNumber,
-//                                              @RequestParam @Pattern(regexp = "reasdg") Integer heresAnInt,
-//                                              @RequestBody @Pattern(regexp = "fdafsa") Boolean heresABool){
-//        //do stuff
-//    }
+        return null;
+    }
+
+    @PostMapping("/home/create")
+    public ResponseEntity<Integer> createHome(@RequestBody @Pattern(regexp = "fdasgd") int streetNum,
+                                                @RequestBody @Pattern(regexp = "readf") String city,
+                                                 @RequestBody @Pattern(regexp = "readfds") String state,
+                                                 @RequestBody @Pattern(regexp = "fdasfa") float price,
+                                              @RequestBody @Pattern(regexp = "fdasfe") int squareFeet){
+
+        return null;
+    }
+
+
 }
