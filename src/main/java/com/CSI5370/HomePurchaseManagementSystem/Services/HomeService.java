@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 
 import java.sql.*;
 @Service
-public class CustomerService {
+public class HomeService {
 
     String URL = "localhost:5432";
 
@@ -12,25 +12,26 @@ public class CustomerService {
 
     String PASSWORD = "mypassword";
 
-    public int createCustomer(String firstName, String lastName, String ssn, float income) throws SQLException {
+    public int createHome(int streetNum, String city, String state, float price, int squareFeet) throws SQLException {
         Connection conn = null;
 
-        String createSQL = "INSERT INTO customer (firstName, lastName, ssn, income) values (?, ?, ?, ?) returning id;";
+        String createSQL = "INSERT INTO Home (streetNum, city, state, price, squareFeet) values (?, ?, ?, ?) returning id;";
 
-        int custId = 0;
+        int homeId = 0;
 
         try(PreparedStatement create = conn.prepareStatement(createSQL)){
             conn = DriverManager.getConnection(URL, USER, PASSWORD);
 
-            create.setString(1,firstName);
-            create.setString(2,lastName);
-            create.setString(3,ssn);
-            create.setFloat(4, income);
+            create.setInt(1,streetNum);
+            create.setString(2,city);
+            create.setString(3,state);
+            create.setFloat(4, price);
+            create.setInt(5,squareFeet);
 
             ResultSet rs = create.executeQuery();
 
             while (rs.next()){
-                custId = rs.getInt("id");
+                homeId = rs.getInt("id");
             }
 
         }catch (SQLException e){
@@ -46,12 +47,8 @@ public class CustomerService {
                 }
             }
         }
-        return custId;
+        return homeId;
     }
-
-
-
-
 
 
 
