@@ -2,6 +2,8 @@ package com.CSI5370.HomePurchaseManagementSystem;
 
 
 import com.CSI5370.HomePurchaseManagementSystem.Services.CustomerService;
+import com.CSI5370.HomePurchaseManagementSystem.Services.HomeService;
+import com.CSI5370.HomePurchaseManagementSystem.Services.RealtorService;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Pattern;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,10 @@ public class HPMSEndpoints {
 
     @Autowired
     CustomerService customerService;
+    @Autowired
+    HomeService homeService;
+    @Autowired
+RealtorService realtorService;
 
     //localhost:8080/search
 
@@ -39,22 +45,22 @@ public class HPMSEndpoints {
     }
 
     @PostMapping("/realtor/create")
-    public ResponseEntity<Integer> createRealtor(@RequestBody @Pattern(regexp = "fdasgd") int employeenum,
-                                                  @RequestBody @Pattern(regexp = "readf") String firstName,
-                                                  @RequestBody @Pattern(regexp = "readfds") String lastName,
-                                                  @RequestBody @Pattern(regexp = "fdasfa") float commissionRate){
-
-        return null;
+    public ResponseEntity<Integer> createRealtor(@RequestParam int employeenum,
+                                                  @RequestParam @Pattern(regexp = "[a-zA-Z]+") String firstName,
+                                                  @RequestParam @Pattern(regexp = "[a-zA-Z]+") String lastName,
+                                                  @RequestParam float commissionRate) throws SQLException {
+        int realId=realtorService.createRealtor( employeenum, firstName, lastName, commissionRate);
+        return ResponseEntity.ok(realId);
     }
 
     @PostMapping("/home/create")
-    public ResponseEntity<Integer> createHome(@RequestBody @Pattern(regexp = "fdasgd") int streetNum,
-                                                @RequestBody @Pattern(regexp = "readf") String city,
-                                                 @RequestBody @Pattern(regexp = "readfds") String state,
-                                                 @RequestBody @Pattern(regexp = "fdasfa") float price,
-                                              @RequestBody @Pattern(regexp = "fdasfe") int squareFeet){
-
-        return null;
+    public ResponseEntity<Integer> createHome(@RequestParam int streetNum,
+                                                @RequestParam @Pattern(regexp = "[a-zA-Z]+") String city,
+                                                 @RequestParam @Pattern(regexp = "[a-zA-Z]+") String state,
+                                                 @RequestParam float price,
+                                              @RequestParam int squareFeet) throws SQLException {
+       int homeid =homeService.createHome(streetNum,city,state,price,squareFeet);
+        return ResponseEntity.ok(homeid);
     }
 
 
