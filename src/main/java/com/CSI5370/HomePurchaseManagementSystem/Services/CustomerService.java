@@ -3,10 +3,11 @@ package com.CSI5370.HomePurchaseManagementSystem.Services;
 import org.springframework.stereotype.Service;
 
 import java.sql.*;
+
 @Service
 public class CustomerService {
 
-    String URL = "localhost:5432";
+    String URL = "jdbc:postgresql://localhost:5432/HMPS";
 
     String USER = "csi5370";
 
@@ -19,8 +20,10 @@ public class CustomerService {
 
         int custId = 0;
 
-        try(PreparedStatement create = conn.prepareStatement(createSQL)){
+        try{
             conn = DriverManager.getConnection(URL, USER, PASSWORD);
+
+            PreparedStatement create = conn.prepareStatement(createSQL);
 
             create.setString(1,firstName);
             create.setString(2,lastName);
@@ -36,7 +39,7 @@ public class CustomerService {
         }catch (SQLException e){
             System.err.println("JDBC Driver not found!");
             e.printStackTrace();
-        }finally {
+        } finally {
             if (conn != null) {
                 try {
                     conn.close();
@@ -48,11 +51,4 @@ public class CustomerService {
         }
         return custId;
     }
-
-
-
-
-
-
-
 }
