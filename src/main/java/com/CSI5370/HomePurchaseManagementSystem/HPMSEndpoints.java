@@ -28,11 +28,6 @@ public class HPMSEndpoints {
         return ResponseEntity.ok(custId);
     }
 
-    @GetMapping("/test")
-    public ResponseEntity<String> test(){
-        return ResponseEntity.ok("test");
-    }
-
     @PostMapping("/purchase/create")
     public ResponseEntity<Integer> createPurchase(@RequestBody @Pattern(regexp = "readf") int customerId,
                                                   @RequestBody @Pattern(regexp = "readfds") int realtorId,
