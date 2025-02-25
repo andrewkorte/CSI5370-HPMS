@@ -3,6 +3,7 @@ package com.CSI5370.HomePurchaseManagementSystem;
 
 import com.CSI5370.HomePurchaseManagementSystem.Services.CustomerService;
 import com.CSI5370.HomePurchaseManagementSystem.Services.HomeService;
+import com.CSI5370.HomePurchaseManagementSystem.Services.PurchaseService;
 import com.CSI5370.HomePurchaseManagementSystem.Services.RealtorService;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Pattern;
@@ -18,10 +19,15 @@ public class HPMSEndpoints {
 
     @Autowired
     CustomerService customerService;
+
     @Autowired
     HomeService homeService;
+
     @Autowired
-RealtorService realtorService;
+    RealtorService realtorService;
+
+    @Autowired
+    PurchaseService purchaseService;
 
     //localhost:8080/search
 
@@ -35,13 +41,14 @@ RealtorService realtorService;
     }
 
     @PostMapping("/purchase/create")
-    public ResponseEntity<Integer> createPurchase(@RequestBody @Pattern(regexp = "readf") int customerId,
-                                                  @RequestBody @Pattern(regexp = "readfds") int realtorId,
-                                                  @RequestBody @Pattern(regexp = "fdasgd") int homeId,
-                                                  @RequestBody @Pattern(regexp = "fdasfa") float loan,
-                                                  @RequestBody @Pattern(regexp = "fdas") float downPayment){
+    public ResponseEntity<Integer> createPurchase(@RequestParam int customerId,
+                                                  @RequestParam int realtorId,
+                                                  @RequestParam int homeId,
+                                                  @RequestParam int loan,
+                                                  @RequestParam int downPayment){
 
-        return null;
+        int purchaseId = purchaseService.createPurchase(customerId, realtorId, homeId, loan, downPayment);
+        return ResponseEntity.ok(purchaseId);
     }
 
     @PostMapping("/realtor/create")

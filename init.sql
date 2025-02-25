@@ -53,13 +53,12 @@ CREATE TABLE purchase (
     realtorid               BIGINT REFERENCES realtor(id) ON DELETE CASCADE not null,
     homeid                  BIGINT REFERENCES home(id) ON DELETE CASCADE not null,
     loan                    integer check (loan between 1 and 9999999) not null,
-    downpayment             INTEGER CHECK (downpayment BETWEEN 1 AND 9999999) NOT NULL,
-    realtorpay              NUMERIC(9,2) CHECK (realtorpay >= 0 AND realtorpay < 9999999) not null
+    downpayment             INTEGER CHECK (downpayment BETWEEN 1 AND 9999999) NOT NULL
 );
 
-INSERT INTO purchase (customerid, realtorid, homeid, loan, downpayment, realtorpay) VALUES
-(1, 1, 1, 200000, 50000, 0.05),
-(2, 2, 2, 250000, 60000, 0.04),
-(3, 1, 3, 100000, 30000, 0.03),
-(1, 3, 4, 150000, 40000, 0.06),
-(4, 2, 5, 300000, 70000, 0.05);
+INSERT INTO purchase (customerid, realtorid, homeid, loan, downpayment) VALUES
+(1, 1, 1, 200000, 50000),
+(2, 2, 2, 250000, 60000),
+(3, 1, 3, 100000, 30000),
+(1, 3, 4, 150000, 40000),
+(4, 2, 5, 300000, 70000);
