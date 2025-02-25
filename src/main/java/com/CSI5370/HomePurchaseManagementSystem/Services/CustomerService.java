@@ -1,7 +1,10 @@
 package com.CSI5370.HomePurchaseManagementSystem.Services;
 
+import org.springframework.stereotype.Service;
+
 import java.sql.*;
 
+@Service
 public class CustomerService {
 
     String URL = "localhost:5432";

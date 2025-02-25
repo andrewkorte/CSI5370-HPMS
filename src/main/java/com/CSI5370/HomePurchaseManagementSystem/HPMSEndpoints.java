@@ -1,13 +1,20 @@
 package com.CSI5370.HomePurchaseManagementSystem;
 
 
+import com.CSI5370.HomePurchaseManagementSystem.Services.CustomerService;
 import jakarta.validation.constraints.Pattern;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.SQLException;
+
 @Controller
 public class HPMSEndpoints {
+
+    @Autowired
+    CustomerService customerService;
 
     //localhost:8080/search
 
@@ -15,9 +22,9 @@ public class HPMSEndpoints {
     public ResponseEntity<Integer> createCustomer(@RequestBody @Pattern(regexp = "readf") String firstName,
                                                   @RequestBody @Pattern(regexp = "readfds") String lastName,
                                                   @RequestBody @Pattern(regexp = "fdasgd") String ssn,
-                                                  @RequestBody @Pattern(regexp = "fdasfa") float income){
-
-        return null;
+                                                  @RequestBody @Pattern(regexp = "fdasfa") float income) throws SQLException {
+        int custId = customerService.createCustomer(firstName, lastName, ssn, income);
+        return ResponseEntity.ok(custId);
     }
 
     @PostMapping("/purchase/create")
