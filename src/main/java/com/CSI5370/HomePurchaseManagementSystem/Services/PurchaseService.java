@@ -1,5 +1,6 @@
 package com.CSI5370.HomePurchaseManagementSystem.Services;
 
+import com.CSI5370.HomePurchaseManagementSystem.Exceptions.PurchaseNotPossibleException;
 import jakarta.validation.constraints.Pattern;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -42,6 +43,7 @@ public class PurchaseService {
         }catch (SQLException e){
             System.err.println("JDBC Driver not found!");
             e.printStackTrace();
+            throw new PurchaseNotPossibleException("Purchase Not Possible", e);
         } finally {
             if (conn != null) {
                 try {
