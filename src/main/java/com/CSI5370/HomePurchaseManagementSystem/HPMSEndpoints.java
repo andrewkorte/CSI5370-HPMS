@@ -1,20 +1,27 @@
 package com.CSI5370.HomePurchaseManagementSystem;
 
 
+import com.CSI5370.HomePurchaseManagementSystem.ErrorResponses.NonPossibleSchema;
 import com.CSI5370.HomePurchaseManagementSystem.Services.CustomerService;
 import com.CSI5370.HomePurchaseManagementSystem.Services.HomeService;
 import com.CSI5370.HomePurchaseManagementSystem.Services.PurchaseService;
 import com.CSI5370.HomePurchaseManagementSystem.Services.RealtorService;
-import jakarta.validation.Valid;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import jakarta.validation.constraints.Pattern;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.sql.SQLException;
 
 @Controller
+@RequestMapping("/")
 public class HPMSEndpoints {
 
     @Autowired
@@ -40,7 +47,10 @@ public class HPMSEndpoints {
         return ResponseEntity.ok(custId);
     }
 
-    @PostMapping("/purchase/create")
+    @PostMapping("purchase/create")
+    @Operation(summary = "Create a purchase record", description = "Create a purchase record")
+    @ApiResponse(responseCode = "200", description = "Resource Created")
+    @ApiResponse(responseCode = "404", description = "Resource not possible", content = @Content(schema = @Schema(implementation = NonPossibleSchema.class)))
     public ResponseEntity<Integer> createPurchase(@RequestParam int customerId,
                                                   @RequestParam int realtorId,
                                                   @RequestParam int homeId,
