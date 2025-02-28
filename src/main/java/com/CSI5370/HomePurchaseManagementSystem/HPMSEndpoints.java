@@ -62,6 +62,17 @@ public class HPMSEndpoints {
         return ResponseEntity.ok(customer);
     }
 
+    @DeleteMapping("customer/delete/{customerid}")
+    @Operation(summary = "Delete a customer record", description = "Delete a customer record")
+    @ApiResponse(responseCode = "204", description = "Resource Deleted")
+    @ApiResponse(responseCode = "404", description = "Resource not found", content = @Content(schema = @Schema(implementation = Schema404.class)))
+    public ResponseEntity<Void> deleteCustomer(@PathVariable int customerid){
+
+        customerService.deleteCustomer(customerid);
+
+        return ResponseEntity.noContent().build();
+    }
+
 
 //---------Purchase Endpoints--------------------------------------------------------------------------------------------------------------------
 
@@ -87,6 +98,17 @@ public class HPMSEndpoints {
 
         Purchase purchase = purchaseService.getPurchase(purchaseid);
         return ResponseEntity.ok(purchase);
+    }
+
+    @DeleteMapping("purchase/delete/{purchaseid}")
+    @Operation(summary = "Delete a purchase record", description = "Delete a purchase record")
+    @ApiResponse(responseCode = "204", description = "Resource Deleted")
+    @ApiResponse(responseCode = "404", description = "Resource not found", content = @Content(schema = @Schema(implementation = Schema404.class)))
+    public ResponseEntity<Void> deletePurchase(@PathVariable int purchaseid){
+
+        purchaseService.deletePurchase(purchaseid);
+
+        return ResponseEntity.noContent().build();
     }
 
 

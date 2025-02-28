@@ -94,7 +94,7 @@ public class PurchaseService {
                 purchase.setDownpayment(rs.getInt("downpayment"));
 
             } else {
-                throw new PurchaseNotFound("Customer Not Found");
+                throw new PurchaseNotFound("Purchase Not Found");
             }
 
         }catch (SQLException e){
@@ -111,5 +111,37 @@ public class PurchaseService {
             }
         }
         return purchase;
+    }
+
+    public void deletePurchase(int purchaseid){
+        Connection conn = null;
+
+        String deleteSQL = "DELETE FROM purchase WHERE id = ? RETURNING id;";
+
+
+        try{
+            conn = DriverManager.getConnection(URL, USER, PASSWORD);
+
+            getPurchase(purchaseid);
+
+            PreparedStatement delete = conn.prepareStatement(deleteSQL);
+
+            delete.setInt(1,purchaseid);
+
+            delete.executeQuery();
+
+        }catch (SQLException e){
+            e.printStackTrace();
+            throw new PostgresUnavailableException("Service Unavailable", e);
+        } finally {
+            if (conn != null) {
+                try {
+                    conn.close();
+                    System.out.println("Connection closed.");
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 }

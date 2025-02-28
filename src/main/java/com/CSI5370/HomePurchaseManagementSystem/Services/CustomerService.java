@@ -2,6 +2,7 @@ package com.CSI5370.HomePurchaseManagementSystem.Services;
 
 import com.CSI5370.HomePurchaseManagementSystem.Domain.Customer;
 import com.CSI5370.HomePurchaseManagementSystem.Exceptions.CustomerNotFound;
+import com.CSI5370.HomePurchaseManagementSystem.Exceptions.PostgresUnavailableException;
 import org.springframework.stereotype.Service;
 
 import java.sql.*;
@@ -98,5 +99,37 @@ public class CustomerService {
             }
         }
         return customer;
+    }
+
+    public void deleteCustomer(int customerid){
+        Connection conn = null;
+
+        String deleteSQL = "DELETE FROM customer WHERE id = ? RETURNING id;";
+
+
+        try{
+            conn = DriverManager.getConnection(URL, USER, PASSWORD);
+
+            getCustomer(customerid);
+
+            PreparedStatement delete = conn.prepareStatement(deleteSQL);
+
+            delete.setInt(1,customerid);
+
+            delete.executeQuery();
+
+        }catch (SQLException e){
+            e.printStackTrace();
+            throw new PostgresUnavailableException("Service Unavailable", e);
+        } finally {
+            if (conn != null) {
+                try {
+                    conn.close();
+                    System.out.println("Connection closed.");
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 }
