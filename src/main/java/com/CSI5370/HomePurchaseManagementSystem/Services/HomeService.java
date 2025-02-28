@@ -1,8 +1,7 @@
 package com.CSI5370.HomePurchaseManagementSystem.Services;
 
 import com.CSI5370.HomePurchaseManagementSystem.Domain.Home;
-import com.CSI5370.HomePurchaseManagementSystem.Domain.Realtor;
-import com.CSI5370.HomePurchaseManagementSystem.Exceptions.CustomerNotFound;
+import com.CSI5370.HomePurchaseManagementSystem.Exceptions.HomeNotFound;
 import org.springframework.stereotype.Service;
 
 import java.sql.*;
@@ -56,7 +55,7 @@ public class HomeService {
     public Home gethome(int homeid){
         Connection conn = null;
 
-        String getSQL = "SELECT * FROM customer where id = ?;";
+        String getSQL = "SELECT * FROM home where id = ?;";
 
        Home home = new Home();
 
@@ -72,14 +71,15 @@ public class HomeService {
             if (rs.next()){
 
                 home.setId(rs.getInt("id"));
-                home.setStreetNum(rs.getInt("streetnum"));
+                home.setAddress(rs.getInt("address"));
+                home.setStreet(rs.getString("street"));
                 home.setCity(rs.getString("city"));
                 home.setState(rs.getString("state"));
                 home.setPrice(rs.getInt("price"));
                 home.setSquareFeet(rs.getInt("squarefeet"));
 
             } else {
-                throw new CustomerNotFound("Customer Not Found");
+                throw new HomeNotFound("Home Not Found");
             }
 
         }catch (SQLException e){

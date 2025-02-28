@@ -1,10 +1,16 @@
 package com.CSI5370.HomePurchaseManagementSystem.Services;
 
+import com.CSI5370.HomePurchaseManagementSystem.Domain.Customer;
+import com.CSI5370.HomePurchaseManagementSystem.Domain.Purchase;
+import com.CSI5370.HomePurchaseManagementSystem.Exceptions.CustomerNotFound;
+import com.CSI5370.HomePurchaseManagementSystem.Exceptions.PostgresUnavailableException;
+import com.CSI5370.HomePurchaseManagementSystem.Exceptions.PurchaseNotFound;
 import com.CSI5370.HomePurchaseManagementSystem.Exceptions.PurchaseNotPossibleException;
 import jakarta.validation.constraints.Pattern;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import javax.naming.ServiceUnavailableException;
 import java.sql.*;
 
 @Service
@@ -41,9 +47,13 @@ public class PurchaseService {
             }
 
         }catch (SQLException e){
-            System.err.println("JDBC Driver not found!");
             e.printStackTrace();
-            throw new PurchaseNotPossibleException("Purchase Not Possible", e);
+            System.out.println(e.getMessage());
+            if(e.getMessage().contains("violates foreign key constraint")) {
+                throw new PurchaseNotPossibleException("Purchase Not Possible: " + e.getMessage(), e);
+            } else {
+                throw new PostgresUnavailableException("Service Unavailable", e);
+            }
         } finally {
             if (conn != null) {
                 try {
@@ -56,5 +66,50 @@ public class PurchaseService {
         }
         return purchaseId;
 
+    }
+
+    public Purchase getPurchase(int purcahseid){
+        Connection conn = null;
+
+        String getSQL = "SELECT * FROM purchase where id = ?;";
+
+        Purchase purchase = new Purchase();
+
+        try{
+            conn = DriverManager.getConnection(URL, USER, PASSWORD);
+
+            PreparedStatement get = conn.prepareStatement(getSQL);
+
+            get.setInt(1,purcahseid);
+
+            ResultSet rs = get.executeQuery();
+
+            if (rs.next()){
+
+                purchase.setId(rs.getInt("id"));
+                purchase.setCustomerid(rs.getInt("customerid"));
+                purchase.setRealtorid(rs.getInt("realtorid"));
+                purchase.setHomeid(rs.getInt("homeid"));
+                purchase.setLoan(rs.getInt("loan"));
+                purchase.setDownpayment(rs.getInt("downpayment"));
+
+            } else {
+                throw new PurchaseNotFound("Customer Not Found");
+            }
+
+        }catch (SQLException e){
+            System.err.println("JDBC Driver not found!");
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                try {
+                    conn.close();
+                    System.out.println("Connection closed.");
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return purchase;
     }
 }

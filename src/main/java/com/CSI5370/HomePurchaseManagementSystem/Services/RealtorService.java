@@ -3,6 +3,7 @@ package com.CSI5370.HomePurchaseManagementSystem.Services;
 import com.CSI5370.HomePurchaseManagementSystem.Domain.Customer;
 import com.CSI5370.HomePurchaseManagementSystem.Domain.Realtor;
 import com.CSI5370.HomePurchaseManagementSystem.Exceptions.CustomerNotFound;
+import com.CSI5370.HomePurchaseManagementSystem.Exceptions.RealtorNotFound;
 import org.springframework.stereotype.Service;
 
 import java.sql.*;
@@ -54,7 +55,7 @@ public class RealtorService {
     public Realtor getrealtor(int realtorid){
         Connection conn = null;
 
-        String getSQL = "SELECT * FROM customer where id = ?;";
+        String getSQL = "SELECT * FROM realtor where id = ?;";
 
         Realtor realtor = new Realtor();
 
@@ -76,7 +77,7 @@ public class RealtorService {
                 realtor.setEmployeenum(rs.getInt("employeenum"));
 
             } else {
-                throw new CustomerNotFound("Customer Not Found");
+                throw new RealtorNotFound("Realtor Not Found");
             }
 
         }catch (SQLException e){

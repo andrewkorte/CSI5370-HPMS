@@ -3,6 +3,7 @@ package com.CSI5370.HomePurchaseManagementSystem;
 
 import com.CSI5370.HomePurchaseManagementSystem.Domain.Customer;
 import com.CSI5370.HomePurchaseManagementSystem.Domain.Home;
+import com.CSI5370.HomePurchaseManagementSystem.Domain.Purchase;
 import com.CSI5370.HomePurchaseManagementSystem.Domain.Realtor;
 import com.CSI5370.HomePurchaseManagementSystem.ErrorResponses.Schema404;
 import com.CSI5370.HomePurchaseManagementSystem.Services.CustomerService;
@@ -53,7 +54,7 @@ public class HPMSEndpoints {
     @Operation(summary = "Create a purchase record", description = "Create a purchase record")
     @ApiResponse(responseCode = "200", description = "Resource Created")
     @ApiResponse(responseCode = "404", description = "Resource not found", content = @Content(schema = @Schema(implementation = Schema404.class)))
-    public ResponseEntity<Customer> createCustomer(@PathVariable int customerid){
+    public ResponseEntity<Customer> getCustomer(@PathVariable int customerid){
 
         Customer customer = customerService.getCustomer(customerid);
         return ResponseEntity.ok(customer);
@@ -76,6 +77,16 @@ public class HPMSEndpoints {
         return ResponseEntity.ok(purchaseId);
     }
 
+    @GetMapping("purchase/get/{purchaseid}")
+    @Operation(summary = "Create a purchase record", description = "Create a purchase record")
+    @ApiResponse(responseCode = "200", description = "Resource Created")
+    @ApiResponse(responseCode = "404", description = "Resource not found", content = @Content(schema = @Schema(implementation = Schema404.class)))
+    public ResponseEntity<Purchase> getPurchase(@PathVariable int purchaseid){
+
+        Purchase purchase = purchaseService.getPurchase(purchaseid);
+        return ResponseEntity.ok(purchase);
+    }
+
     @PostMapping("realtor/create")
     public ResponseEntity<Integer> createRealtor(@RequestParam int employeenum,
                                                   @RequestParam @Pattern(regexp = "[a-zA-Z]+") String firstName,
@@ -85,7 +96,7 @@ public class HPMSEndpoints {
         return ResponseEntity.ok(realId);
     }
 
-    @GetMapping("customer/get/{customerid}")
+    @GetMapping("realtor/get/{realtorid}")
     @Operation(summary = "Create a purchase record", description = "Create a purchase record")
     @ApiResponse(responseCode = "200", description = "Resource Created")
     @ApiResponse(responseCode = "404", description = "Resource not found", content = @Content(schema = @Schema(implementation = Schema404.class)))
@@ -107,7 +118,7 @@ public class HPMSEndpoints {
         return ResponseEntity.ok(homeid);
     }
 
-    @GetMapping("customer/get/{customerid}")
+    @GetMapping("home/get/{homeid}")
     @Operation(summary = "Create a purchase record", description = "Create a purchase record")
     @ApiResponse(responseCode = "200", description = "Resource Created")
     @ApiResponse(responseCode = "404", description = "Resource not found", content = @Content(schema = @Schema(implementation = Schema404.class)))

@@ -8,7 +8,8 @@ import lombok.*;
 public class Home {
 
  private int id;
-  private  int streetNum;
+  private  int address;
+  private String street;
    private String city;
     private String state;
     private float price;
@@ -18,9 +19,13 @@ public class Home {
 
  public void setId(int id) {this.id = id;}
 
- public int getStreetNum() {return streetNum;}
+ public int getAddress() {return address;}
 
-    public void setStreetNum(int streetNum) {this.streetNum = streetNum;}
+    public void setAddress(int address) {this.address = address;}
+
+    public String getStreet() {return street;}
+
+    public void setStreet(String street) {this.street = street;}
 
     public String getCity() {return city;}
 
