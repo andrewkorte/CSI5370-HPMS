@@ -2,6 +2,8 @@ package com.CSI5370.HomePurchaseManagementSystem;
 
 
 import com.CSI5370.HomePurchaseManagementSystem.Domain.Customer;
+import com.CSI5370.HomePurchaseManagementSystem.Domain.Home;
+import com.CSI5370.HomePurchaseManagementSystem.Domain.Realtor;
 import com.CSI5370.HomePurchaseManagementSystem.ErrorResponses.Schema404;
 import com.CSI5370.HomePurchaseManagementSystem.Services.CustomerService;
 import com.CSI5370.HomePurchaseManagementSystem.Services.HomeService;
@@ -83,6 +85,18 @@ public class HPMSEndpoints {
         return ResponseEntity.ok(realId);
     }
 
+    @GetMapping("customer/get/{customerid}")
+    @Operation(summary = "Create a purchase record", description = "Create a purchase record")
+    @ApiResponse(responseCode = "200", description = "Resource Created")
+    @ApiResponse(responseCode = "404", description = "Resource not found", content = @Content(schema = @Schema(implementation = Schema404.class)))
+    public ResponseEntity<Realtor> getRealtor(@PathVariable int realtorid){
+
+       Realtor realtor = realtorService.getrealtor(realtorid);
+        return ResponseEntity.ok(realtor);
+    }
+
+
+
     @PostMapping("home/create")
     public ResponseEntity<Integer> createHome(@RequestParam int streetNum,
                                                 @RequestParam @Pattern(regexp = "[a-zA-Z]+") String city,
@@ -93,5 +107,13 @@ public class HPMSEndpoints {
         return ResponseEntity.ok(homeid);
     }
 
+    @GetMapping("customer/get/{customerid}")
+    @Operation(summary = "Create a purchase record", description = "Create a purchase record")
+    @ApiResponse(responseCode = "200", description = "Resource Created")
+    @ApiResponse(responseCode = "404", description = "Resource not found", content = @Content(schema = @Schema(implementation = Schema404.class)))
+    public ResponseEntity<Home> getHome(@PathVariable int homeid){
 
+        Home home = homeService.gethome(homeid);
+        return ResponseEntity.ok(home);
+    }
 }

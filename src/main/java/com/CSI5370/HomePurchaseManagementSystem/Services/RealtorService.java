@@ -1,5 +1,8 @@
 package com.CSI5370.HomePurchaseManagementSystem.Services;
 
+import com.CSI5370.HomePurchaseManagementSystem.Domain.Customer;
+import com.CSI5370.HomePurchaseManagementSystem.Domain.Realtor;
+import com.CSI5370.HomePurchaseManagementSystem.Exceptions.CustomerNotFound;
 import org.springframework.stereotype.Service;
 
 import java.sql.*;
@@ -48,6 +51,49 @@ public class RealtorService {
         return realId;
     }
 
+    public Realtor getrealtor(int realtorid){
+        Connection conn = null;
 
+        String getSQL = "SELECT * FROM customer where id = ?;";
+
+        Realtor realtor = new Realtor();
+
+        try{
+            conn = DriverManager.getConnection(URL, USER, PASSWORD);
+
+            PreparedStatement get = conn.prepareStatement(getSQL);
+
+            get.setInt(1,realtorid);
+
+            ResultSet rs = get.executeQuery();
+
+            if (rs.next()){
+
+                realtor.setId(rs.getInt("id"));
+                realtor.setFirstName(rs.getString("firstname"));
+                realtor.setLastName(rs.getString("lastname"));
+                realtor.setCommissionRate(rs.getFloat("commissionrate"));
+                realtor.setEmployeenum(rs.getInt("employeenum"));
+
+            } else {
+                throw new CustomerNotFound("Customer Not Found");
+            }
+
+        }catch (SQLException e){
+            System.err.println("JDBC Driver not found!");
+            e.printStackTrace();
+
+        } finally {
+            if (conn != null) {
+                try {
+                    conn.close();
+                    System.out.println("Connection closed.");
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return realtor;
+    }
 
 }
