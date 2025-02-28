@@ -1,7 +1,8 @@
 package com.CSI5370.HomePurchaseManagementSystem;
 
 
-import com.CSI5370.HomePurchaseManagementSystem.ErrorResponses.NonPossibleSchema;
+import com.CSI5370.HomePurchaseManagementSystem.Domain.Customer;
+import com.CSI5370.HomePurchaseManagementSystem.ErrorResponses.Schema404;
 import com.CSI5370.HomePurchaseManagementSystem.Services.CustomerService;
 import com.CSI5370.HomePurchaseManagementSystem.Services.HomeService;
 import com.CSI5370.HomePurchaseManagementSystem.Services.PurchaseService;
@@ -14,9 +15,7 @@ import jakarta.validation.constraints.Pattern;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.sql.SQLException;
 
@@ -36,9 +35,10 @@ public class HPMSEndpoints {
     @Autowired
     PurchaseService purchaseService;
 
-    //localhost:8080/search
 
-    @PostMapping("/customer/create")
+    @PostMapping("customer/create")
+    @Operation(summary = "Create a customer record", description = "Create a customer record")
+    @ApiResponse(responseCode = "200", description = "Resource Created")
     public ResponseEntity<Integer> createCustomer(@RequestParam @Pattern(regexp = "[a-zA-Z]+") String firstName,
                                                   @RequestParam @Pattern(regexp = "[a-zA-Z]+") String lastName,
                                                   @RequestParam @Pattern(regexp = "[0-9]{2}-[0-9]{3}-[0-9]{4}") String ssn,
@@ -47,10 +47,23 @@ public class HPMSEndpoints {
         return ResponseEntity.ok(custId);
     }
 
+    @GetMapping("customer/get/{customerid}")
+    @Operation(summary = "Create a purchase record", description = "Create a purchase record")
+    @ApiResponse(responseCode = "200", description = "Resource Created")
+    @ApiResponse(responseCode = "404", description = "Resource not found", content = @Content(schema = @Schema(implementation = Schema404.class)))
+    public ResponseEntity<Customer> createCustomer(@PathVariable int customerid){
+
+        Customer customer = customerService.getCustomer(customerid);
+        return ResponseEntity.ok(customer);
+    }
+
+
+
+
     @PostMapping("purchase/create")
     @Operation(summary = "Create a purchase record", description = "Create a purchase record")
     @ApiResponse(responseCode = "200", description = "Resource Created")
-    @ApiResponse(responseCode = "404", description = "Resource not possible", content = @Content(schema = @Schema(implementation = NonPossibleSchema.class)))
+    @ApiResponse(responseCode = "404", description = "Resource not possible", content = @Content(schema = @Schema(implementation = Schema404.class)))
     public ResponseEntity<Integer> createPurchase(@RequestParam int customerId,
                                                   @RequestParam int realtorId,
                                                   @RequestParam int homeId,
@@ -61,7 +74,7 @@ public class HPMSEndpoints {
         return ResponseEntity.ok(purchaseId);
     }
 
-    @PostMapping("/realtor/create")
+    @PostMapping("realtor/create")
     public ResponseEntity<Integer> createRealtor(@RequestParam int employeenum,
                                                   @RequestParam @Pattern(regexp = "[a-zA-Z]+") String firstName,
                                                   @RequestParam @Pattern(regexp = "[a-zA-Z]+") String lastName,
@@ -70,7 +83,7 @@ public class HPMSEndpoints {
         return ResponseEntity.ok(realId);
     }
 
-    @PostMapping("/home/create")
+    @PostMapping("home/create")
     public ResponseEntity<Integer> createHome(@RequestParam int streetNum,
                                                 @RequestParam @Pattern(regexp = "[a-zA-Z]+") String city,
                                                  @RequestParam @Pattern(regexp = "[a-zA-Z]+") String state,

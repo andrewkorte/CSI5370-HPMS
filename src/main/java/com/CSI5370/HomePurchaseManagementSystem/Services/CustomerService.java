@@ -1,5 +1,7 @@
 package com.CSI5370.HomePurchaseManagementSystem.Services;
 
+import com.CSI5370.HomePurchaseManagementSystem.Domain.Customer;
+import com.CSI5370.HomePurchaseManagementSystem.Exceptions.CustomerNotFound;
 import org.springframework.stereotype.Service;
 
 import java.sql.*;
@@ -50,5 +52,51 @@ public class CustomerService {
             }
         }
         return custId;
+    }
+
+
+    public Customer getCustomer(int customerid){
+        Connection conn = null;
+
+        String getSQL = "SELECT * FROM customer where id = ?;";
+
+        Customer customer = new Customer();
+
+        try{
+            conn = DriverManager.getConnection(URL, USER, PASSWORD);
+
+            PreparedStatement get = conn.prepareStatement(getSQL);
+
+            get.setInt(1,customerid);
+
+            ResultSet rs = get.executeQuery();
+
+            if (rs.next()){
+
+                customer.setId(rs.getInt("id"));
+                customer.setFirstName(rs.getString("firstname"));
+                customer.setLastName(rs.getString("lastname"));
+                customer.setSsn(rs.getString("ssn"));
+                customer.setIncome(rs.getFloat("income"));
+
+            } else {
+                throw new CustomerNotFound("Customer Not Found");
+            }
+
+        }catch (SQLException e){
+            System.err.println("JDBC Driver not found!");
+            e.printStackTrace();
+
+        } finally {
+            if (conn != null) {
+                try {
+                    conn.close();
+                    System.out.println("Connection closed.");
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return customer;
     }
 }

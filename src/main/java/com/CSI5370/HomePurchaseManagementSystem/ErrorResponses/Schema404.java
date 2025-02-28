@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @AllArgsConstructor
-public class NonPossibleSchema {
+public class Schema404 {
 
     @Schema(description = "Error type", example = "Not Found")
     private String error;
