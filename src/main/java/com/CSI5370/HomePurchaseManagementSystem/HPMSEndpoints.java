@@ -39,6 +39,8 @@ public class HPMSEndpoints {
     PurchaseService purchaseService;
 
 
+//---------Customer Endpoints--------------------------------------------------------------------------------------------------------------------
+
     @PostMapping("customer/create")
     @Operation(summary = "Create a customer record", description = "Create a customer record")
     @ApiResponse(responseCode = "200", description = "Resource Created")
@@ -61,7 +63,7 @@ public class HPMSEndpoints {
     }
 
 
-
+//---------Purchase Endpoints--------------------------------------------------------------------------------------------------------------------
 
     @PostMapping("purchase/create")
     @Operation(summary = "Create a purchase record", description = "Create a purchase record")
@@ -87,6 +89,9 @@ public class HPMSEndpoints {
         return ResponseEntity.ok(purchase);
     }
 
+
+//---------Realtor Endpoints--------------------------------------------------------------------------------------------------------------------
+
     @PostMapping("realtor/create")
     public ResponseEntity<Integer> createRealtor(@RequestParam int employeenum,
                                                   @RequestParam @Pattern(regexp = "[a-zA-Z]+") String firstName,
@@ -97,7 +102,7 @@ public class HPMSEndpoints {
     }
 
     @GetMapping("realtor/get/{realtorid}")
-    @Operation(summary = "Create a purchase record", description = "Create a purchase record")
+    @Operation(summary = "Get a realtor record", description = "Get a realtor record")
     @ApiResponse(responseCode = "200", description = "Resource Created")
     @ApiResponse(responseCode = "404", description = "Resource not found", content = @Content(schema = @Schema(implementation = Schema404.class)))
     public ResponseEntity<Realtor> getRealtor(@PathVariable int realtorid){
@@ -106,7 +111,19 @@ public class HPMSEndpoints {
         return ResponseEntity.ok(realtor);
     }
 
+    @DeleteMapping("realtor/delete/{realtorid}")
+    @Operation(summary = "Delete a realtor record", description = "Delete a realtor record")
+    @ApiResponse(responseCode = "204", description = "Resource Deleted")
+    @ApiResponse(responseCode = "404", description = "Resource not found", content = @Content(schema = @Schema(implementation = Schema404.class)))
+    public ResponseEntity<Void> deleteRealtor(@PathVariable int realtorid){
 
+        realtorService.deleteRealtor(realtorid);
+
+        return ResponseEntity.noContent().build();
+    }
+
+
+//---------Home Endpoints--------------------------------------------------------------------------------------------------------------------
 
     @PostMapping("home/create")
     public ResponseEntity<Integer> createHome(@RequestParam int streetNum,
