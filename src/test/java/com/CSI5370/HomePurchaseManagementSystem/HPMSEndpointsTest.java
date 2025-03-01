@@ -2,9 +2,11 @@ package com.CSI5370.HomePurchaseManagementSystem;
 
 import com.CSI5370.HomePurchaseManagementSystem.Domain.Customer;
 import com.CSI5370.HomePurchaseManagementSystem.Domain.Home;
+import com.CSI5370.HomePurchaseManagementSystem.Domain.Purchase;
 import com.CSI5370.HomePurchaseManagementSystem.Domain.Realtor;
 import com.CSI5370.HomePurchaseManagementSystem.Services.CustomerService;
 import com.CSI5370.HomePurchaseManagementSystem.Services.HomeService;
+import com.CSI5370.HomePurchaseManagementSystem.Services.PurchaseService;
 import com.CSI5370.HomePurchaseManagementSystem.Services.RealtorService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -33,6 +35,9 @@ class HPMSEndpointsTest {
 
      @Mock
     RealtorService realtorService;
+
+     @Mock
+    PurchaseService purchaseService;
 
     @Test
     public void createCustomer_Returns200WithId() throws SQLException {
@@ -154,6 +159,45 @@ class HPMSEndpointsTest {
         assertThat(result.getStatusCode()).isEqualTo(HttpStatus.NO_CONTENT);
     }
 
+    /* ----------------------------------------------------------------------------------------------------------*/
 
+    @Test
+    public void createPurchase_Returns200WithId() throws SQLException {
+
+        when(purchaseService.createPurchase(1, 1, 1, 500000,500)).thenReturn(1);
+
+        ResponseEntity<Integer> result = hpmsEndpoints.createPurchase(1, 1, 1, 500000,500);
+
+        assertThat(result.getBody()).isEqualTo(1);
+        assertThat(result.getStatusCode()).isEqualTo(HttpStatus.OK);
+    }
+
+    @Test
+    public void getPurchase_Returns200WithCustomer() {
+       Purchase purchase = new Purchase(1,1, 1, 1, 500000,500);
+
+        when(purchaseService.getPurchase(1)).thenReturn(purchase);
+
+        ResponseEntity<Purchase> result = hpmsEndpoints.getPurchase(1);
+
+        assertThat(result.getBody().getId()).isEqualTo(1);
+        assertThat(result.getBody().getCustomerid()).isEqualTo(1);
+        assertThat(result.getBody().getRealtorid()).isEqualTo(1);
+        assertThat(result.getBody().getHomeid()).isEqualTo(1);
+        assertThat(result.getBody().getLoan()).isEqualTo(500000);
+        assertThat(result.getBody().getDownpayment()).isEqualTo(500);
+        assertThat(result.getStatusCode()).isEqualTo(HttpStatus.OK);
+    }
+
+    @Test
+    public void deletePurchase_Returns204() {
+
+        doNothing().when(purchaseService).deletePurchase(1);
+
+        ResponseEntity<Void> result = hpmsEndpoints.deletePurchase(1);
+
+        verify(purchaseService, times(1)).deletePurchase(1);
+        assertThat(result.getStatusCode()).isEqualTo(HttpStatus.NO_CONTENT);
+    }
 
 }
