@@ -167,7 +167,7 @@ public class HPMSEndpoints {
         return ResponseEntity.ok(home);
     }
 
-    @DeleteMapping("Home/delete/{homeid}")
+    @DeleteMapping("home/delete/{homeid}")
     @Operation(summary = "Delete a home record", description = "Delete a home record")
     @ApiResponse(responseCode = "204", description = "Resource Deleted")
     @ApiResponse(responseCode = "404", description = "Resource not found", content = @Content(schema = @Schema(implementation = Schema404.class)))
