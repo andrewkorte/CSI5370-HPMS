@@ -38,15 +38,15 @@ public class RealtorService {
             }
 
         }catch (SQLException e){
-            System.err.println("JDBC Driver not found!");
             e.printStackTrace();
-        }finally {
+            throw new PostgresUnavailableException("Service Unavailable", e);
+        } finally {
             if (conn != null) {
                 try {
                     conn.close();
                     System.out.println("Connection closed.");
                 } catch (SQLException e) {
-                    e.printStackTrace();
+                    throw new PostgresUnavailableException("Service Unavailable", e);
                 }
             }
         }
@@ -82,16 +82,15 @@ public class RealtorService {
             }
 
         }catch (SQLException e){
-            System.err.println("No results");
             e.printStackTrace();
-
+            throw new PostgresUnavailableException("Service Unavailable", e);
         } finally {
             if (conn != null) {
                 try {
                     conn.close();
                     System.out.println("Connection closed.");
                 } catch (SQLException e) {
-                    e.printStackTrace();
+                    throw new PostgresUnavailableException("Service Unavailable", e);
                 }
             }
         }
@@ -124,7 +123,7 @@ public class RealtorService {
                     conn.close();
                     System.out.println("Connection closed.");
                 } catch (SQLException e) {
-                    e.printStackTrace();
+                    throw new PostgresUnavailableException("Service Unavailable", e);
                 }
             }
         }

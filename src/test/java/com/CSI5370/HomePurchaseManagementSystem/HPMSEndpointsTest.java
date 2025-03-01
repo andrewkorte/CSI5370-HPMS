@@ -92,8 +92,8 @@ class HPMSEndpointsTest {
     }
 
     @Test
-    public void getHome_Returns200WithCustomer() {
-        Home home = new Home(1,5046, "Hell", "Michigan", 40000.00F,2600);
+    public void getHome_Returns200WithHome() {
+        Home home = new Home(1,5046, "Crazy", "Hell", "Michigan", 40000.00F,2600);
 
         when(homeService.gethome(1)).thenReturn(home);
 
@@ -101,6 +101,7 @@ class HPMSEndpointsTest {
 
         assertThat(result.getBody().getId()).isEqualTo(1);
         assertThat(result.getBody().getAddress()).isEqualTo(5046);
+        assertThat(result.getBody().getStreet()).isEqualTo("Crazy");
         assertThat(result.getBody().getCity()).isEqualTo("Hell");
         assertThat(result.getBody().getState()).isEqualTo("Michigan");
         assertThat(result.getBody().getPrice()).isEqualTo(40000.00F);
@@ -115,7 +116,7 @@ class HPMSEndpointsTest {
 
         ResponseEntity<Void> result = hpmsEndpoints.deletehome(1);
 
-        verify(customerService, times(1)).deleteCustomer(1);
+        verify(homeService, times(1)).deleteHome(1);
         assertThat(result.getStatusCode()).isEqualTo(HttpStatus.NO_CONTENT);
     }
 
@@ -133,7 +134,7 @@ class HPMSEndpointsTest {
     }
 
     @Test
-    public void getRealtor_Returns200WithCustomer() {
+    public void getRealtor_Returns200WithRealtor() {
         Realtor realtor = new Realtor(1,1, "Ken", "Butcher", 400.00F);
 
         when(realtorService.getrealtor(1)).thenReturn(realtor);
@@ -173,7 +174,7 @@ class HPMSEndpointsTest {
     }
 
     @Test
-    public void getPurchase_Returns200WithCustomer() {
+    public void getPurchase_Returns200WithPurchase() {
        Purchase purchase = new Purchase(1,1, 1, 1, 500000,500);
 
         when(purchaseService.getPurchase(1)).thenReturn(purchase);

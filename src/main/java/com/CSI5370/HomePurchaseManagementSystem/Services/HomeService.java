@@ -38,15 +38,15 @@ public class HomeService {
             }
 
         }catch (SQLException e){
-            System.err.println("JDBC Driver not found!");
             e.printStackTrace();
-        }finally {
+            throw new PostgresUnavailableException("Service Unavailable", e);
+        } finally {
             if (conn != null) {
                 try {
                     conn.close();
                     System.out.println("Connection closed.");
                 } catch (SQLException e) {
-                    e.printStackTrace();
+                    throw new PostgresUnavailableException("Service Unavailable", e);
                 }
             }
         }
@@ -84,16 +84,15 @@ public class HomeService {
             }
 
         }catch (SQLException e){
-            System.err.println("JDBC Driver not found!");
             e.printStackTrace();
-
+            throw new PostgresUnavailableException("Service Unavailable", e);
         } finally {
             if (conn != null) {
                 try {
                     conn.close();
                     System.out.println("Connection closed.");
                 } catch (SQLException e) {
-                    e.printStackTrace();
+                    throw new PostgresUnavailableException("Service Unavailable", e);
                 }
             }
         }
@@ -126,7 +125,7 @@ public class HomeService {
                     conn.close();
                     System.out.println("Connection closed.");
                 } catch (SQLException e) {
-                    e.printStackTrace();
+                    throw new PostgresUnavailableException("Service Unavailable", e);
                 }
             }
         }
