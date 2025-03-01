@@ -2,6 +2,7 @@ package com.CSI5370.HomePurchaseManagementSystem.Services;
 
 import com.CSI5370.HomePurchaseManagementSystem.Domain.Home;
 import com.CSI5370.HomePurchaseManagementSystem.Exceptions.HomeNotFound;
+import com.CSI5370.HomePurchaseManagementSystem.Exceptions.PostgresUnavailableException;
 import org.springframework.stereotype.Service;
 
 import java.sql.*;
@@ -99,5 +100,35 @@ public class HomeService {
         return home;
     }
 
+    public void deleteHome(int homeid){
+        Connection conn = null;
 
+        String deleteSQL = "DELETE FROM home WHERE id = ? RETURNING id;";
+
+
+        try{
+            conn = DriverManager.getConnection(URL, USER, PASSWORD);
+
+            gethome(homeid);
+
+            PreparedStatement delete = conn.prepareStatement(deleteSQL);
+
+            delete.setInt(1,homeid);
+
+            delete.executeQuery();
+
+        }catch (SQLException e){
+            e.printStackTrace();
+            throw new PostgresUnavailableException("Service Unavailable", e);
+        } finally {
+            if (conn != null) {
+                try {
+                    conn.close();
+                    System.out.println("Connection closed.");
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
 }
