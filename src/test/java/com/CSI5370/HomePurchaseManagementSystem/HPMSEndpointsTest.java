@@ -2,8 +2,10 @@ package com.CSI5370.HomePurchaseManagementSystem;
 
 import com.CSI5370.HomePurchaseManagementSystem.Domain.Customer;
 import com.CSI5370.HomePurchaseManagementSystem.Domain.Home;
+import com.CSI5370.HomePurchaseManagementSystem.Domain.Realtor;
 import com.CSI5370.HomePurchaseManagementSystem.Services.CustomerService;
 import com.CSI5370.HomePurchaseManagementSystem.Services.HomeService;
+import com.CSI5370.HomePurchaseManagementSystem.Services.RealtorService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -28,6 +30,9 @@ class HPMSEndpointsTest {
 
      @Mock
     HomeService homeService;
+
+     @Mock
+    RealtorService realtorService;
 
     @Test
     public void createCustomer_Returns200WithId() throws SQLException {
@@ -111,6 +116,43 @@ class HPMSEndpointsTest {
 
     /* ----------------------------------------------------------------------------------------------------------*/
 
+    @Test
+    public void createRealtor_Returns200WithId() throws SQLException {
+
+        when(realtorService.createRealtor(1, "Ken", "Butcher", 400.00F)).thenReturn(1);
+
+        ResponseEntity<Integer> result = hpmsEndpoints.createRealtor(1, "Ken", "Butcher", 400.00F);
+
+        assertThat(result.getBody()).isEqualTo(1);
+        assertThat(result.getStatusCode()).isEqualTo(HttpStatus.OK);
+    }
+
+    @Test
+    public void getRealtor_Returns200WithCustomer() {
+        Realtor realtor = new Realtor(1,1, "Ken", "Butcher", 400.00F);
+
+        when(realtorService.getrealtor(1)).thenReturn(realtor);
+
+        ResponseEntity<Realtor> result = hpmsEndpoints.getRealtor(1);
+
+        assertThat(result.getBody().getId()).isEqualTo(1);
+        assertThat(result.getBody().getEmployeenum()).isEqualTo(1);
+        assertThat(result.getBody().getFirstName()).isEqualTo("Ken");
+        assertThat(result.getBody().getLastName()).isEqualTo("Butcher");
+        assertThat(result.getBody().getCommissionRate()).isEqualTo(400.00F);
+        assertThat(result.getStatusCode()).isEqualTo(HttpStatus.OK);
+    }
+
+    @Test
+    public void deleteRealtor_Returns204() {
+
+        doNothing().when(realtorService).deleteRealtor(1);
+
+        ResponseEntity<Void> result = hpmsEndpoints.deleteRealtor(1);
+
+        verify(realtorService, times(1)).deleteRealtor(1);
+        assertThat(result.getStatusCode()).isEqualTo(HttpStatus.NO_CONTENT);
+    }
 
 
 
