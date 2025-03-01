@@ -3,7 +3,6 @@ package com.CSI5370.HomePurchaseManagementSystem.Services;
 import com.CSI5370.HomePurchaseManagementSystem.Domain.Customer;
 import com.CSI5370.HomePurchaseManagementSystem.Exceptions.CustomerNotFound;
 import com.CSI5370.HomePurchaseManagementSystem.Exceptions.PostgresUnavailableException;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
