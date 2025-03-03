@@ -40,16 +40,17 @@ class HomeServiceTest {
             doNothing().when(conn).close();
 
             doNothing().when(preparedStatement).setInt(1, 5046);
-            doNothing().when(preparedStatement).setString(2, "Hell");
-            doNothing().when(preparedStatement).setString(3, "Michigan");
-            doNothing().when(preparedStatement).setFloat(4, 40000.00F);
-            doNothing().when(preparedStatement).setInt(5,2600);
+            doNothing().when(preparedStatement).setString(2, "Crazy");
+            doNothing().when(preparedStatement).setString(3, "Hell");
+            doNothing().when(preparedStatement).setString(4, "Michigan");
+            doNothing().when(preparedStatement).setFloat(5, 40000.00F);
+            doNothing().when(preparedStatement).setInt(6,2600);
             doReturn(rs).when(preparedStatement).executeQuery();
 
             doReturn(true, false).when(rs).next();
             doReturn(1).when(rs).getInt("id");
 
-            int result = homeService.createHome(5046, "Hell", "Michigan", 40000.00f,2600);
+            int result = homeService.createHome(5046, "Crazy", "Hell", "Michigan", 40000.00f,2600);
 
             assertThat(result).isEqualTo(1);
         }
@@ -68,13 +69,14 @@ class HomeServiceTest {
             doNothing().when(conn).close();
 
             doNothing().when(preparedStatement).setInt(1, 5046);
-            doNothing().when(preparedStatement).setString(2, "Hell");
-            doNothing().when(preparedStatement).setString(3, "Michigan");
-            doNothing().when(preparedStatement).setFloat(4, 40000.00F);
-            doNothing().when(preparedStatement).setInt(5,2600);
+            doNothing().when(preparedStatement).setString(2, "Crazy");
+            doNothing().when(preparedStatement).setString(3, "Hell");
+            doNothing().when(preparedStatement).setString(4, "Michigan");
+            doNothing().when(preparedStatement).setFloat(5, 40000.00F);
+            doNothing().when(preparedStatement).setInt(6,2600);
             doThrow(new SQLException("Service Unavailable")).when(preparedStatement).executeQuery();
 
-            assertThatThrownBy(() -> homeService.createHome(5046, "Hell", "Michigan", 40000.00f,2600)).isInstanceOf(PostgresUnavailableException.class);
+            assertThatThrownBy(() -> homeService.createHome(5046, "Crazy", "Hell", "Michigan", 40000.00f,2600)).isInstanceOf(PostgresUnavailableException.class);
         }
     }
 
@@ -91,13 +93,14 @@ class HomeServiceTest {
             doThrow(new SQLException("Service Unavailable")).when(conn).close();
 
             doNothing().when(preparedStatement).setInt(1, 5046);
-            doNothing().when(preparedStatement).setString(2, "Hell");
-            doNothing().when(preparedStatement).setString(3, "Michigan");
-            doNothing().when(preparedStatement).setFloat(4, 40000.00F);
-            doNothing().when(preparedStatement).setInt(5,2600);
+            doNothing().when(preparedStatement).setString(2, "Crazy");
+            doNothing().when(preparedStatement).setString(3, "Hell");
+            doNothing().when(preparedStatement).setString(4, "Michigan");
+            doNothing().when(preparedStatement).setFloat(5, 40000.00F);
+            doNothing().when(preparedStatement).setInt(6,2600);
 
 
-            assertThatThrownBy(() -> homeService.createHome(5046, "Hell", "Michigan", 40000.00f,2600)).isInstanceOf(PostgresUnavailableException.class);
+            assertThatThrownBy(() -> homeService.createHome(5046, "Crazy", "Hell", "Michigan", 40000.00f,2600)).isInstanceOf(PostgresUnavailableException.class);
         }
     }
 
@@ -110,7 +113,7 @@ class HomeServiceTest {
         try(MockedStatic<DriverManager> mockedStatic = Mockito.mockStatic(DriverManager.class)) {
             mockedStatic.when(() -> DriverManager.getConnection("jdbc:postgresql://localhost:5432/HMPS", "csi5370", "mypassword")).thenReturn(null);
 
-            assertThatThrownBy(() -> homeService.createHome(5046, "Hell", "Michigan", 40000.00f,2600)).isInstanceOf(NullPointerException.class);
+            assertThatThrownBy(() -> homeService.createHome(5046, "Crazy", "Hell", "Michigan", 40000.00f,2600)).isInstanceOf(NullPointerException.class);
 
             verify(conn, times(0)).close();
         }
@@ -134,16 +137,17 @@ class HomeServiceTest {
             doReturn(true).when(rs).next();
             doReturn(1).when(rs).getInt("id");
             doReturn(5046).when(rs).getInt("address");
+            doReturn("Crazy").when(rs).getString("street");
             doReturn("Hell").when(rs).getString("city");
             doReturn("Michigan").when(rs).getString("state");
-            doReturn(40000.00F).when(rs).getFloat("price");
+            doReturn(40000).when(rs).getInt("price");
             doReturn(2600).when(rs).getInt("squarefeet");
 
             Home result = homeService.gethome(1);
 
             assertThat(result.getId()).isEqualTo(1);
             assertThat(result.getAddress()).isEqualTo(5046);
-            //assertThat(result.getStreet()).isEqualTo("Crazy");
+            assertThat(result.getStreet()).isEqualTo("Crazy");
             assertThat(result.getCity()).isEqualTo("Hell");
             assertThat(result.getState()).isEqualTo("Michigan");
             assertThat(result.getPrice()).isEqualTo(40000.00F);

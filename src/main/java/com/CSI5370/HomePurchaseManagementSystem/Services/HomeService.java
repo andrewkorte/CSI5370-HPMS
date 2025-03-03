@@ -15,21 +15,24 @@ public class HomeService {
 
     String PASSWORD = "mypassword";
 
-    public int createHome(int streetNum, String city, String state, float price, int squareFeet) throws SQLException {
+    public int createHome(int address, String street, String city, String state, float price, int squareFeet) throws SQLException {
         Connection conn = null;
 
         String createSQL = "INSERT INTO Home (streetNum, city, state, price, squareFeet) values (?, ?, ?, ?) returning id;";
 
         int homeId = 0;
 
-        try(PreparedStatement create = conn.prepareStatement(createSQL)){
+        try{
             conn = DriverManager.getConnection(URL, USER, PASSWORD);
 
-            create.setInt(1,streetNum);
-            create.setString(2,city);
-            create.setString(3,state);
-            create.setFloat(4, price);
-            create.setInt(5,squareFeet);
+            PreparedStatement create = conn.prepareStatement(createSQL);
+
+            create.setInt(1,address);
+            create.setString(2,street);
+            create.setString(3,city);
+            create.setString(4,state);
+            create.setFloat(5, price);
+            create.setInt(6,squareFeet);
 
             ResultSet rs = create.executeQuery();
 

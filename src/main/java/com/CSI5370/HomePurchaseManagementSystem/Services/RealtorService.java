@@ -23,8 +23,10 @@ public class RealtorService {
 
         int realId = 0;
 
-        try(PreparedStatement create = conn.prepareStatement(createSQL)){
+        try{
             conn = DriverManager.getConnection(URL, USER, PASSWORD);
+
+            PreparedStatement create = conn.prepareStatement(createSQL);
 
             create.setInt(1,employeenum);
             create.setString(2,firstName);

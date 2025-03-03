@@ -83,9 +83,9 @@ class HPMSEndpointsTest {
     @Test
     public void createHome_Returns200WithId() throws SQLException {
 
-        when(homeService.createHome(5046, "Hell", "Michigan", 40000.00F,2600)).thenReturn(1);
+        when(homeService.createHome(5046, "Crazy", "Hell", "Michigan", 40000.00F,2600)).thenReturn(1);
 
-        ResponseEntity<Integer> result = hpmsEndpoints.createHome(5046, "Hell", "Michigan", 40000.00F,2600);
+        ResponseEntity<Integer> result = hpmsEndpoints.createHome(5046, "Crazy", "Hell", "Michigan", 40000.00F,2600);
 
         assertThat(result.getBody()).isEqualTo(1);
         assertThat(result.getStatusCode()).isEqualTo(HttpStatus.OK);

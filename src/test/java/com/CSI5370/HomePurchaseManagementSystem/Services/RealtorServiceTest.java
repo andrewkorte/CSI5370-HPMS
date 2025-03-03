@@ -132,7 +132,7 @@ class RealtorServiceTest {
 
             doReturn(true).when(rs).next();
             doReturn(1).when(rs).getInt("id");
-            doReturn(1).when(rs).getString("employeenum");
+            doReturn(1).when(rs).getInt("employeenum");
             doReturn("Ken").when(rs).getString("firstname");
             doReturn("Butcher").when(rs).getString("lastname");
             doReturn(400.00F).when(rs).getFloat("commissionrate");
