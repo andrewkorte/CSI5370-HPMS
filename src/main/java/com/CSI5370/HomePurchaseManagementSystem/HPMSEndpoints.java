@@ -131,6 +131,8 @@ public class HPMSEndpoints {
     public ResponseEntity<Integer> createRealtor(@RequestParam int employeenum,
                                                   @RequestParam @Pattern(regexp = "[a-zA-Z]+") String firstName,
                                                   @RequestParam @Pattern(regexp = "[a-zA-Z]+") String lastName,
+                                                 @DecimalMin(value = "0.0", message = "Commission rate cannot be negative")
+                                                     @DecimalMax(value = "10000000.0", message = "Commission must not exceed 1,0000,000")
                                                   @RequestParam float commissionRate) throws SQLException {
         int realId=realtorService.createRealtor( employeenum, firstName, lastName, commissionRate);
         return ResponseEntity.ok(realId);
@@ -141,7 +143,7 @@ public class HPMSEndpoints {
     @ApiResponse(responseCode = "200", description = "Resource Created")
     @ApiResponse(responseCode = "404", description = "Resource not found", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
     @ApiResponse(responseCode = "503", description = "Service Unavailable", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
-    public ResponseEntity<Realtor> getRealtor(@PathVariable int realtorid){
+    public ResponseEntity<Realtor> getRealtor(@Valid @PathVariable int realtorid){
 
        Realtor realtor = realtorService.getrealtor(realtorid);
         return ResponseEntity.ok(realtor);
@@ -152,7 +154,7 @@ public class HPMSEndpoints {
     @ApiResponse(responseCode = "204", description = "Resource Deleted")
     @ApiResponse(responseCode = "404", description = "Resource not found", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
     @ApiResponse(responseCode = "503", description = "Service Unavailable", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
-    public ResponseEntity<Void> deleteRealtor(@PathVariable int realtorid){
+    public ResponseEntity<Void> deleteRealtor(@Valid @PathVariable int realtorid){
 
         realtorService.deleteRealtor(realtorid);
 
@@ -168,7 +170,11 @@ public class HPMSEndpoints {
                                               @RequestParam String street,
                                               @RequestParam @Pattern(regexp = "[a-zA-Z]+") String city,
                                               @RequestParam @Pattern(regexp = "[a-zA-Z]+") String state,
+                                              @DecimalMin(value = "1.0", message = "price must be at least 1")
+                                                  @DecimalMax(value = "10000000.0", message = "Price must not exceed 1,0000,000")
                                               @RequestParam float price,
+                                              @DecimalMin(value = "0.0", message = "sq feet cannot be negative")
+                                                  @DecimalMax(value = "10000000.0", message = "size limit of 1,0000,000")
                                               @RequestParam int squareFeet) throws SQLException {
        int homeid =homeService.createHome(address, street,city,state,price,squareFeet);
         return ResponseEntity.ok(homeid);
@@ -179,7 +185,7 @@ public class HPMSEndpoints {
     @ApiResponse(responseCode = "200", description = "Resource Created")
     @ApiResponse(responseCode = "404", description = "Resource not found", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
     @ApiResponse(responseCode = "503", description = "Service Unavailable", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
-    public ResponseEntity<Home> getHome(@PathVariable int homeid){
+    public ResponseEntity<Home> getHome(@Valid @PathVariable int homeid){
 
         Home home = homeService.gethome(homeid);
         return ResponseEntity.ok(home);
@@ -190,7 +196,7 @@ public class HPMSEndpoints {
     @ApiResponse(responseCode = "204", description = "Resource Deleted")
     @ApiResponse(responseCode = "404", description = "Resource not found", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
     @ApiResponse(responseCode = "503", description = "Service Unavailable", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
-    public ResponseEntity<Void> deletehome(@PathVariable int homeid){
+    public ResponseEntity<Void> deletehome(@Valid @PathVariable int homeid){
 
         homeService.deleteHome(homeid);
 
