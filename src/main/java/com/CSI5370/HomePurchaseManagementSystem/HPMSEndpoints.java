@@ -127,13 +127,16 @@ public class HPMSEndpoints {
 //---------Realtor Endpoints--------------------------------------------------------------------------------------------------------------------
 
     @PostMapping("realtor/create")
+    @Operation(summary = "Create a realtor record", description = "Create a realtor record")
+    @ApiResponse(responseCode = "200", description = "Resource Created")
     @ApiResponse(responseCode = "503", description = "Service Unavailable", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
-    public ResponseEntity<Integer> createRealtor(@RequestParam int employeenum,
-                                                  @RequestParam @Pattern(regexp = "[a-zA-Z]+") String firstName,
-                                                  @RequestParam @Pattern(regexp = "[a-zA-Z]+") String lastName,
+    public ResponseEntity<Integer> createRealtor(@Valid @RequestParam int employeenum,
+                                                  @Valid @RequestParam @Pattern(regexp = "[a-zA-Z]+") @Schema(description = "First name containing only letters", pattern = "[a-zA-Z]+") String firstName,
+                                                  @Valid @RequestParam @Pattern(regexp = "[a-zA-Z]+") @Schema(description = "Last name containing only letters", pattern = "[a-zA-Z]+") String lastName,
+                                                 @Valid @RequestParam @Schema(description = "Commission Rate in float format (min: 0, max: 1)", minimum = "0.0", maximum = "1.0")
                                                  @DecimalMin(value = "0.0", message = "Commission rate cannot be negative")
-                                                     @DecimalMax(value = "10000000.0", message = "Commission must not exceed 1,0000,000")
-                                                  @RequestParam float commissionRate) throws SQLException {
+                                                 @DecimalMax(value = "1.0", message = "Commission must not exceed 1,0000,000")
+                                                 float commissionRate) throws SQLException {
         int realId=realtorService.createRealtor( employeenum, firstName, lastName, commissionRate);
         return ResponseEntity.ok(realId);
     }
@@ -165,23 +168,24 @@ public class HPMSEndpoints {
 //---------Home Endpoints--------------------------------------------------------------------------------------------------------------------
 
     @PostMapping("home/create")
+    @Operation(summary = "Create a home record", description = "Create a home record")
+    @ApiResponse(responseCode = "200", description = "Resource Created")
     @ApiResponse(responseCode = "503", description = "Service Unavailable", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
-    public ResponseEntity<Integer> createHome(@RequestParam int address,
-                                              @RequestParam String street,
-                                              @RequestParam @Pattern(regexp = "[a-zA-Z]+") String city,
-                                              @RequestParam @Pattern(regexp = "[a-zA-Z]+") String state,
-                                              @DecimalMin(value = "1.0", message = "price must be at least 1")
-                                                  @DecimalMax(value = "10000000.0", message = "Price must not exceed 1,0000,000")
-                                              @RequestParam float price,
-                                              @DecimalMin(value = "0.0", message = "sq feet cannot be negative")
-                                                  @DecimalMax(value = "10000000.0", message = "size limit of 1,0000,000")
-                                              @RequestParam int squareFeet) throws SQLException {
+    public ResponseEntity<Integer> createHome(@Valid @RequestParam int address,
+                                              @Valid @RequestParam @Pattern(regexp = "[a-zA-Z]+") @Schema(description = "Street name containing only letters", pattern = "[a-zA-Z]+") String street,
+                                              @Valid @RequestParam @Pattern(regexp = "[a-zA-Z]+") @Schema(description = "City name containing only letters", pattern = "[a-zA-Z]+") String city,
+                                              @Valid @RequestParam @Pattern(regexp = "[a-zA-Z]{2}") @Schema(description = "State name containing only letters", pattern = "[a-zA-Z]{2}") String state,
+                                              @DecimalMin(value = "1", message = "price must be at least 1")
+                                              @DecimalMax(value = "9999999", message = "Price must not exceed 99,99,999")
+                                              @Valid @RequestParam @Schema(description = "Price in integer format (min: 1, max: 9999999)", minimum = "1", maximum = "9999999") float price,
+                                              @DecimalMin(value = "1", message = "sq feet cannot be negative")
+                                              @Valid @RequestParam @Schema(description = "Square feet in integer format (min: 1)", minimum = "1") int squareFeet) throws SQLException {
        int homeid =homeService.createHome(address, street,city,state,price,squareFeet);
         return ResponseEntity.ok(homeid);
     }
 
     @GetMapping("home/get/{homeid}")
-    @Operation(summary = "Create a purchase record", description = "Create a purchase record")
+    @Operation(summary = "Get a home record", description = "Get a home record")
     @ApiResponse(responseCode = "200", description = "Resource Created")
     @ApiResponse(responseCode = "404", description = "Resource not found", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
     @ApiResponse(responseCode = "503", description = "Service Unavailable", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
