@@ -47,6 +47,7 @@ public class HPMSEndpoints {
     @PostMapping("customer/create")
     @Operation(summary = "Create a customer record", description = "Create a customer record")
     @ApiResponse(responseCode = "200", description = "Resource Created")
+    @ApiResponse(responseCode = "400", description = "Invalid request parameters", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
     @ApiResponse(responseCode = "503", description = "Service Unavailable", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
     public ResponseEntity<Integer> createCustomer(@Valid @RequestParam @Pattern(regexp = "[a-zA-Z]+") @Schema(description = "First name containing only letters", pattern = "[a-zA-Z]+") String firstName,
                                                   @Valid @RequestParam @Pattern(regexp = "[a-zA-Z]+") @Schema(description = "Last name containing only letters", pattern = "[a-zA-Z]+") String lastName,
@@ -62,6 +63,7 @@ public class HPMSEndpoints {
     @GetMapping("customer/get/{customerid}")
     @Operation(summary = "Create a purchase record", description = "Create a purchase record")
     @ApiResponse(responseCode = "200", description = "Resource Created")
+    @ApiResponse(responseCode = "400", description = "Invalid request parameters", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
     @ApiResponse(responseCode = "404", description = "Resource not found", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
     @ApiResponse(responseCode = "503", description = "Service Unavailable", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
     public ResponseEntity<Customer> getCustomer(@Valid @PathVariable int customerid){
@@ -73,6 +75,7 @@ public class HPMSEndpoints {
     @DeleteMapping("customer/delete/{customerid}")
     @Operation(summary = "Delete a customer record", description = "Delete a customer record")
     @ApiResponse(responseCode = "204", description = "Resource Deleted")
+    @ApiResponse(responseCode = "400", description = "Invalid request parameters", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
     @ApiResponse(responseCode = "404", description = "Resource not found", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
     @ApiResponse(responseCode = "503", description = "Service Unavailable", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
     public ResponseEntity<Void> deleteCustomer(@Valid @PathVariable int customerid){
@@ -88,6 +91,7 @@ public class HPMSEndpoints {
     @PostMapping("purchase/create")
     @Operation(summary = "Create a purchase record", description = "Create a purchase record")
     @ApiResponse(responseCode = "200", description = "Resource Created")
+    @ApiResponse(responseCode = "400", description = "Invalid request parameters", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
     @ApiResponse(responseCode = "404", description = "Resource not possible", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
     @ApiResponse(responseCode = "503", description = "Service Unavailable", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
     public ResponseEntity<Integer> createPurchase(@RequestParam int customerId,
@@ -103,6 +107,7 @@ public class HPMSEndpoints {
     @GetMapping("purchase/get/{purchaseid}")
     @Operation(summary = "Create a purchase record", description = "Create a purchase record")
     @ApiResponse(responseCode = "200", description = "Resource Created")
+    @ApiResponse(responseCode = "400", description = "Invalid request parameters", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
     @ApiResponse(responseCode = "404", description = "Resource not found", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
     @ApiResponse(responseCode = "503", description = "Service Unavailable", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
     public ResponseEntity<Purchase> getPurchase(@PathVariable int purchaseid){
@@ -114,6 +119,7 @@ public class HPMSEndpoints {
     @DeleteMapping("purchase/delete/{purchaseid}")
     @Operation(summary = "Delete a purchase record", description = "Delete a purchase record")
     @ApiResponse(responseCode = "204", description = "Resource Deleted")
+    @ApiResponse(responseCode = "400", description = "Invalid request parameters", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
     @ApiResponse(responseCode = "404", description = "Resource not found", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
     @ApiResponse(responseCode = "503", description = "Service Unavailable", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
     public ResponseEntity<Void> deletePurchase(@PathVariable int purchaseid){
@@ -129,6 +135,7 @@ public class HPMSEndpoints {
     @PostMapping("realtor/create")
     @Operation(summary = "Create a realtor record", description = "Create a realtor record")
     @ApiResponse(responseCode = "200", description = "Resource Created")
+    @ApiResponse(responseCode = "400", description = "Invalid request parameters", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
     @ApiResponse(responseCode = "503", description = "Service Unavailable", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
     public ResponseEntity<Integer> createRealtor(@Valid @RequestParam int employeenum,
                                                   @Valid @RequestParam @Pattern(regexp = "[a-zA-Z]+") @Schema(description = "First name containing only letters", pattern = "[a-zA-Z]+") String firstName,
@@ -144,6 +151,7 @@ public class HPMSEndpoints {
     @GetMapping("realtor/get/{realtorid}")
     @Operation(summary = "Get a realtor record", description = "Get a realtor record")
     @ApiResponse(responseCode = "200", description = "Resource Created")
+    @ApiResponse(responseCode = "400", description = "Invalid request parameters", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
     @ApiResponse(responseCode = "404", description = "Resource not found", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
     @ApiResponse(responseCode = "503", description = "Service Unavailable", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
     public ResponseEntity<Realtor> getRealtor(@Valid @PathVariable int realtorid){
@@ -155,6 +163,7 @@ public class HPMSEndpoints {
     @DeleteMapping("realtor/delete/{realtorid}")
     @Operation(summary = "Delete a realtor record", description = "Delete a realtor record")
     @ApiResponse(responseCode = "204", description = "Resource Deleted")
+    @ApiResponse(responseCode = "400", description = "Invalid request parameters", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
     @ApiResponse(responseCode = "404", description = "Resource not found", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
     @ApiResponse(responseCode = "503", description = "Service Unavailable", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
     public ResponseEntity<Void> deleteRealtor(@Valid @PathVariable int realtorid){
@@ -170,6 +179,7 @@ public class HPMSEndpoints {
     @PostMapping("home/create")
     @Operation(summary = "Create a home record", description = "Create a home record")
     @ApiResponse(responseCode = "200", description = "Resource Created")
+    @ApiResponse(responseCode = "400", description = "Invalid request parameters", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
     @ApiResponse(responseCode = "503", description = "Service Unavailable", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
     public ResponseEntity<Integer> createHome(@Valid @RequestParam int address,
                                               @Valid @RequestParam @Pattern(regexp = "[a-zA-Z]+") @Schema(description = "Street name containing only letters", pattern = "[a-zA-Z]+") String street,
@@ -187,6 +197,7 @@ public class HPMSEndpoints {
     @GetMapping("home/get/{homeid}")
     @Operation(summary = "Get a home record", description = "Get a home record")
     @ApiResponse(responseCode = "200", description = "Resource Created")
+    @ApiResponse(responseCode = "400", description = "Invalid request parameters", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
     @ApiResponse(responseCode = "404", description = "Resource not found", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
     @ApiResponse(responseCode = "503", description = "Service Unavailable", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
     public ResponseEntity<Home> getHome(@Valid @PathVariable int homeid){
@@ -198,6 +209,7 @@ public class HPMSEndpoints {
     @DeleteMapping("home/delete/{homeid}")
     @Operation(summary = "Delete a home record", description = "Delete a home record")
     @ApiResponse(responseCode = "204", description = "Resource Deleted")
+    @ApiResponse(responseCode = "400", description = "Invalid request parameters", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
     @ApiResponse(responseCode = "404", description = "Resource not found", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
     @ApiResponse(responseCode = "503", description = "Service Unavailable", content = @Content(schema = @Schema(implementation = ErrorSchema.class)))
     public ResponseEntity<Void> deletehome(@Valid @PathVariable int homeid){
