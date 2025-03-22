@@ -2,11 +2,13 @@ package com.CSI5370.HomePurchaseManagementSystem.Services;
 
 import com.CSI5370.HomePurchaseManagementSystem.Domain.Customer;
 import com.CSI5370.HomePurchaseManagementSystem.Domain.Purchase;
+import com.CSI5370.HomePurchaseManagementSystem.Domain.Realtor;
 import com.CSI5370.HomePurchaseManagementSystem.Exceptions.CustomerNotFound;
 import com.CSI5370.HomePurchaseManagementSystem.Exceptions.PostgresUnavailableException;
 import com.CSI5370.HomePurchaseManagementSystem.Exceptions.PurchaseNotFound;
 import com.CSI5370.HomePurchaseManagementSystem.Exceptions.PurchaseNotPossibleException;
 import jakarta.validation.constraints.Pattern;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -22,14 +24,25 @@ public class PurchaseService {
 
     String PASSWORD = "mypassword";
 
+    @Autowired
+    RealtorService realtorService;
+
     public int createPurchase(int customerId, int realtorId, int homeId, int loan, int downPayment){
+
+        if(loan > 6500000){
+            loan += 100000;
+        }
+
         Connection conn = null;
 
-        String createSQL = "INSERT INTO purchase (customerid, realtorid, homeid, loan, downpayment) values (?, ?, ?, ?, ?) returning id;";
+        String createSQL = "INSERT INTO purchase (customerid, realtorid, homeid, loan, downpayment, realtorpay) values (?, ?, ?, ?, ?, ?) returning id;";
 
         int purchaseId = 0;
 
         try{
+
+            Realtor realtor = realtorService.getrealtor(realtorId);
+
             conn = DriverManager.getConnection(URL, USER, PASSWORD);
 
             PreparedStatement create = conn.prepareStatement(createSQL);
@@ -39,6 +52,7 @@ public class PurchaseService {
             create.setInt(3, homeId);
             create.setInt(4, loan);
             create.setInt(5, downPayment);
+            create.setFloat(6, realtor.getCommissionRate() * loan);
 
             ResultSet rs = create.executeQuery();
 

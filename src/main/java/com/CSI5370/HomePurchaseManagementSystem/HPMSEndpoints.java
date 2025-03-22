@@ -96,11 +96,11 @@ public class HPMSEndpoints {
     @ApiResponse(responseCode = "400", description = "Invalid request parameters", content = @Content(schema = @Schema(implementation = BadRequestErrorSchema.class)))
     @ApiResponse(responseCode = "404", description = "Resource not possible", content = @Content(schema = @Schema(implementation = NotFoundErrorSchema.class)))
     @ApiResponse(responseCode = "503", description = "Service Unavailable", content = @Content(schema = @Schema(implementation = ServiceUnavailableErrorSchema.class)))
-    public ResponseEntity<Integer> createPurchase(@RequestParam int customerId,
-                                                  @RequestParam int realtorId,
-                                                  @RequestParam int homeId,
-                                                  @RequestParam int loan,
-                                                  @RequestParam int downPayment){
+    public ResponseEntity<Integer> createPurchase(@Valid @RequestParam int customerId,
+                                                  @Valid @RequestParam int realtorId,
+                                                  @Valid @RequestParam int homeId,
+                                                  @Valid @RequestParam int loan,
+                                                  @Valid @RequestParam int downPayment){
 
         int purchaseId = purchaseService.createPurchase(customerId, realtorId, homeId, loan, downPayment);
         return ResponseEntity.ok(purchaseId);
@@ -186,7 +186,7 @@ public class HPMSEndpoints {
     public ResponseEntity<Integer> createHome(@Valid @RequestParam int address,
                                               @Valid @RequestParam @Pattern(regexp = "[a-zA-Z]+") @Schema(description = "Street name containing only letters", pattern = "[a-zA-Z]+") String street,
                                               @Valid @RequestParam @Pattern(regexp = "[a-zA-Z]+") @Schema(description = "City name containing only letters", pattern = "[a-zA-Z]+") String city,
-                                              @Valid @RequestParam @Pattern(regexp = "[a-zA-Z]{2}") @Schema(description = "State name containing only letters", pattern = "[a-zA-Z]{2}") String state,
+                                              @Valid @RequestParam @Pattern(regexp = "[a-zA-Z]{2,4}") @Schema(description = "State name containing only letters", pattern = "[a-zA-Z]{2}") String state,
                                               @DecimalMin(value = "1", message = "price must be at least 1")
                                               @DecimalMax(value = "9999999", message = "Price must not exceed 99,99,999")
                                               @Valid @RequestParam @Schema(description = "Price in integer format (min: 1, max: 9999999)", minimum = "1", maximum = "9999999") float price,

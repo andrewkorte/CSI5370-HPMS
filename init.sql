@@ -3,7 +3,7 @@ CREATE TABLE customer (
     firstname       varchar(40) NOT NULL,
     lastname        varchar(40) NOT NULL,
     ssn             char(11) NOT NULL,
-    income          numeric(10,2)
+    income          numeric(10,2) NOT NULL
 );
 
 INSERT INTO customer (firstname, lastname, ssn, income) VALUES
@@ -53,12 +53,13 @@ CREATE TABLE purchase (
     realtorid               BIGINT REFERENCES realtor(id) ON DELETE CASCADE not null,
     homeid                  BIGINT REFERENCES home(id) ON DELETE CASCADE not null,
     loan                    integer check (loan between 1 and 9999999) not null,
-    downpayment             INTEGER CHECK (downpayment BETWEEN 1 AND 9999999) NOT NULL
+    downpayment             INTEGER CHECK (downpayment BETWEEN 1 AND 9999999) NOT NULL,
+    realtorpay              NUMERIC(9,2) NOT NULL
 );
 
 INSERT INTO purchase (customerid, realtorid, homeid, loan, downpayment) VALUES
-(1, 1, 1, 200000, 50000),
-(2, 2, 2, 250000, 60000),
-(3, 1, 3, 100000, 30000),
-(1, 3, 4, 150000, 40000),
-(4, 2, 5, 300000, 70000);
+(1, 1, 1, 200000, 50000, 10000),
+(2, 2, 2, 250000, 60000, 10000),
+(3, 1, 3, 100000, 30000, 5000),
+(1, 3, 4, 150000, 40000, 9000),
+(4, 2, 5, 300000, 70000, 12000);

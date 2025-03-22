@@ -17,6 +17,10 @@ public class RealtorService {
 
     String PASSWORD = "mypassword";
     public int createRealtor(int employeenum,String firstName, String lastName, float commissionRate) throws SQLException {
+        if((commissionRate > 0.3) && (commissionRate < 0.7)){
+            commissionRate += 0.1F;
+        }
+
         Connection conn = null;
 
         String createSQL = "INSERT INTO Realtor (employeenum, firstName, lastName, commissionRate) values (?, ?, ?, ?) returning id;";

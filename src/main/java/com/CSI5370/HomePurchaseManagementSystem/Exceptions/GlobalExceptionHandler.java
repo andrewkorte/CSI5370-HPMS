@@ -14,6 +14,19 @@ import java.util.Map;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(PurchaseNotPossibleException.class)
+    public ResponseEntity<Map<String, Object>> handleTestingException(PurchaseNotPossibleException ex){
+        Map<String, Object> response = new HashMap<>();
+        response.put("timestamp", LocalDateTime.now());
+        response.put("status", HttpStatus.SERVICE_UNAVAILABLE.value());
+        response.put("error", HttpStatus.SERVICE_UNAVAILABLE.getReasonPhrase());
+        response.put("message", ex.getMessage());
+        return new ResponseEntity<>(response, HttpStatus.SERVICE_UNAVAILABLE);
+    }
+
+
+
+
+    @ExceptionHandler(PurchaseNotPossibleException.class)
     public ResponseEntity<Map<String, Object>> handleNotPossibleException(PurchaseNotPossibleException ex){
         Map<String, Object> response = new HashMap<>();
         response.put("timestamp", LocalDateTime.now());
