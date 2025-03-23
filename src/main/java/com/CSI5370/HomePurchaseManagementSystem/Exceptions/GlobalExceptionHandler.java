@@ -13,8 +13,8 @@ import java.util.Map;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(PurchaseNotPossibleException.class)
-    public ResponseEntity<Map<String, Object>> handleTestingException(PurchaseNotPossibleException ex){
+    @ExceptionHandler(TestingException.class)
+    public ResponseEntity<Map<String, Object>> handleTestingException(TestingException ex){
         Map<String, Object> response = new HashMap<>();
         response.put("timestamp", LocalDateTime.now());
         response.put("status", HttpStatus.SERVICE_UNAVAILABLE.value());

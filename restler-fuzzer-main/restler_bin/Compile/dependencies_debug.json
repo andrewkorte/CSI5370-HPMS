@@ -1,0 +1,776 @@
+[
+  {
+    "consumer": {
+      "id": {
+        "RequestId": {
+          "endpoint": "/customer/create",
+          "method": "Post"
+        },
+        "ResourceReference": {
+          "QueryResource": "income"
+        },
+        "ContainerName": "create",
+        "PathContainerName": "create",
+        "CandidateTypeNames": [
+          "create"
+        ],
+        "AccessPathParts": {
+          "path": []
+        },
+        "ResourceName": "income",
+        "ProducerParameterName": "income",
+        "IsNestedBodyResource": false,
+        "PrimitiveType": "Number"
+      },
+      "parameterKind": "Query"
+    }
+  },
+  {
+    "consumer": {
+      "id": {
+        "RequestId": {
+          "endpoint": "/customer/create",
+          "method": "Post"
+        },
+        "ResourceReference": {
+          "QueryResource": "firstName"
+        },
+        "ContainerName": "create",
+        "PathContainerName": "create",
+        "CandidateTypeNames": [
+          "create"
+        ],
+        "AccessPathParts": {
+          "path": []
+        },
+        "ResourceName": "firstName",
+        "ProducerParameterName": "name",
+        "IsNestedBodyResource": false,
+        "PrimitiveType": "String"
+      },
+      "parameterKind": "Query"
+    }
+  },
+  {
+    "consumer": {
+      "id": {
+        "RequestId": {
+          "endpoint": "/customer/create",
+          "method": "Post"
+        },
+        "ResourceReference": {
+          "QueryResource": "ssn"
+        },
+        "ContainerName": "create",
+        "PathContainerName": "create",
+        "CandidateTypeNames": [
+          "create"
+        ],
+        "AccessPathParts": {
+          "path": []
+        },
+        "ResourceName": "ssn",
+        "ProducerParameterName": "ssn",
+        "IsNestedBodyResource": false,
+        "PrimitiveType": "String"
+      },
+      "parameterKind": "Query"
+    }
+  },
+  {
+    "consumer": {
+      "id": {
+        "RequestId": {
+          "endpoint": "/customer/create",
+          "method": "Post"
+        },
+        "ResourceReference": {
+          "QueryResource": "lastName"
+        },
+        "ContainerName": "create",
+        "PathContainerName": "create",
+        "CandidateTypeNames": [
+          "create"
+        ],
+        "AccessPathParts": {
+          "path": []
+        },
+        "ResourceName": "lastName",
+        "ProducerParameterName": "name",
+        "IsNestedBodyResource": false,
+        "PrimitiveType": "String"
+      },
+      "parameterKind": "Query"
+    }
+  },
+  {
+    "consumer": {
+      "id": {
+        "RequestId": {
+          "endpoint": "/customer/delete/{customerid}",
+          "method": "Delete"
+        },
+        "ResourceReference": {
+          "PathResource": {
+            "name": "customerid",
+            "pathToParameter": [
+              "customer",
+              "delete"
+            ],
+            "responsePath": {
+              "path": []
+            }
+          }
+        },
+        "ContainerName": "delete",
+        "PathContainerName": "delete",
+        "CandidateTypeNames": [
+          "delete"
+        ],
+        "AccessPathParts": {
+          "path": []
+        },
+        "ResourceName": "customerid",
+        "ProducerParameterName": "customerid",
+        "IsNestedBodyResource": false,
+        "PrimitiveType": "Int"
+      },
+      "parameterKind": "Path"
+    }
+  },
+  {
+    "consumer": {
+      "id": {
+        "RequestId": {
+          "endpoint": "/customer/get/{customerid}",
+          "method": "Get"
+        },
+        "ResourceReference": {
+          "PathResource": {
+            "name": "customerid",
+            "pathToParameter": [
+              "customer",
+              "get"
+            ],
+            "responsePath": {
+              "path": []
+            }
+          }
+        },
+        "ContainerName": "get",
+        "PathContainerName": "get",
+        "CandidateTypeNames": [
+          "get"
+        ],
+        "AccessPathParts": {
+          "path": []
+        },
+        "ResourceName": "customerid",
+        "ProducerParameterName": "customerid",
+        "IsNestedBodyResource": false,
+        "PrimitiveType": "Int"
+      },
+      "parameterKind": "Path"
+    }
+  },
+  {
+    "consumer": {
+      "id": {
+        "RequestId": {
+          "endpoint": "/home/create",
+          "method": "Post"
+        },
+        "ResourceReference": {
+          "QueryResource": "street"
+        },
+        "ContainerName": "create",
+        "PathContainerName": "create",
+        "CandidateTypeNames": [
+          "create"
+        ],
+        "AccessPathParts": {
+          "path": []
+        },
+        "ResourceName": "street",
+        "ProducerParameterName": "street",
+        "IsNestedBodyResource": false,
+        "PrimitiveType": "String"
+      },
+      "parameterKind": "Query"
+    }
+  },
+  {
+    "consumer": {
+      "id": {
+        "RequestId": {
+          "endpoint": "/home/create",
+          "method": "Post"
+        },
+        "ResourceReference": {
+          "QueryResource": "address"
+        },
+        "ContainerName": "create",
+        "PathContainerName": "create",
+        "CandidateTypeNames": [
+          "create"
+        ],
+        "AccessPathParts": {
+          "path": []
+        },
+        "ResourceName": "address",
+        "ProducerParameterName": "address",
+        "IsNestedBodyResource": false,
+        "PrimitiveType": "Int"
+      },
+      "parameterKind": "Query"
+    }
+  },
+  {
+    "consumer": {
+      "id": {
+        "RequestId": {
+          "endpoint": "/home/create",
+          "method": "Post"
+        },
+        "ResourceReference": {
+          "QueryResource": "state"
+        },
+        "ContainerName": "create",
+        "PathContainerName": "create",
+        "CandidateTypeNames": [
+          "create"
+        ],
+        "AccessPathParts": {
+          "path": []
+        },
+        "ResourceName": "state",
+        "ProducerParameterName": "state",
+        "IsNestedBodyResource": false,
+        "PrimitiveType": "String"
+      },
+      "parameterKind": "Query"
+    }
+  },
+  {
+    "consumer": {
+      "id": {
+        "RequestId": {
+          "endpoint": "/home/create",
+          "method": "Post"
+        },
+        "ResourceReference": {
+          "QueryResource": "city"
+        },
+        "ContainerName": "create",
+        "PathContainerName": "create",
+        "CandidateTypeNames": [
+          "create"
+        ],
+        "AccessPathParts": {
+          "path": []
+        },
+        "ResourceName": "city",
+        "ProducerParameterName": "city",
+        "IsNestedBodyResource": false,
+        "PrimitiveType": "String"
+      },
+      "parameterKind": "Query"
+    }
+  },
+  {
+    "consumer": {
+      "id": {
+        "RequestId": {
+          "endpoint": "/home/create",
+          "method": "Post"
+        },
+        "ResourceReference": {
+          "QueryResource": "squareFeet"
+        },
+        "ContainerName": "create",
+        "PathContainerName": "create",
+        "CandidateTypeNames": [
+          "create"
+        ],
+        "AccessPathParts": {
+          "path": []
+        },
+        "ResourceName": "squareFeet",
+        "ProducerParameterName": "feet",
+        "IsNestedBodyResource": false,
+        "PrimitiveType": "Int"
+      },
+      "parameterKind": "Query"
+    }
+  },
+  {
+    "consumer": {
+      "id": {
+        "RequestId": {
+          "endpoint": "/home/create",
+          "method": "Post"
+        },
+        "ResourceReference": {
+          "QueryResource": "price"
+        },
+        "ContainerName": "create",
+        "PathContainerName": "create",
+        "CandidateTypeNames": [
+          "create"
+        ],
+        "AccessPathParts": {
+          "path": []
+        },
+        "ResourceName": "price",
+        "ProducerParameterName": "price",
+        "IsNestedBodyResource": false,
+        "PrimitiveType": "Number"
+      },
+      "parameterKind": "Query"
+    }
+  },
+  {
+    "consumer": {
+      "id": {
+        "RequestId": {
+          "endpoint": "/home/delete/{homeid}",
+          "method": "Delete"
+        },
+        "ResourceReference": {
+          "PathResource": {
+            "name": "homeid",
+            "pathToParameter": [
+              "home",
+              "delete"
+            ],
+            "responsePath": {
+              "path": []
+            }
+          }
+        },
+        "ContainerName": "delete",
+        "PathContainerName": "delete",
+        "CandidateTypeNames": [
+          "delete"
+        ],
+        "AccessPathParts": {
+          "path": []
+        },
+        "ResourceName": "homeid",
+        "ProducerParameterName": "homeid",
+        "IsNestedBodyResource": false,
+        "PrimitiveType": "Int"
+      },
+      "parameterKind": "Path"
+    }
+  },
+  {
+    "consumer": {
+      "id": {
+        "RequestId": {
+          "endpoint": "/home/get/{homeid}",
+          "method": "Get"
+        },
+        "ResourceReference": {
+          "PathResource": {
+            "name": "homeid",
+            "pathToParameter": [
+              "home",
+              "get"
+            ],
+            "responsePath": {
+              "path": []
+            }
+          }
+        },
+        "ContainerName": "get",
+        "PathContainerName": "get",
+        "CandidateTypeNames": [
+          "get"
+        ],
+        "AccessPathParts": {
+          "path": []
+        },
+        "ResourceName": "homeid",
+        "ProducerParameterName": "homeid",
+        "IsNestedBodyResource": false,
+        "PrimitiveType": "Int"
+      },
+      "parameterKind": "Path"
+    }
+  },
+  {
+    "consumer": {
+      "id": {
+        "RequestId": {
+          "endpoint": "/purchase/create",
+          "method": "Post"
+        },
+        "ResourceReference": {
+          "QueryResource": "loan"
+        },
+        "ContainerName": "create",
+        "PathContainerName": "create",
+        "CandidateTypeNames": [
+          "create"
+        ],
+        "AccessPathParts": {
+          "path": []
+        },
+        "ResourceName": "loan",
+        "ProducerParameterName": "loan",
+        "IsNestedBodyResource": false,
+        "PrimitiveType": "Int"
+      },
+      "parameterKind": "Query"
+    }
+  },
+  {
+    "consumer": {
+      "id": {
+        "RequestId": {
+          "endpoint": "/purchase/create",
+          "method": "Post"
+        },
+        "ResourceReference": {
+          "QueryResource": "realtorId"
+        },
+        "ContainerName": "create",
+        "PathContainerName": "create",
+        "CandidateTypeNames": [
+          "create"
+        ],
+        "AccessPathParts": {
+          "path": []
+        },
+        "ResourceName": "realtorId",
+        "ProducerParameterName": "id",
+        "IsNestedBodyResource": false,
+        "PrimitiveType": "Int"
+      },
+      "parameterKind": "Query"
+    }
+  },
+  {
+    "consumer": {
+      "id": {
+        "RequestId": {
+          "endpoint": "/purchase/create",
+          "method": "Post"
+        },
+        "ResourceReference": {
+          "QueryResource": "downPayment"
+        },
+        "ContainerName": "create",
+        "PathContainerName": "create",
+        "CandidateTypeNames": [
+          "create"
+        ],
+        "AccessPathParts": {
+          "path": []
+        },
+        "ResourceName": "downPayment",
+        "ProducerParameterName": "payment",
+        "IsNestedBodyResource": false,
+        "PrimitiveType": "Int"
+      },
+      "parameterKind": "Query"
+    }
+  },
+  {
+    "consumer": {
+      "id": {
+        "RequestId": {
+          "endpoint": "/purchase/create",
+          "method": "Post"
+        },
+        "ResourceReference": {
+          "QueryResource": "customerId"
+        },
+        "ContainerName": "create",
+        "PathContainerName": "create",
+        "CandidateTypeNames": [
+          "create"
+        ],
+        "AccessPathParts": {
+          "path": []
+        },
+        "ResourceName": "customerId",
+        "ProducerParameterName": "id",
+        "IsNestedBodyResource": false,
+        "PrimitiveType": "Int"
+      },
+      "parameterKind": "Query"
+    }
+  },
+  {
+    "consumer": {
+      "id": {
+        "RequestId": {
+          "endpoint": "/purchase/create",
+          "method": "Post"
+        },
+        "ResourceReference": {
+          "QueryResource": "homeId"
+        },
+        "ContainerName": "create",
+        "PathContainerName": "create",
+        "CandidateTypeNames": [
+          "create"
+        ],
+        "AccessPathParts": {
+          "path": []
+        },
+        "ResourceName": "homeId",
+        "ProducerParameterName": "id",
+        "IsNestedBodyResource": false,
+        "PrimitiveType": "Int"
+      },
+      "parameterKind": "Query"
+    }
+  },
+  {
+    "consumer": {
+      "id": {
+        "RequestId": {
+          "endpoint": "/purchase/delete/{purchaseid}",
+          "method": "Delete"
+        },
+        "ResourceReference": {
+          "PathResource": {
+            "name": "purchaseid",
+            "pathToParameter": [
+              "purchase",
+              "delete"
+            ],
+            "responsePath": {
+              "path": []
+            }
+          }
+        },
+        "ContainerName": "delete",
+        "PathContainerName": "delete",
+        "CandidateTypeNames": [
+          "delete"
+        ],
+        "AccessPathParts": {
+          "path": []
+        },
+        "ResourceName": "purchaseid",
+        "ProducerParameterName": "purchaseid",
+        "IsNestedBodyResource": false,
+        "PrimitiveType": "Int"
+      },
+      "parameterKind": "Path"
+    }
+  },
+  {
+    "consumer": {
+      "id": {
+        "RequestId": {
+          "endpoint": "/purchase/get/{purchaseid}",
+          "method": "Get"
+        },
+        "ResourceReference": {
+          "PathResource": {
+            "name": "purchaseid",
+            "pathToParameter": [
+              "purchase",
+              "get"
+            ],
+            "responsePath": {
+              "path": []
+            }
+          }
+        },
+        "ContainerName": "get",
+        "PathContainerName": "get",
+        "CandidateTypeNames": [
+          "get"
+        ],
+        "AccessPathParts": {
+          "path": []
+        },
+        "ResourceName": "purchaseid",
+        "ProducerParameterName": "purchaseid",
+        "IsNestedBodyResource": false,
+        "PrimitiveType": "Int"
+      },
+      "parameterKind": "Path"
+    }
+  },
+  {
+    "consumer": {
+      "id": {
+        "RequestId": {
+          "endpoint": "/realtor/create",
+          "method": "Post"
+        },
+        "ResourceReference": {
+          "QueryResource": "firstName"
+        },
+        "ContainerName": "create",
+        "PathContainerName": "create",
+        "CandidateTypeNames": [
+          "create"
+        ],
+        "AccessPathParts": {
+          "path": []
+        },
+        "ResourceName": "firstName",
+        "ProducerParameterName": "name",
+        "IsNestedBodyResource": false,
+        "PrimitiveType": "String"
+      },
+      "parameterKind": "Query"
+    }
+  },
+  {
+    "consumer": {
+      "id": {
+        "RequestId": {
+          "endpoint": "/realtor/create",
+          "method": "Post"
+        },
+        "ResourceReference": {
+          "QueryResource": "commissionRate"
+        },
+        "ContainerName": "create",
+        "PathContainerName": "create",
+        "CandidateTypeNames": [
+          "create"
+        ],
+        "AccessPathParts": {
+          "path": []
+        },
+        "ResourceName": "commissionRate",
+        "ProducerParameterName": "rate",
+        "IsNestedBodyResource": false,
+        "PrimitiveType": "Number"
+      },
+      "parameterKind": "Query"
+    }
+  },
+  {
+    "consumer": {
+      "id": {
+        "RequestId": {
+          "endpoint": "/realtor/create",
+          "method": "Post"
+        },
+        "ResourceReference": {
+          "QueryResource": "lastName"
+        },
+        "ContainerName": "create",
+        "PathContainerName": "create",
+        "CandidateTypeNames": [
+          "create"
+        ],
+        "AccessPathParts": {
+          "path": []
+        },
+        "ResourceName": "lastName",
+        "ProducerParameterName": "name",
+        "IsNestedBodyResource": false,
+        "PrimitiveType": "String"
+      },
+      "parameterKind": "Query"
+    }
+  },
+  {
+    "consumer": {
+      "id": {
+        "RequestId": {
+          "endpoint": "/realtor/create",
+          "method": "Post"
+        },
+        "ResourceReference": {
+          "QueryResource": "employeenum"
+        },
+        "ContainerName": "create",
+        "PathContainerName": "create",
+        "CandidateTypeNames": [
+          "create"
+        ],
+        "AccessPathParts": {
+          "path": []
+        },
+        "ResourceName": "employeenum",
+        "ProducerParameterName": "employeenum",
+        "IsNestedBodyResource": false,
+        "PrimitiveType": "Int"
+      },
+      "parameterKind": "Query"
+    }
+  },
+  {
+    "consumer": {
+      "id": {
+        "RequestId": {
+          "endpoint": "/realtor/delete/{realtorid}",
+          "method": "Delete"
+        },
+        "ResourceReference": {
+          "PathResource": {
+            "name": "realtorid",
+            "pathToParameter": [
+              "realtor",
+              "delete"
+            ],
+            "responsePath": {
+              "path": []
+            }
+          }
+        },
+        "ContainerName": "delete",
+        "PathContainerName": "delete",
+        "CandidateTypeNames": [
+          "delete"
+        ],
+        "AccessPathParts": {
+          "path": []
+        },
+        "ResourceName": "realtorid",
+        "ProducerParameterName": "realtorid",
+        "IsNestedBodyResource": false,
+        "PrimitiveType": "Int"
+      },
+      "parameterKind": "Path"
+    }
+  },
+  {
+    "consumer": {
+      "id": {
+        "RequestId": {
+          "endpoint": "/realtor/get/{realtorid}",
+          "method": "Get"
+        },
+        "ResourceReference": {
+          "PathResource": {
+            "name": "realtorid",
+            "pathToParameter": [
+              "realtor",
+              "get"
+            ],
+            "responsePath": {
+              "path": []
+            }
+          }
+        },
+        "ContainerName": "get",
+        "PathContainerName": "get",
+        "CandidateTypeNames": [
+          "get"
+        ],
+        "AccessPathParts": {
+          "path": []
+        },
+        "ResourceName": "realtorid",
+        "ProducerParameterName": "realtorid",
+        "IsNestedBodyResource": false,
+        "PrimitiveType": "Int"
+      },
+      "parameterKind": "Path"
+    }
+  }
+]
