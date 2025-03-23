@@ -9,10 +9,10 @@ import lombok.NoArgsConstructor;
 public class Realtor {
 
     private int id;
-   private int employeenum;
-  private String firstName;
-  private String lastName;
-private float commissionRate;
+    private int employeenum;
+    private String firstName;
+    private String lastName;
+    private float commissionRate;
 
     public int getId() {
         return id;

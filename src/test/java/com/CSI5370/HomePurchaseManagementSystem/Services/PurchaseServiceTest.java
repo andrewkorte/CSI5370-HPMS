@@ -2,16 +2,14 @@ package com.CSI5370.HomePurchaseManagementSystem.Services;
 
 import com.CSI5370.HomePurchaseManagementSystem.Domain.Customer;
 import com.CSI5370.HomePurchaseManagementSystem.Domain.Purchase;
+import com.CSI5370.HomePurchaseManagementSystem.Domain.Realtor;
 import com.CSI5370.HomePurchaseManagementSystem.Exceptions.CustomerNotFound;
 import com.CSI5370.HomePurchaseManagementSystem.Exceptions.PostgresUnavailableException;
 import com.CSI5370.HomePurchaseManagementSystem.Exceptions.PurchaseNotFound;
 import com.CSI5370.HomePurchaseManagementSystem.Exceptions.PurchaseNotPossibleException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.MockedStatic;
-import org.mockito.Mockito;
-import org.mockito.Spy;
+import org.mockito.*;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.sql.*;
@@ -30,15 +28,21 @@ class PurchaseServiceTest {
     @InjectMocks
     PurchaseService purchaseService;
 
+    @Mock
+    RealtorService realtorService;
+
     @Test
     public void createPurchase_Success_ReturnsPurchaseId() throws SQLException {
         Connection conn = mock(Connection.class);
         PreparedStatement preparedStatement = mock(PreparedStatement.class);
         ResultSet rs = mock(ResultSet.class);
+        Realtor realtor = new Realtor();
+        realtor.setCommissionRate(0.5f);
 
         try(MockedStatic<DriverManager> mockedStatic = Mockito.mockStatic(DriverManager.class)) {
             mockedStatic.when(() -> DriverManager.getConnection("jdbc:postgresql://localhost:5432/HMPS", "csi5370", "mypassword")).thenReturn(conn);
 
+            doReturn(realtor).when(realtorService).getrealtor(2);
             doReturn(preparedStatement).when(conn).prepareStatement(any());
             doNothing().when(conn).close();
 
@@ -47,6 +51,7 @@ class PurchaseServiceTest {
             doNothing().when(preparedStatement).setInt(3, 3);
             doNothing().when(preparedStatement).setInt(4, 4);
             doNothing().when(preparedStatement).setInt(5, 5);
+            doNothing().when(preparedStatement).setFloat(6, 4 * realtor.getCommissionRate());
             doReturn(rs).when(preparedStatement).executeQuery();
 
             doReturn(true, false).when(rs).next();
@@ -63,10 +68,13 @@ class PurchaseServiceTest {
         Connection conn = mock(Connection.class);
         PreparedStatement preparedStatement = mock(PreparedStatement.class);
         ResultSet rs = mock(ResultSet.class);
+        Realtor realtor = new Realtor();
+        realtor.setCommissionRate(0.5f);
 
         try(MockedStatic<DriverManager> mockedStatic = Mockito.mockStatic(DriverManager.class)) {
             mockedStatic.when(() -> DriverManager.getConnection("jdbc:postgresql://localhost:5432/HMPS", "csi5370", "mypassword")).thenReturn(conn);
 
+            doReturn(realtor).when(realtorService).getrealtor(2);
             doReturn(preparedStatement).when(conn).prepareStatement(any());
             doNothing().when(conn).close();
 
@@ -75,6 +83,7 @@ class PurchaseServiceTest {
             doNothing().when(preparedStatement).setInt(3, 3);
             doNothing().when(preparedStatement).setInt(4, 4);
             doNothing().when(preparedStatement).setInt(5, 5);
+            doNothing().when(preparedStatement).setFloat(6, 4 * realtor.getCommissionRate());
             doThrow(new SQLException("violates foreign key constraint")).when(preparedStatement).executeQuery();
 
             assertThatThrownBy(() -> purchaseService.createPurchase(1, 2, 3, 4, 5)).isInstanceOf(PurchaseNotPossibleException.class);
@@ -86,10 +95,13 @@ class PurchaseServiceTest {
         Connection conn = mock(Connection.class);
         PreparedStatement preparedStatement = mock(PreparedStatement.class);
         ResultSet rs = mock(ResultSet.class);
+        Realtor realtor = new Realtor();
+        realtor.setCommissionRate(0.5f);
 
         try(MockedStatic<DriverManager> mockedStatic = Mockito.mockStatic(DriverManager.class)) {
             mockedStatic.when(() -> DriverManager.getConnection("jdbc:postgresql://localhost:5432/HMPS", "csi5370", "mypassword")).thenReturn(conn);
 
+            doReturn(realtor).when(realtorService).getrealtor(2);
             doReturn(preparedStatement).when(conn).prepareStatement(any());
             doNothing().when(conn).close();
 
@@ -98,6 +110,7 @@ class PurchaseServiceTest {
             doNothing().when(preparedStatement).setInt(3, 3);
             doNothing().when(preparedStatement).setInt(4, 4);
             doNothing().when(preparedStatement).setInt(5, 5);
+            doNothing().when(preparedStatement).setFloat(6, 4 * realtor.getCommissionRate());
             doThrow(new SQLException("Service Unavailable")).when(preparedStatement).executeQuery();
 
             assertThatThrownBy(() -> purchaseService.createPurchase(1, 2, 3, 4, 5)).isInstanceOf(PostgresUnavailableException.class);
