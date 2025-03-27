@@ -1,9 +1,6 @@
 package com.CSI5370.HomePurchaseManagementSystem;
 
-import com.CSI5370.HomePurchaseManagementSystem.Domain.Customer;
-import com.CSI5370.HomePurchaseManagementSystem.Domain.Home;
-import com.CSI5370.HomePurchaseManagementSystem.Domain.Purchase;
-import com.CSI5370.HomePurchaseManagementSystem.Domain.Realtor;
+import com.CSI5370.HomePurchaseManagementSystem.Domain.*;
 import com.CSI5370.HomePurchaseManagementSystem.Services.CustomerService;
 import com.CSI5370.HomePurchaseManagementSystem.Services.HomeService;
 import com.CSI5370.HomePurchaseManagementSystem.Services.PurchaseService;
@@ -17,6 +14,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import java.sql.SQLException;
+import java.util.Objects;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
@@ -44,9 +42,9 @@ class HPMSEndpointsTest {
 
         when(customerService.createCustomer("firstname", "lastname", "22-222-2222", 100.00F)).thenReturn(1);
 
-        ResponseEntity<Integer> result = hpmsEndpoints.createCustomer("firstname", "lastname", "22-222-2222", 100.00F);
+        ResponseEntity<CustomerId> result = hpmsEndpoints.createCustomer("firstname", "lastname", "22-222-2222", 100.00F);
 
-        assertThat(result.getBody()).isEqualTo(1);
+        assertThat(Objects.requireNonNull(result.getBody()).customerid).isEqualTo(1);
         assertThat(result.getStatusCode()).isEqualTo(HttpStatus.OK);
     }
 
@@ -85,9 +83,9 @@ class HPMSEndpointsTest {
 
         when(homeService.createHome(5046, "Crazy", "Hell", "Michigan", 40000.00F,2600)).thenReturn(1);
 
-        ResponseEntity<Integer> result = hpmsEndpoints.createHome(5046, "Crazy", "Hell", "Michigan", 40000.00F,2600);
+        ResponseEntity<HomeId> result = hpmsEndpoints.createHome(5046, "Crazy", "Hell", "Michigan", 40000.00F,2600);
 
-        assertThat(result.getBody()).isEqualTo(1);
+        assertThat(Objects.requireNonNull(result.getBody()).homeid).isEqualTo(1);
         assertThat(result.getStatusCode()).isEqualTo(HttpStatus.OK);
     }
 
@@ -127,9 +125,9 @@ class HPMSEndpointsTest {
 
         when(realtorService.createRealtor(1, "Ken", "Butcher", 400.00F)).thenReturn(1);
 
-        ResponseEntity<Integer> result = hpmsEndpoints.createRealtor(1, "Ken", "Butcher", 400.00F);
+        ResponseEntity<RealtorId> result = hpmsEndpoints.createRealtor(1, "Ken", "Butcher", 400.00F);
 
-        assertThat(result.getBody()).isEqualTo(1);
+        assertThat(Objects.requireNonNull(result.getBody()).realtorid).isEqualTo(1);
         assertThat(result.getStatusCode()).isEqualTo(HttpStatus.OK);
     }
 
@@ -167,9 +165,9 @@ class HPMSEndpointsTest {
 
         when(purchaseService.createPurchase(1, 1, 1, 500000,500)).thenReturn(1);
 
-        ResponseEntity<Integer> result = hpmsEndpoints.createPurchase(1, 1, 1, 500000,500);
+        ResponseEntity<PurchaseId> result = hpmsEndpoints.createPurchase(1, 1, 1, 500000,500);
 
-        assertThat(result.getBody()).isEqualTo(1);
+        assertThat(result.getBody().purchaseid).isEqualTo(1);
         assertThat(result.getStatusCode()).isEqualTo(HttpStatus.OK);
     }
 

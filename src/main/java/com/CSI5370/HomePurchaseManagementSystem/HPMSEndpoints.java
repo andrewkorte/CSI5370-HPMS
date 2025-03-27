@@ -1,10 +1,7 @@
 package com.CSI5370.HomePurchaseManagementSystem;
 
 
-import com.CSI5370.HomePurchaseManagementSystem.Domain.Customer;
-import com.CSI5370.HomePurchaseManagementSystem.Domain.Home;
-import com.CSI5370.HomePurchaseManagementSystem.Domain.Purchase;
-import com.CSI5370.HomePurchaseManagementSystem.Domain.Realtor;
+import com.CSI5370.HomePurchaseManagementSystem.Domain.*;
 import com.CSI5370.HomePurchaseManagementSystem.ErrorResponses.BadRequestErrorSchema;
 import com.CSI5370.HomePurchaseManagementSystem.ErrorResponses.NotFoundErrorSchema;
 import com.CSI5370.HomePurchaseManagementSystem.ErrorResponses.ServiceUnavailableErrorSchema;
@@ -48,18 +45,18 @@ public class HPMSEndpoints {
 
     @PostMapping("customer/create")
     @Operation(summary = "Create a customer record", description = "Create a customer record")
-    @ApiResponse(responseCode = "200", description = "Resource Created")
+    @ApiResponse(responseCode = "200", description = "Resource Created", content = @Content(schema = @Schema(implementation = CustomerId.class)))
     @ApiResponse(responseCode = "400", description = "Invalid request parameters", content = @Content(schema = @Schema(implementation = BadRequestErrorSchema.class)))
     @ApiResponse(responseCode = "503", description = "Service Unavailable", content = @Content(schema = @Schema(implementation = ServiceUnavailableErrorSchema.class)))
-    public ResponseEntity<Integer> createCustomer(@Valid @RequestParam @Pattern(regexp = "[a-zA-Z]+") @Schema(description = "First name containing only letters", pattern = "[a-zA-Z]+") String firstName,
+    public ResponseEntity<CustomerId> createCustomer(@Valid @RequestParam @Pattern(regexp = "[a-zA-Z]+") @Schema(description = "First name containing only letters", pattern = "[a-zA-Z]+") String firstName,
                                                   @Valid @RequestParam @Pattern(regexp = "[a-zA-Z]+") @Schema(description = "Last name containing only letters", pattern = "[a-zA-Z]+") String lastName,
                                                   @Valid @RequestParam @Pattern(regexp = "[0-9]{2}-[0-9]{3}-[0-9]{4}") @Schema(description = "Social Security Number format XX-XXX-XXXX", pattern = "[0-9]{2}-[0-9]{3}-[0-9]{4}") String ssn,
                                                   @Valid @RequestParam @Schema(description = "Annual income in float format (min: 0, max: 1,0000,000)", minimum = "0", maximum = "10000000")
                                                   @DecimalMin(value = "0.0", message = "Income must be at least 1000")
                                                   @DecimalMax(value = "10000000.0", message = "Income must not exceed 1,0000,000")
                                                   float income) throws SQLException {
-        int custId = customerService.createCustomer(firstName, lastName, ssn, income);
-        return ResponseEntity.ok(custId);
+        CustomerId customer = new CustomerId(customerService.createCustomer(firstName, lastName, ssn, income));
+        return ResponseEntity.ok(customer);
     }
 
     @GetMapping("customer/get/{customerid}")
@@ -92,17 +89,17 @@ public class HPMSEndpoints {
 
     @PostMapping("purchase/create")
     @Operation(summary = "Create a purchase record", description = "Create a purchase record")
-    @ApiResponse(responseCode = "200", description = "Resource Created")
+    @ApiResponse(responseCode = "200", description = "Resource Created", content = @Content(schema = @Schema(implementation = PurchaseId.class)))
     @ApiResponse(responseCode = "400", description = "Invalid request parameters", content = @Content(schema = @Schema(implementation = BadRequestErrorSchema.class)))
     @ApiResponse(responseCode = "404", description = "Resource not possible", content = @Content(schema = @Schema(implementation = NotFoundErrorSchema.class)))
     @ApiResponse(responseCode = "503", description = "Service Unavailable", content = @Content(schema = @Schema(implementation = ServiceUnavailableErrorSchema.class)))
-    public ResponseEntity<Integer> createPurchase(@Valid @RequestParam int customerId,
+    public ResponseEntity<PurchaseId> createPurchase(@Valid @RequestParam int customerId,
                                                   @Valid @RequestParam int realtorId,
                                                   @Valid @RequestParam int homeId,
                                                   @Valid @RequestParam int loan,
                                                   @Valid @RequestParam int downPayment){
 
-        int purchaseId = purchaseService.createPurchase(customerId, realtorId, homeId, loan, downPayment);
+        PurchaseId purchaseId = new PurchaseId(purchaseService.createPurchase(customerId, realtorId, homeId, loan, downPayment));
         return ResponseEntity.ok(purchaseId);
     }
 
@@ -136,17 +133,17 @@ public class HPMSEndpoints {
 
     @PostMapping("realtor/create")
     @Operation(summary = "Create a realtor record", description = "Create a realtor record")
-    @ApiResponse(responseCode = "200", description = "Resource Created")
+    @ApiResponse(responseCode = "200", description = "Resource Created", content = @Content(schema = @Schema(implementation = RealtorId.class)))
     @ApiResponse(responseCode = "400", description = "Invalid request parameters", content = @Content(schema = @Schema(implementation = BadRequestErrorSchema.class)))
     @ApiResponse(responseCode = "503", description = "Service Unavailable", content = @Content(schema = @Schema(implementation = ServiceUnavailableErrorSchema.class)))
-    public ResponseEntity<Integer> createRealtor(@Valid @RequestParam int employeenum,
+    public ResponseEntity<RealtorId> createRealtor(@Valid @RequestParam int employeenum,
                                                   @Valid @RequestParam @Pattern(regexp = "[a-zA-Z]+") @Schema(description = "First name containing only letters", pattern = "[a-zA-Z]+") String firstName,
                                                   @Valid @RequestParam @Pattern(regexp = "[a-zA-Z]+") @Schema(description = "Last name containing only letters", pattern = "[a-zA-Z]+") String lastName,
                                                  @Valid @RequestParam @Schema(description = "Commission Rate in float format (min: 0, max: 1)", minimum = "0.0", maximum = "1.0")
                                                  @DecimalMin(value = "0.0", message = "Commission rate cannot be negative")
                                                  @DecimalMax(value = "1.0", message = "Commission must not exceed 1,0000,000")
                                                  float commissionRate) throws SQLException {
-        int realId=realtorService.createRealtor( employeenum, firstName, lastName, commissionRate);
+        RealtorId realId = new RealtorId(realtorService.createRealtor( employeenum, firstName, lastName, commissionRate));
         return ResponseEntity.ok(realId);
     }
 
@@ -180,10 +177,10 @@ public class HPMSEndpoints {
 
     @PostMapping("home/create")
     @Operation(summary = "Create a home record", description = "Create a home record")
-    @ApiResponse(responseCode = "200", description = "Resource Created")
+    @ApiResponse(responseCode = "200", description = "Resource Created", content = @Content(schema = @Schema(implementation = HomeId.class)))
     @ApiResponse(responseCode = "400", description = "Invalid request parameters", content = @Content(schema = @Schema(implementation = BadRequestErrorSchema.class)))
     @ApiResponse(responseCode = "503", description = "Service Unavailable", content = @Content(schema = @Schema(implementation = ServiceUnavailableErrorSchema.class)))
-    public ResponseEntity<Integer> createHome(@Valid @RequestParam int address,
+    public ResponseEntity<HomeId> createHome(@Valid @RequestParam int address,
                                               @Valid @RequestParam @Pattern(regexp = "[a-zA-Z]+") @Schema(description = "Street name containing only letters", pattern = "[a-zA-Z]+") String street,
                                               @Valid @RequestParam @Pattern(regexp = "[a-zA-Z]+") @Schema(description = "City name containing only letters", pattern = "[a-zA-Z]+") String city,
                                               @Valid @RequestParam @Pattern(regexp = "[a-zA-Z]{2,4}") @Schema(description = "State name containing only letters", pattern = "[a-zA-Z]{2}") String state,
@@ -192,7 +189,7 @@ public class HPMSEndpoints {
                                               @Valid @RequestParam @Schema(description = "Price in integer format (min: 1, max: 9999999)", minimum = "1", maximum = "9999999") float price,
                                               @DecimalMin(value = "1", message = "sq feet cannot be negative")
                                               @Valid @RequestParam @Schema(description = "Square feet in integer format (min: 1)", minimum = "1") int squareFeet) throws SQLException {
-       int homeid =homeService.createHome(address, street,city,state,price,squareFeet);
+        HomeId homeid = new HomeId(homeService.createHome(address, street,city,state,price,squareFeet));
         return ResponseEntity.ok(homeid);
     }
 

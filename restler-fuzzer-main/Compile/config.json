@@ -1,0 +1,23 @@
+{
+  "SwaggerSpecFilePath": [
+    "C:\\Users\\Andrew\\Desktop\\School\\CSI5370\\CSI5370-HPMS\\swagger.json"
+  ],
+  "GrammarOutputDirectoryPath": "C:\\Users\\Andrew\\Desktop\\School\\CSI5370\\CSI5370-HPMS\\restler-fuzzer-main\\Compile",
+  "CustomDictionaryFilePath": "C:\\Users\\Andrew\\Desktop\\School\\CSI5370\\CSI5370-HPMS\\restler-fuzzer-main\\Compile\\defaultDict.json",
+  "IncludeOptionalParameters": true,
+  "UseHeaderExamples": true,
+  "UsePathExamples": false,
+  "UseQueryExamples": true,
+  "UseBodyExamples": true,
+  "UseAllExamplePayloads": false,
+  "DiscoverExamples": false,
+  "ExamplesDirectory": "",
+  "DataFuzzing": true,
+  "ReadOnlyFuzz": false,
+  "ResolveQueryDependencies": true,
+  "ResolveBodyDependencies": true,
+  "ResolveHeaderDependencies": false,
+  "UseRefreshableToken": true,
+  "AllowGetProducers": false,
+  "TrackFuzzedParameterNames": false
+}

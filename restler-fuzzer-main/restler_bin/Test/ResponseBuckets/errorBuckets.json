@@ -1,0 +1,289 @@
+{
+  "0": {},
+  "400": {
+    "17e66bda-58b4-430a-84fa-824590fefc74": [
+      {
+        "request": {
+          "RequestData": {
+            "method": "POST",
+            "path": "/home/create",
+            "query": "address=1&city=fuzzstring&price=1.23&squareFeet=1&state=fuzzstring&street=fuzzstring",
+            "body": ""
+          }
+        },
+        "response": {
+          "ResponseData": {
+            "code": 400,
+            "codeDescription": "",
+            "content": "66\r\n{\"timestamp\":\"2025-03-23T16:44:03.921+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/home/create\"}\r\n0\r\n\r\n",
+            "isFailure": true,
+            "isBug": false
+          }
+        }
+      }
+    ],
+    "22d2b120-400a-48d9-a34a-193e1f406db5": [
+      {
+        "request": {
+          "RequestData": {
+            "method": "POST",
+            "path": "/customer/create",
+            "query": "firstName=fuzzstring&income=1.23&lastName=fuzzstring&ssn=fuzzstring",
+            "body": ""
+          }
+        },
+        "response": {
+          "ResponseData": {
+            "code": 400,
+            "codeDescription": "",
+            "content": "6a\r\n{\"timestamp\":\"2025-03-23T16:44:03.787+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/customer/create\"}\r\n0\r\n\r\n",
+            "isFailure": true,
+            "isBug": false
+          }
+        }
+      }
+    ],
+    "38823b3b-42d6-4870-972a-b8488c713340": [
+      {
+        "request": {
+          "RequestData": {
+            "method": "POST",
+            "path": "/customer/create",
+            "query": "firstName=fuzzstring&income=1.23&lastName=fuzzstring&ssn=fuzzstring",
+            "body": ""
+          }
+        },
+        "response": {
+          "ResponseData": {
+            "code": 400,
+            "codeDescription": "",
+            "content": "6a\r\n{\"timestamp\":\"2025-03-23T16:44:03.804+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/customer/create\"}\r\n0\r\n\r\n",
+            "isFailure": true,
+            "isBug": false
+          }
+        }
+      }
+    ],
+    "3e0a952c-fb23-4e23-9984-f0a6caa43530": [
+      {
+        "request": {
+          "RequestData": {
+            "method": "POST",
+            "path": "/realtor/create",
+            "query": "commissionRate=1.23&employeenum=1&firstName=fuzzstring&lastName=fuzzstring",
+            "body": ""
+          }
+        },
+        "response": {
+          "ResponseData": {
+            "code": 400,
+            "codeDescription": "",
+            "content": "69\r\n{\"timestamp\":\"2025-03-23T16:44:04.031+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/realtor/create\"}\r\n0\r\n\r\n",
+            "isFailure": true,
+            "isBug": false
+          }
+        }
+      }
+    ],
+    "712dcae7-89af-4611-b830-e56440400b1a": [
+      {
+        "request": {
+          "RequestData": {
+            "method": "POST",
+            "path": "/home/create",
+            "query": "address=1&city=fuzzstring&price=1.23&squareFeet=1&state=fuzzstring&street=fuzzstring",
+            "body": ""
+          }
+        },
+        "response": {
+          "ResponseData": {
+            "code": 400,
+            "codeDescription": "",
+            "content": "66\r\n{\"timestamp\":\"2025-03-23T16:44:03.909+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/home/create\"}\r\n0\r\n\r\n",
+            "isFailure": true,
+            "isBug": false
+          }
+        }
+      }
+    ],
+    "82c9a308-6313-4967-96e7-5e1cdae05276": [
+      {
+        "request": {
+          "RequestData": {
+            "method": "POST",
+            "path": "/realtor/create",
+            "query": "commissionRate=1.23&employeenum=1&firstName=fuzzstring&lastName=fuzzstring",
+            "body": ""
+          }
+        },
+        "response": {
+          "ResponseData": {
+            "code": 400,
+            "codeDescription": "",
+            "content": "69\r\n{\"timestamp\":\"2025-03-23T16:44:04.021+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/realtor/create\"}\r\n0\r\n\r\n",
+            "isFailure": true,
+            "isBug": false
+          }
+        }
+      }
+    ]
+  },
+  "404": {
+    "1050294d-b52a-47f4-b466-2bce33e0a4ce": [
+      {
+        "request": {
+          "RequestData": {
+            "method": "POST",
+            "path": "/purchase/create",
+            "query": "customerId=1&downPayment=1&homeId=1&loan=1&realtorId=1",
+            "body": ""
+          }
+        },
+        "response": {
+          "ResponseData": {
+            "code": 404,
+            "codeDescription": "",
+            "content": "6a\r\n{\"error\":\"Not Found\",\"message\":\"Realtor Not Found\",\"timestamp\":\"2025-03-23T12:44:04.0687177\",\"status\":404}\r\n0\r\n\r\n",
+            "isFailure": true,
+            "isBug": false
+          }
+        }
+      },
+      {
+        "request": {
+          "RequestData": {
+            "method": "POST",
+            "path": "/purchase/create",
+            "query": "customerId=1&downPayment=1&homeId=1&loan=1&realtorId=1",
+            "body": ""
+          }
+        },
+        "response": {
+          "ResponseData": {
+            "code": 404,
+            "codeDescription": "",
+            "content": "6a\r\n{\"error\":\"Not Found\",\"message\":\"Realtor Not Found\",\"timestamp\":\"2025-03-23T12:44:04.0527235\",\"status\":404}\r\n0\r\n\r\n",
+            "isFailure": true,
+            "isBug": false
+          }
+        }
+      },
+      {
+        "request": {
+          "RequestData": {
+            "method": "GET",
+            "path": "/realtor/get/1",
+            "query": "",
+            "body": ""
+          }
+        },
+        "response": {
+          "ResponseData": {
+            "code": 404,
+            "codeDescription": "",
+            "content": "6a\r\n{\"error\":\"Not Found\",\"message\":\"Realtor Not Found\",\"timestamp\":\"2025-03-23T12:44:03.6730163\",\"status\":404}\r\n0\r\n\r\n",
+            "isFailure": true,
+            "isBug": false
+          }
+        }
+      },
+      {
+        "request": {
+          "RequestData": {
+            "method": "GET",
+            "path": "/realtor/get/1",
+            "query": "",
+            "body": ""
+          }
+        },
+        "response": {
+          "ResponseData": {
+            "code": 404,
+            "codeDescription": "",
+            "content": "6a\r\n{\"error\":\"Not Found\",\"message\":\"Realtor Not Found\",\"timestamp\":\"2025-03-23T12:44:03.6465041\",\"status\":404}\r\n0\r\n\r\n",
+            "isFailure": true,
+            "isBug": false
+          }
+        }
+      }
+    ],
+    "fb9b2c17-857c-40f0-9075-39c22f6a98a7": [
+      {
+        "request": {
+          "RequestData": {
+            "method": "GET",
+            "path": "/purchase/get/1",
+            "query": "",
+            "body": ""
+          }
+        },
+        "response": {
+          "ResponseData": {
+            "code": 404,
+            "codeDescription": "",
+            "content": "6b\r\n{\"error\":\"Not Found\",\"message\":\"Purchase Not Found\",\"timestamp\":\"2025-03-23T12:44:03.9585936\",\"status\":404}\r\n0\r\n\r\n",
+            "isFailure": true,
+            "isBug": false
+          }
+        }
+      },
+      {
+        "request": {
+          "RequestData": {
+            "method": "GET",
+            "path": "/purchase/get/1",
+            "query": "",
+            "body": ""
+          }
+        },
+        "response": {
+          "ResponseData": {
+            "code": 404,
+            "codeDescription": "",
+            "content": "6b\r\n{\"error\":\"Not Found\",\"message\":\"Purchase Not Found\",\"timestamp\":\"2025-03-23T12:44:03.9414756\",\"status\":404}\r\n0\r\n\r\n",
+            "isFailure": true,
+            "isBug": false
+          }
+        }
+      },
+      {
+        "request": {
+          "RequestData": {
+            "method": "DELETE",
+            "path": "/purchase/delete/1",
+            "query": "",
+            "body": ""
+          }
+        },
+        "response": {
+          "ResponseData": {
+            "code": 404,
+            "codeDescription": "",
+            "content": "6b\r\n{\"error\":\"Not Found\",\"message\":\"Purchase Not Found\",\"timestamp\":\"2025-03-23T12:44:03.8937259\",\"status\":404}\r\n0\r\n\r\n",
+            "isFailure": true,
+            "isBug": false
+          }
+        }
+      },
+      {
+        "request": {
+          "RequestData": {
+            "method": "DELETE",
+            "path": "/purchase/delete/1",
+            "query": "",
+            "body": ""
+          }
+        },
+        "response": {
+          "ResponseData": {
+            "code": 404,
+            "codeDescription": "",
+            "content": "6b\r\n{\"error\":\"Not Found\",\"message\":\"Purchase Not Found\",\"timestamp\":\"2025-03-23T12:44:03.8690848\",\"status\":404}\r\n0\r\n\r\n",
+            "isFailure": true,
+            "isBug": false
+          }
+        }
+      }
+    ]
+  }
+}

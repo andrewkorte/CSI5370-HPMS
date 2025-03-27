@@ -1,0 +1,153 @@
+{
+    "156ae1eebc2424515b9612adc4c363c8f36dc6a1_1": {
+        "verb": "DELETE",
+        "endpoint": "/realtor/delete/{realtorid}",
+        "valid": 1,
+        "matching_prefix": [],
+        "request": "DELETE /realtor/delete/1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\n\r\n",
+        "response": "HTTP/1.1 204 \r\nDate: Wed, 26 Mar 2025 23:34:28 GMT\r\n\r\n"
+    },
+    "1c306955e12240bec9918d41c2b35d8941bf8234_1": {
+        "verb": "GET",
+        "endpoint": "/realtor/get/{realtorid}",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "GET /realtor/get/1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\n\r\n",
+        "response": "HTTP/1.1 404 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Wed, 26 Mar 2025 23:34:30 GMT\r\n\r\n6a\r\n{\"error\":\"Not Found\",\"message\":\"Realtor Not Found\",\"timestamp\":\"2025-03-26T19:34:30.0799085\",\"status\":404}\r\n0\r\n\r\n"
+    },
+    "1c306955e12240bec9918d41c2b35d8941bf8234_2": {
+        "verb": "GET",
+        "endpoint": "/realtor/get/{realtorid}",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "GET /realtor/get/1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\n\r\n",
+        "response": "HTTP/1.1 404 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Wed, 26 Mar 2025 23:34:30 GMT\r\n\r\n6a\r\n{\"error\":\"Not Found\",\"message\":\"Realtor Not Found\",\"timestamp\":\"2025-03-26T19:34:30.8118527\",\"status\":404}\r\n0\r\n\r\n"
+    },
+    "2f5eee9548eee1076757edc10da9706d355c956e_1": {
+        "verb": "POST",
+        "endpoint": "/customer/create",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "POST /customer/create?firstName=fuzzstring&lastName=fuzzstring&ssn=fuzzstring&income=1.23 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\n\r\n",
+        "response": "HTTP/1.1 400 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Wed, 26 Mar 2025 23:34:30 GMT\r\nConnection: close\r\n\r\n6a\r\n{\"timestamp\":\"2025-03-26T23:34:30.916+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/customer/create\"}\r\n0\r\n\r\n"
+    },
+    "2f5eee9548eee1076757edc10da9706d355c956e_2": {
+        "verb": "POST",
+        "endpoint": "/customer/create",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "POST /customer/create?firstName=fuzzstring&lastName=fuzzstring&ssn=fuzzstring&income=1.23 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\n\r\n",
+        "response": "HTTP/1.1 400 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Wed, 26 Mar 2025 23:34:32 GMT\r\nConnection: close\r\n\r\n6a\r\n{\"timestamp\":\"2025-03-26T23:34:32.831+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/customer/create\"}\r\n0\r\n\r\n"
+    },
+    "3e62e8768b05c60e2c5b1e52458b4cf10ac63b44_1": {
+        "verb": "GET",
+        "endpoint": "/customer/get/{customerid}",
+        "valid": 1,
+        "matching_prefix": [],
+        "request": "GET /customer/get/1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\n\r\n",
+        "response": "HTTP/1.1 200 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Wed, 26 Mar 2025 23:34:34 GMT\r\n\r\n51\r\n{\"id\":1,\"firstName\":\"John\",\"lastName\":\"Doe\",\"ssn\":\"123-45-6789\",\"income\":50000.0}\r\n0\r\n\r\n"
+    },
+    "686085bd33fe41a3e05febd886b13cc596775f13_1": {
+        "verb": "GET",
+        "endpoint": "/home/get/{homeid}",
+        "valid": 1,
+        "matching_prefix": [],
+        "request": "GET /home/get/1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\n\r\n",
+        "response": "HTTP/1.1 200 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Wed, 26 Mar 2025 23:34:35 GMT\r\n\r\n6c\r\n{\"id\":1,\"address\":1,\"street\":\"Main St\",\"city\":\"Springfield\",\"state\":\"IL\",\"price\":250000.0,\"squareFeet\":1500}\r\n0\r\n\r\n"
+    },
+    "69c66231419258f45d1e4e1de7197c48987902b6_1": {
+        "verb": "DELETE",
+        "endpoint": "/purchase/delete/{purchaseid}",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "DELETE /purchase/delete/1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\n\r\n",
+        "response": "HTTP/1.1 404 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Wed, 26 Mar 2025 23:34:35 GMT\r\n\r\n6a\r\n{\"error\":\"Not Found\",\"message\":\"Purchase Not Found\",\"timestamp\":\"2025-03-26T19:34:35.923939\",\"status\":404}\r\n0\r\n\r\n"
+    },
+    "69c66231419258f45d1e4e1de7197c48987902b6_2": {
+        "verb": "DELETE",
+        "endpoint": "/purchase/delete/{purchaseid}",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "DELETE /purchase/delete/1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\n\r\n",
+        "response": "HTTP/1.1 404 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Wed, 26 Mar 2025 23:34:36 GMT\r\n\r\n6b\r\n{\"error\":\"Not Found\",\"message\":\"Purchase Not Found\",\"timestamp\":\"2025-03-26T19:34:36.7498293\",\"status\":404}\r\n0\r\n\r\n"
+    },
+    "7e436fbcce462ef0f7211688711bc463d384cebf_1": {
+        "verb": "POST",
+        "endpoint": "/home/create",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "POST /home/create?address=1&street=fuzzstring&city=fuzzstring&state=fuzzstring&price=1.23&squareFeet=1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\n\r\n",
+        "response": "HTTP/1.1 400 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Wed, 26 Mar 2025 23:34:36 GMT\r\nConnection: close\r\n\r\n66\r\n{\"timestamp\":\"2025-03-26T23:34:36.781+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/home/create\"}\r\n0\r\n\r\n"
+    },
+    "7e436fbcce462ef0f7211688711bc463d384cebf_2": {
+        "verb": "POST",
+        "endpoint": "/home/create",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "POST /home/create?address=1&street=fuzzstring&city=fuzzstring&state=fuzzstring&price=1.23&squareFeet=1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\n\r\n",
+        "response": "HTTP/1.1 400 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Wed, 26 Mar 2025 23:34:39 GMT\r\nConnection: close\r\n\r\n66\r\n{\"timestamp\":\"2025-03-26T23:34:39.370+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/home/create\"}\r\n0\r\n\r\n"
+    },
+    "97195992896dca5b73a3b97108de090ffba7ac8d_1": {
+        "verb": "GET",
+        "endpoint": "/purchase/get/{purchaseid}",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "GET /purchase/get/1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\n\r\n",
+        "response": "HTTP/1.1 404 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Wed, 26 Mar 2025 23:34:41 GMT\r\n\r\n6b\r\n{\"error\":\"Not Found\",\"message\":\"Purchase Not Found\",\"timestamp\":\"2025-03-26T19:34:41.9702419\",\"status\":404}\r\n0\r\n\r\n"
+    },
+    "97195992896dca5b73a3b97108de090ffba7ac8d_2": {
+        "verb": "GET",
+        "endpoint": "/purchase/get/{purchaseid}",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "GET /purchase/get/1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\n\r\n",
+        "response": "HTTP/1.1 404 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Wed, 26 Mar 2025 23:34:42 GMT\r\n\r\n6b\r\n{\"error\":\"Not Found\",\"message\":\"Purchase Not Found\",\"timestamp\":\"2025-03-26T19:34:42.5761165\",\"status\":404}\r\n0\r\n\r\n"
+    },
+    "b4ff73ea9ad098359baefa2d6809db17d896b96e_1": {
+        "verb": "DELETE",
+        "endpoint": "/home/delete/{homeid}",
+        "valid": 1,
+        "matching_prefix": [],
+        "request": "DELETE /home/delete/1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\n\r\n",
+        "response": "HTTP/1.1 204 \r\nDate: Wed, 26 Mar 2025 23:34:42 GMT\r\n\r\n"
+    },
+    "c0cbe9f5c5d62a1b96efc6aa0d740a9255cc4a65_1": {
+        "verb": "DELETE",
+        "endpoint": "/customer/delete/{customerid}",
+        "valid": 1,
+        "matching_prefix": [],
+        "request": "DELETE /customer/delete/1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\n\r\n",
+        "response": "HTTP/1.1 204 \r\nDate: Wed, 26 Mar 2025 23:34:43 GMT\r\n\r\n"
+    },
+    "ce0f3631ee3582c32b4cca941b4071d82516fff1_1": {
+        "verb": "POST",
+        "endpoint": "/realtor/create",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "POST /realtor/create?employeenum=1&firstName=fuzzstring&lastName=fuzzstring&commissionRate=1.23 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\n\r\n",
+        "response": "HTTP/1.1 400 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Wed, 26 Mar 2025 23:34:44 GMT\r\nConnection: close\r\n\r\n69\r\n{\"timestamp\":\"2025-03-26T23:34:44.228+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/realtor/create\"}\r\n0\r\n\r\n"
+    },
+    "ce0f3631ee3582c32b4cca941b4071d82516fff1_2": {
+        "verb": "POST",
+        "endpoint": "/realtor/create",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "POST /realtor/create?employeenum=1&firstName=fuzzstring&lastName=fuzzstring&commissionRate=1.23 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\n\r\n",
+        "response": "HTTP/1.1 400 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Wed, 26 Mar 2025 23:34:45 GMT\r\nConnection: close\r\n\r\n69\r\n{\"timestamp\":\"2025-03-26T23:34:45.842+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/realtor/create\"}\r\n0\r\n\r\n"
+    },
+    "d11558dd093aba5c0743136491d060c2cba54775_1": {
+        "verb": "POST",
+        "endpoint": "/purchase/create",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "POST /purchase/create?customerId=1&realtorId=1&homeId=1&loan=1&downPayment=1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\n\r\n",
+        "response": "HTTP/1.1 404 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Wed, 26 Mar 2025 23:34:47 GMT\r\n\r\n6a\r\n{\"error\":\"Not Found\",\"message\":\"Realtor Not Found\",\"timestamp\":\"2025-03-26T19:34:47.5261143\",\"status\":404}\r\n0\r\n\r\n"
+    },
+    "d11558dd093aba5c0743136491d060c2cba54775_2": {
+        "verb": "POST",
+        "endpoint": "/purchase/create",
+        "valid": 0,
+        "matching_prefix": [],
+        "request": "POST /purchase/create?customerId=1&realtorId=1&homeId=1&loan=1&downPayment=1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\n\r\n",
+        "response": "HTTP/1.1 404 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Wed, 26 Mar 2025 23:34:50 GMT\r\n\r\n6a\r\n{\"error\":\"Not Found\",\"message\":\"Realtor Not Found\",\"timestamp\":\"2025-03-26T19:34:50.4544125\",\"status\":404}\r\n0\r\n\r\n"
+    }}
