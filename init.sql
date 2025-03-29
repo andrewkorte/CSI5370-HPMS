@@ -57,7 +57,7 @@ CREATE TABLE purchase (
     realtorpay              NUMERIC(9,2) NOT NULL
 );
 
-INSERT INTO purchase (customerid, realtorid, homeid, loan, downpayment) VALUES
+INSERT INTO purchase (customerid, realtorid, homeid, loan, downpayment, realtorpay) VALUES
 (1, 1, 1, 200000, 50000, 10000),
 (2, 2, 2, 250000, 60000, 10000),
 (3, 1, 3, 100000, 30000, 5000),

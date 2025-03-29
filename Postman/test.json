@@ -1,0 +1,39 @@
+{
+  "info": {
+    "_postman_id": "your-postman-id",
+    "name": "API Status Code Tests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "404 Tests",
+      "item": [
+        {
+          "name": "Get Non-Existent Realtor",
+          "request": { "method": "GET", "url": "{{base_url}}/realtor/get/9999" },
+          "event": [{ "listen": "test", "script": { "exec": ["pm.test(\"Status code is 404\", function () { pm.response.to.have.status(404); });"] } }]
+        },
+        {
+          "name": "Delete Non-Existent Home",
+          "request": { "method": "DELETE", "url": "{{base_url}}/home/delete/9999" },
+          "event": [{ "listen": "test", "script": { "exec": ["pm.test(\"Status code is 404\", function () { pm.response.to.have.status(404); });"] } }]
+        }
+      ]
+    },
+    {
+      "name": "400 Tests",
+      "item": [
+        {
+          "name": "Create Home with Negative Price",
+          "request": { "method": "POST", "url": "{{base_url}}/home/create?address=202&street=ElmStreet&city=Metropolis&state=NY&price=-100000&squareFeet=2000" },
+          "event": [{ "listen": "test", "script": { "exec": ["pm.test(\"Status code is 400\", function () { pm.response.to.have.status(400); });"] } }]
+        },
+        {
+          "name": "Create Customer with Invalid SSN",
+          "request": { "method": "POST", "url": "{{base_url}}/customer/create?firstName=Bob&lastName=Martin&ssn=INVALID&income=85000" },
+          "event": [{ "listen": "test", "script": { "exec": ["pm.test(\"Status code is 400\", function () { pm.response.to.have.status(400); });"] } }]
+        }
+      ]
+    }
+  ]
+}

@@ -18,7 +18,7 @@ public class HomeService {
     public int createHome(int address, String street, String city, String state, float price, int squareFeet) throws SQLException {
         Connection conn = null;
 
-        String createSQL = "INSERT INTO Home (streetNum, city, state, price, squareFeet) values (?, ?, ?, ?) returning id;";
+        String createSQL = "INSERT INTO Home (address, street, city, state, price, squareFeet) values (?, ?, ?, ?, ?, ?) returning id;";
 
         int homeId = 0;
 

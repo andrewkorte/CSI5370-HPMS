@@ -1,0 +1,132 @@
+{
+  "info": {
+    "_postman_id": "your-postman-id",
+    "name": "API Tests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Valid Requests",
+      "item": [
+        {
+          "name": "Create Realtor",
+          "request": { "method": "POST", "url": "{{base_url}}/realtor/create?employeenum=12346&firstName=Alice&lastName=Johnson&commissionRate=0.06" }
+        },
+        {
+          "name": "Get Realtor",
+          "request": { "method": "GET", "url": "{{base_url}}/realtor/get/6" }
+        },
+        {
+          "name": "Delete Realtor",
+          "request": { "method": "DELETE", "url": "{{base_url}}/realtor/delete/6" }
+        },
+        {
+          "name": "Create Customer",
+          "request": { "method": "POST", "url": "{{base_url}}/customer/create?firstName=Bob&lastName=Martin&ssn=98-765-4321&income=85000" }
+        },
+        {
+          "name": "Get Customer",
+          "request": { "method": "GET", "url": "{{base_url}}/customer/get/6" }
+        },
+        {
+          "name": "Delete Customer",
+          "request": { "method": "DELETE", "url": "{{base_url}}/customer/delete/6" }
+        },
+        {
+          "name": "Create Home",
+          "request": { "method": "POST", "url": "{{base_url}}/home/create?address=202&street=ElmStreet&city=Metropolis&state=NY&price=300000&squareFeet=2000" }
+        },
+        {
+          "name": "Get Home",
+          "request": { "method": "GET", "url": "{{base_url}}/home/get/6" }
+        },
+        {
+          "name": "Delete Home",
+          "request": { "method": "DELETE", "url": "{{base_url}}/home/delete/6" }
+        },
+        {
+          "name": "Create Purchase",
+          "request": { "method": "POST", "url": "{{base_url}}/purchase/create?customerId=6&realtorId=6&homeId=6&loan=250000&downPayment=50000" }
+        },
+        {
+          "name": "Get Purchase",
+          "request": { "method": "GET", "url": "{{base_url}}/purchase/get/6" }
+        },
+        {
+          "name": "Delete Purchase",
+          "request": { "method": "DELETE", "url": "{{base_url}}/purchase/delete/6" }
+        }
+      ]
+    },
+    {
+      "name": "404 Not Found Tests",
+      "item": [
+        {
+          "name": "Get Non-Existent Realtor",
+          "request": { "method": "GET", "url": "{{base_url}}/realtor/get/9999" },
+          "event": [{ "listen": "test", "script": { "exec": ["pm.test(\"Status code is 404\", function () { pm.response.to.have.status(404); });"] } }]
+        },
+        {
+          "name": "Delete Non-Existent Realtor",
+          "request": { "method": "DELETE", "url": "{{base_url}}/realtor/delete/9999" },
+          "event": [{ "listen": "test", "script": { "exec": ["pm.test(\"Status code is 404\", function () { pm.response.to.have.status(404); });"] } }]
+        },
+        {
+          "name": "Get Non-Existent Customer",
+          "request": { "method": "GET", "url": "{{base_url}}/customer/get/9999" },
+          "event": [{ "listen": "test", "script": { "exec": ["pm.test(\"Status code is 404\", function () { pm.response.to.have.status(404); });"] } }]
+        },
+        {
+          "name": "Delete Non-Existent Customer",
+          "request": { "method": "DELETE", "url": "{{base_url}}/customer/delete/9999" },
+          "event": [{ "listen": "test", "script": { "exec": ["pm.test(\"Status code is 404\", function () { pm.response.to.have.status(404); });"] } }]
+        },
+        {
+          "name": "Get Non-Existent Home",
+          "request": { "method": "GET", "url": "{{base_url}}/home/get/9999" },
+          "event": [{ "listen": "test", "script": { "exec": ["pm.test(\"Status code is 404\", function () { pm.response.to.have.status(404); });"] } }]
+        },
+        {
+          "name": "Delete Non-Existent Home",
+          "request": { "method": "DELETE", "url": "{{base_url}}/home/delete/9999" },
+          "event": [{ "listen": "test", "script": { "exec": ["pm.test(\"Status code is 404\", function () { pm.response.to.have.status(404); });"] } }]
+        },
+        {
+          "name": "Get Non-Existent Purchase",
+          "request": { "method": "GET", "url": "{{base_url}}/purchase/get/9999" },
+          "event": [{ "listen": "test", "script": { "exec": ["pm.test(\"Status code is 404\", function () { pm.response.to.have.status(404); });"] } }]
+        },
+        {
+          "name": "Delete Non-Existent Purchase",
+          "request": { "method": "DELETE", "url": "{{base_url}}/purchase/delete/9999" },
+          "event": [{ "listen": "test", "script": { "exec": ["pm.test(\"Status code is 404\", function () { pm.response.to.have.status(404); });"] } }]
+        }
+      ]
+    },
+    {
+      "name": "400 Bad Request Tests",
+      "item": [
+        {
+          "name": "Create Realtor with Missing Fields",
+          "request": { "method": "POST", "url": "{{base_url}}/realtor/create?firstName=Alice" },
+          "event": [{ "listen": "test", "script": { "exec": ["pm.test(\"Status code is 400\", function () { pm.response.to.have.status(400); });"] } }]
+        },
+        {
+          "name": "Create Customer with Invalid SSN",
+          "request": { "method": "POST", "url": "{{base_url}}/customer/create?firstName=Bob&lastName=Martin&ssn=INVALID&income=85000" },
+          "event": [{ "listen": "test", "script": { "exec": ["pm.test(\"Status code is 400\", function () { pm.response.to.have.status(400); });"] } }]
+        },
+        {
+          "name": "Create Home with Negative Price",
+          "request": { "method": "POST", "url": "{{base_url}}/home/create?address=202&street=ElmStreet&city=Metropolis&state=NY&price=-100000&squareFeet=2000" },
+          "event": [{ "listen": "test", "script": { "exec": ["pm.test(\"Status code is 400\", function () { pm.response.to.have.status(400); });"] } }]
+        },
+        {
+          "name": "Create Purchase with Non-Existent Customer",
+          "request": { "method": "POST", "url": "{{base_url}}/purchase/create?customerId=9999&realtorId=1&homeId=1&loan=250000&downPayment=50000" },
+          "event": [{ "listen": "test", "script": { "exec": ["pm.test(\"Status code is 400\", function () { pm.response.to.have.status(400); });"] } }]
+        }
+      ]
+    }
+  ]
+}
