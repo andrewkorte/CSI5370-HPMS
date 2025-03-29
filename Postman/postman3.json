@@ -1,0 +1,153 @@
+{
+  "info": {
+    "name": "API Testing Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Home",
+      "item": [
+        {
+          "name": "Create Home",
+          "request": {
+            "method": "POST",
+            "url": "http://localhost:8080/home/create",
+            "query": [
+              {"key": "address", "value": "123"},
+              {"key": "street", "value": "Main"},
+              {"key": "city", "value": "Metropolis"},
+              {"key": "state", "value": "NY"},
+              {"key": "price", "value": "250000"},
+              {"key": "squareFeet", "value": "1500"}
+            ]
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Response should be 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Home",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8080/home/get/6"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Response should be 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Delete Home",
+          "request": {
+            "method": "DELETE",
+            "url": "http://localhost:8080/home/delete/6"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Response should be 204\", function () {",
+                  "    pm.response.to.have.status(204);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Purchase",
+      "item": [
+        {
+          "name": "Create Purchase",
+          "request": {
+            "method": "POST",
+            "url": "http://localhost:8080/purchase/create",
+            "query": [
+              {"key": "customerId", "value": "6"},
+              {"key": "realtorId", "value": "6"},
+              {"key": "homeId", "value": "6"},
+              {"key": "loan", "value": "200000"},
+              {"key": "downPayment", "value": "50000"}
+            ]
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Response should be 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Purchase",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8080/purchase/get/6"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Response should be 200\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Delete Purchase",
+          "request": {
+            "method": "DELETE",
+            "url": "http://localhost:8080/purchase/delete/6"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Response should be 204\", function () {",
+                  "    pm.response.to.have.status(204);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
