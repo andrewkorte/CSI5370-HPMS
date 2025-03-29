@@ -1,0 +1,110 @@
+{
+  "info": {
+    "name": "HPMS API Tests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Realtor Tests",
+      "item": [
+        {
+          "name": "Valid Create Realtor",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "http://localhost:8080/realtor/create?employeenum=6&firstName=John&lastName=Doe&commissionRate=0.05",
+              "host": ["http://localhost:8080"],
+              "path": ["realtor", "create"],
+              "query": [
+                {"key": "employeenum", "value": "6"},
+                {"key": "firstName", "value": "John"},
+                {"key": "lastName", "value": "Doe"},
+                {"key": "commissionRate", "value": "0.05"}
+              ]
+            }
+          }
+        },
+        {
+          "name": "404 Get Realtor",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/realtor/get/999",
+              "host": ["http://localhost:8080"],
+              "path": ["realtor", "get", "999"]
+            }
+          }
+        },
+        {
+          "name": "400 Create Realtor",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "http://localhost:8080/realtor/create?employeenum=ABC&firstName=123&lastName=Doe&commissionRate=-0.5",
+              "host": ["http://localhost:8080"],
+              "path": ["realtor", "create"],
+              "query": [
+                {"key": "employeenum", "value": "ABC"},
+                {"key": "firstName", "value": "123"},
+                {"key": "lastName", "value": "Doe"},
+                {"key": "commissionRate", "value": "-0.5"}
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Purchase Tests",
+      "item": [
+        {
+          "name": "Valid Create Purchase",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "http://localhost:8080/purchase/create?customerId=6&realtorId=6&homeId=6&loan=300000&downPayment=60000",
+              "host": ["http://localhost:8080"],
+              "path": ["purchase", "create"],
+              "query": [
+                {"key": "customerId", "value": "6"},
+                {"key": "realtorId", "value": "6"},
+                {"key": "homeId", "value": "6"},
+                {"key": "loan", "value": "300000"},
+                {"key": "downPayment", "value": "60000"}
+              ]
+            }
+          }
+        },
+        {
+          "name": "404 Get Purchase",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/purchase/get/999",
+              "host": ["http://localhost:8080"],
+              "path": ["purchase", "get", "999"]
+            }
+          }
+        },
+        {
+          "name": "400 Create Purchase",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "http://localhost:8080/purchase/create?customerId=ABC&realtorId=XYZ&homeId=&loan=-50000&downPayment=abc",
+              "host": ["http://localhost:8080"],
+              "path": ["purchase", "create"],
+              "query": [
+                {"key": "customerId", "value": "ABC"},
+                {"key": "realtorId", "value": "XYZ"},
+                {"key": "homeId", "value": ""},
+                {"key": "loan", "value": "-50000"},
+                {"key": "downPayment", "value": "abc"}
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
