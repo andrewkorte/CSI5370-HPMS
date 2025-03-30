@@ -1,0 +1,71 @@
+{
+  "info": {
+    "name": "Customer API Tests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Customer - Valid Data",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"firstName\":\"Alice\",\"lastName\":\"Smith\",\"ssn\":\"34-567-8901\",\"income\":\"85000\"}"
+        },
+        "url": {"raw": "{{baseUrl}}/customer/create", "host": ["{{baseUrl}}"], "path": ["customer", "create"]}
+      },
+      "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Create Customer - Should return 200 and valid response\", function () {","pm.response.to.have.status(200);","pm.response.to.have.jsonBody('customerid');","});"], "type": "text/javascript"}}]
+    },
+    {
+      "name": "Create Customer - Edge Case (High Income)",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"firstName\":\"Bob\",\"lastName\":\"Johnson\",\"ssn\":\"45-678-9012\",\"income\":\"9999999\"}"
+        },
+        "url": {"raw": "{{baseUrl}}/customer/create", "host": ["{{baseUrl}}"], "path": ["customer", "create"]}
+      },
+      "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Create Customer - Should return 200 and valid response\", function () {","pm.response.to.have.status(200);","pm.response.to.have.jsonBody('customerid');","});"], "type": "text/javascript"}}]
+    },
+    {
+      "name": "Create Customer - Edge Case (Low Income)",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"firstName\":\"Charlie\",\"lastName\":\"Brown\",\"ssn\":\"56-789-0123\",\"income\":\"1\"}"
+        },
+        "url": {"raw": "{{baseUrl}}/customer/create", "host": ["{{baseUrl}}"], "path": ["customer", "create"]}
+      },
+      "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Create Customer - Should return 200 and valid response\", function () {","pm.response.to.have.status(200);","pm.response.to.have.jsonBody('customerid');","});"], "type": "text/javascript"}}]
+    },
+    {
+      "name": "Create Customer - Missing Required Fields",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"firstName\":\"\",\"lastName\":\"\",\"ssn\":\"\",\"income\":\"\"}"
+        },
+        "url": {"raw": "{{baseUrl}}/customer/create", "host": ["{{baseUrl}}"], "path": ["customer", "create"]}
+      },
+      "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Create Customer - Should return 400 for missing fields\", function () {","pm.response.to.have.status(400);","});"], "type": "text/javascript"}}]
+    },
+    {
+      "name": "Get Non-Existent Customer",
+      "request": {
+        "method": "GET",
+        "url": {"raw": "{{baseUrl}}/customer/get/99999", "host": ["{{baseUrl}}"], "path": ["customer", "get", "99999"]}
+      },
+      "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Get Non-Existent Customer - Should return 404\", function () {","pm.response.to.have.status(404);","});"], "type": "text/javascript"}}]
+    }
+  ],
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:8080" }
+  ]
+}
