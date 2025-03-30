@@ -29,9 +29,9 @@ public class PurchaseService {
 
     public int createPurchase(int customerId, int realtorId, int homeId, int loan, int downPayment){
 
-//        if(loan > 6500000){
-//            loan += 100000;
-//        }
+        if(loan > 6500000){
+            loan += 100000;
+        }
 
         Connection conn = null;
 
