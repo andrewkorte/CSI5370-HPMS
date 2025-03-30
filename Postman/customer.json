@@ -1,49 +1,107 @@
-// Define base URL
-const baseUrl = "http://localhost:8080";
-let customerId = 6; // Start from customer 6 as requested
-
-// Request 1: Create Customer
-pm.sendRequest({
-url: `${baseUrl}/customer/create`,
-method: "POST",
-header: {"Content-Type": "application/json"},
-body: {
-mode: "urlencoded",
-urlencoded: [
-{ key: "firstName", value: "John", type: "text" },
-{ key: "lastName", value: "Doe", type: "text" },
-{ key: "ssn", value: "12-345-6789", type: "text" },
-{ key: "income", value: "75000", type: "text" }
-]
+{
+  "info": {
+    "name": "Customer API Tests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Customer",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/customer/create",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["customer", "create"]
+        },
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            { "key": "firstName", "value": "John", "type": "text" },
+            { "key": "lastName", "value": "Doe", "type": "text" },
+            { "key": "ssn", "value": "12-345-6789", "type": "text" },
+            { "key": "income", "value": "75000", "type": "text" }
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Create Customer - Should return 200 and valid response\", function () {",
+              "    pm.response.to.have.status(200);",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData).to.have.property(\"customerid\");",
+              "    pm.globals.set(\"customerId\", jsonData.customerid);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Get Customer",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/customer/get/{{customerId}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["customer", "get", "{{customerId}}"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Get Customer - Should return 200 and valid response\", function () {",
+              "    pm.response.to.have.status(200);",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData).to.have.property(\"id\", parseInt(pm.globals.get(\"customerId\")));",
+              "    pm.expect(jsonData).to.have.property(\"firstName\", \"John\");",
+              "    pm.expect(jsonData).to.have.property(\"lastName\", \"Doe\");",
+              "    pm.expect(jsonData).to.have.property(\"ssn\", \"12-345-6789\");",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Delete Customer",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:8080/customer/delete/{{customerId}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["customer", "delete", "{{customerId}}"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Delete Customer - Should return 204\", function () {",
+              "    pm.response.to.have.status(204);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    }
+  ]
 }
-}, function (err, res) {
-pm.test("Create Customer - Should return 200 and valid response", function () {
-pm.expect(res.status).to.equal(200);
-pm.expect(res.json()).to.have.property("customerid");
-customerId = res.json().customerid;
-});
-});
 
-// Request 2: Get Customer
-pm.sendRequest({
-url: `${baseUrl}/customer/get/${customerId}`,
-method: "GET"
-}, function (err, res) {
-pm.test("Get Customer - Should return 200 and valid response", function () {
-pm.expect(res.status).to.equal(200);
-pm.expect(res.json()).to.have.property("id", customerId);
-pm.expect(res.json()).to.have.property("firstName", "John");
-pm.expect(res.json()).to.have.property("lastName", "Doe");
-pm.expect(res.json()).to.have.property("ssn", "12-345-6789");
-});
-});
-
-// Request 3: Delete Customer
-pm.sendRequest({
-url: `${baseUrl}/customer/delete/${customerId}`,
-method: "DELETE"
-}, function (err, res) {
-pm.test("Delete Customer - Should return 204", function () {
-pm.expect(res.status).to.equal(204);
-});
-});
