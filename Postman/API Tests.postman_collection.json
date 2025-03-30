@@ -1,0 +1,761 @@
+{
+	"info": {
+		"_postman_id": "0f14311a-907e-4686-88b1-6ef6d9648c02",
+		"name": "API Tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42374825"
+	},
+	"item": [
+		{
+			"name": "Valid Requests",
+			"item": [
+				{
+					"name": "Create Realtor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/realtor/create?employeenum=12346&firstName=Alice&lastName=Johnson&commissionRate=0.06",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"realtor",
+								"create"
+							],
+							"query": [
+								{
+									"key": "employeenum",
+									"value": "12346"
+								},
+								{
+									"key": "firstName",
+									"value": "Alice"
+								},
+								{
+									"key": "lastName",
+									"value": "Johnson"
+								},
+								{
+									"key": "commissionRate",
+									"value": "0.06"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Realtor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/realtor/get/6",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"realtor",
+								"get",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Realtor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/realtor/delete/6",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"realtor",
+								"delete",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/customer/create?firstName=Bob&lastName=Martin&ssn=98-765-4321&income=85000",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"customer",
+								"create"
+							],
+							"query": [
+								{
+									"key": "firstName",
+									"value": "Bob"
+								},
+								{
+									"key": "lastName",
+									"value": "Martin"
+								},
+								{
+									"key": "ssn",
+									"value": "98-765-4321"
+								},
+								{
+									"key": "income",
+									"value": "85000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Customer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/customer/get/6",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"customer",
+								"get",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Customer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/customer/delete/6",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"customer",
+								"delete",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Home",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/home/create?address=202&street=ElmStreet&city=Metropolis&state=NY&price=300000&squareFeet=2000",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"home",
+								"create"
+							],
+							"query": [
+								{
+									"key": "address",
+									"value": "202"
+								},
+								{
+									"key": "street",
+									"value": "ElmStreet"
+								},
+								{
+									"key": "city",
+									"value": "Metropolis"
+								},
+								{
+									"key": "state",
+									"value": "NY"
+								},
+								{
+									"key": "price",
+									"value": "300000"
+								},
+								{
+									"key": "squareFeet",
+									"value": "2000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Home",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/home/get/6",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"home",
+								"get",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Home",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/home/delete/6",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"home",
+								"delete",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Purchase",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/purchase/create?customerId=6&realtorId=6&homeId=6&loan=250000&downPayment=50000",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"purchase",
+								"create"
+							],
+							"query": [
+								{
+									"key": "customerId",
+									"value": "6"
+								},
+								{
+									"key": "realtorId",
+									"value": "6"
+								},
+								{
+									"key": "homeId",
+									"value": "6"
+								},
+								{
+									"key": "loan",
+									"value": "250000"
+								},
+								{
+									"key": "downPayment",
+									"value": "50000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Purchase",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/purchase/get/6",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"purchase",
+								"get",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Purchase",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/purchase/delete/6",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"purchase",
+								"delete",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "404 Not Found Tests",
+			"item": [
+				{
+					"name": "Get Non-Existent Realtor",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () { pm.response.to.have.status(404); });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/realtor/get/9999",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"realtor",
+								"get",
+								"9999"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Non-Existent Realtor",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () { pm.response.to.have.status(404); });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/realtor/delete/9999",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"realtor",
+								"delete",
+								"9999"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Non-Existent Customer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () { pm.response.to.have.status(404); });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/customer/get/9999",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"customer",
+								"get",
+								"9999"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Non-Existent Customer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () { pm.response.to.have.status(404); });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/customer/delete/9999",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"customer",
+								"delete",
+								"9999"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Non-Existent Home",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () { pm.response.to.have.status(404); });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/home/get/9999",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"home",
+								"get",
+								"9999"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Non-Existent Home",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () { pm.response.to.have.status(404); });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/home/delete/9999",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"home",
+								"delete",
+								"9999"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Non-Existent Purchase",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () { pm.response.to.have.status(404); });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/purchase/get/9999",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"purchase",
+								"get",
+								"9999"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Non-Existent Purchase",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () { pm.response.to.have.status(404); });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/purchase/delete/9999",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"purchase",
+								"delete",
+								"9999"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "400 Bad Request Tests",
+			"item": [
+				{
+					"name": "Create Realtor with Missing Fields",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () { pm.response.to.have.status(400); });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/realtor/create?firstName=Alice",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"realtor",
+								"create"
+							],
+							"query": [
+								{
+									"key": "firstName",
+									"value": "Alice"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Customer with Invalid SSN",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () { pm.response.to.have.status(400); });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/customer/create?firstName=Bob&lastName=Martin&ssn=INVALID&income=85000",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"customer",
+								"create"
+							],
+							"query": [
+								{
+									"key": "firstName",
+									"value": "Bob"
+								},
+								{
+									"key": "lastName",
+									"value": "Martin"
+								},
+								{
+									"key": "ssn",
+									"value": "INVALID"
+								},
+								{
+									"key": "income",
+									"value": "85000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Home with Negative Price",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () { pm.response.to.have.status(400); });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/home/create?address=202&street=ElmStreet&city=Metropolis&state=NY&price=-100000&squareFeet=2000",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"home",
+								"create"
+							],
+							"query": [
+								{
+									"key": "address",
+									"value": "202"
+								},
+								{
+									"key": "street",
+									"value": "ElmStreet"
+								},
+								{
+									"key": "city",
+									"value": "Metropolis"
+								},
+								{
+									"key": "state",
+									"value": "NY"
+								},
+								{
+									"key": "price",
+									"value": "-100000"
+								},
+								{
+									"key": "squareFeet",
+									"value": "2000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Purchase with Non-Existent Customer",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () { pm.response.to.have.status(400); });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/purchase/create?customerId=9999&realtorId=1&homeId=1&loan=250000&downPayment=50000",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"purchase",
+								"create"
+							],
+							"query": [
+								{
+									"key": "customerId",
+									"value": "9999"
+								},
+								{
+									"key": "realtorId",
+									"value": "1"
+								},
+								{
+									"key": "homeId",
+									"value": "1"
+								},
+								{
+									"key": "loan",
+									"value": "250000"
+								},
+								{
+									"key": "downPayment",
+									"value": "50000"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,335 @@
+{
+  "info": {
+    "name": "Real Estate API",
+    "_postman_id": "abcd1234-efgh-5678-ijkl-90mnopqrstuv",
+    "description": "Test Collection for Real Estate API with Create, Get, and Delete operations for Realtor, Customer, Home, and Purchase.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Realtor API",
+      "item": [
+        {
+          "name": "Create Realtor",
+          "request": {
+            "url": "http://localhost:8080/realtor/create?employeenum=6&firstName=John&lastName=Doe&commissionRate=0.05",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Realtor ID is 6', function () { pm.response.to.have.jsonBody('id', 6); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Realtor",
+          "request": {
+            "url": "http://localhost:8080/realtor/get/6",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Realtor data is returned correctly', function () { pm.response.to.have.jsonBody('id', 6); pm.response.to.have.jsonBody('firstName', 'John'); pm.response.to.have.jsonBody('lastName', 'Doe'); pm.response.to.have.jsonBody('commissionRate', 0.05); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Customer API",
+      "item": [
+        {
+          "name": "Create Customer",
+          "request": {
+            "url": "http://localhost:8080/customer/create?firstName=Jane&lastName=Smith&ssn=12-345-6789&income=55000",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Customer ID is 6', function () { pm.response.to.have.jsonBody('id', 6); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Customer",
+          "request": {
+            "url": "http://localhost:8080/customer/get/6",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Customer data is returned correctly', function () { pm.response.to.have.jsonBody('id', 6); pm.response.to.have.jsonBody('firstName', 'Jane'); pm.response.to.have.jsonBody('lastName', 'Smith'); pm.response.to.have.jsonBody('ssn', '12-345-6789'); pm.response.to.have.jsonBody('income', 55000); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Home API",
+      "item": [
+        {
+          "name": "Create Home",
+          "request": {
+            "url": "http://localhost:8080/home/create?address=1234&street=Main&city=SomeCity&state=CA&price=350000&squareFeet=2500",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Home ID is 6', function () { pm.response.to.have.jsonBody('id', 6); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Home",
+          "request": {
+            "url": "http://localhost:8080/home/get/6",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Home data is returned correctly', function () { pm.response.to.have.jsonBody('id', 6); pm.response.to.have.jsonBody('address', '1234'); pm.response.to.have.jsonBody('street', 'Main'); pm.response.to.have.jsonBody('city', 'SomeCity'); pm.response.to.have.jsonBody('state', 'CA'); pm.response.to.have.jsonBody('price', 350000); pm.response.to.have.jsonBody('squareFeet', 2500); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Purchase API",
+      "item": [
+        {
+          "name": "Create Purchase",
+          "request": {
+            "url": "http://localhost:8080/purchase/create?customerId=6&realtorId=6&homeId=6&loan=300000&downPayment=50000",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Purchase ID is 6', function () { pm.response.to.have.jsonBody('id', 6); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Purchase",
+          "request": {
+            "url": "http://localhost:8080/purchase/get/6",
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Purchase data is returned correctly', function () { pm.response.to.have.jsonBody('id', 6); pm.response.to.have.jsonBody('customerId', 6); pm.response.to.have.jsonBody('realtorId', 6); pm.response.to.have.jsonBody('homeId', 6); pm.response.to.have.jsonBody('loan', 300000); pm.response.to.have.jsonBody('downPayment', 50000); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Delete API",
+      "item": [
+        {
+          "name": "Delete Purchase",
+          "request": {
+            "url": "http://localhost:8080/purchase/delete/6",
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Purchase is deleted successfully', function () { pm.response.to.have.jsonBody('message', 'Purchase deleted successfully'); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Delete Realtor",
+          "request": {
+            "url": "http://localhost:8080/realtor/delete/6",
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Realtor is deleted successfully', function () { pm.response.to.have.jsonBody('message', 'Realtor deleted successfully'); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Delete Customer",
+          "request": {
+            "url": "http://localhost:8080/customer/delete/6",
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Customer is deleted successfully', function () { pm.response.to.have.jsonBody('message', 'Customer deleted successfully'); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Delete Home",
+          "request": {
+            "url": "http://localhost:8080/home/delete/6",
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Home is deleted successfully', function () { pm.response.to.have.jsonBody('message', 'Home deleted successfully'); });"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
