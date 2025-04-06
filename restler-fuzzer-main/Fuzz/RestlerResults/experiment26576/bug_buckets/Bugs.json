@@ -1,9 +1,0 @@
-{"bugs":[{
-    "filepath": "InvalidValueChecker_503_1.json",
-    "reproducible": true,
-    "checker_name": "InvalidValueChecker",
-    "error_code": "503"},{
-    "filepath": "InvalidValueChecker_503_2.json",
-    "reproducible": true,
-    "checker_name": "InvalidValueChecker",
-    "error_code": "503"}]}

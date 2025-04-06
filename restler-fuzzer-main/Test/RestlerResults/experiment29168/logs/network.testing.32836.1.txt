@@ -1,0 +1,572 @@
+
+Generation-1: Rendering Sequence-1
+
+	Request: 1 (Remaining candidate combinations: 2)
+	Request hash: 156ae1eebc2424515b9612adc4c363c8f36dc6a1
+
+		- restler_static_string: 'DELETE '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'realtor'
+		- restler_static_string: '/'
+		- restler_static_string: 'delete'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: localhost:8080\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2025-04-06 12:52:54.014: Sending: 'DELETE /realtor/delete/1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\nContent-Length: 0\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: b267e55b-39cb-4314-b8e5-0b9f050689c7\r\n\r\n'
+
+2025-04-06 12:52:54.046: Received: 'HTTP/1.1 204 \r\nDate: Sun, 06 Apr 2025 16:52:54 GMT\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-2
+
+	Request: 1 (Remaining candidate combinations: 2)
+	Request hash: 1c306955e12240bec9918d41c2b35d8941bf8234
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'realtor'
+		- restler_static_string: '/'
+		- restler_static_string: 'get'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: localhost:8080\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2025-04-06 12:52:54.056: Sending: 'GET /realtor/get/1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\nContent-Length: 0\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: f70496fe-e8e4-4c4d-9249-810fdb8577a2\r\n\r\n'
+
+2025-04-06 12:52:54.072: Received: 'HTTP/1.1 404 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 16:52:54 GMT\r\n\r\n6a\r\n{"error":"Not Found","message":"Realtor Not Found","timestamp":"2025-04-06T12:52:54.0709584","status":404}\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-2
+
+	Request: 1 (Remaining candidate combinations: 1)
+	Request hash: 1c306955e12240bec9918d41c2b35d8941bf8234
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'realtor'
+		- restler_static_string: '/'
+		- restler_static_string: 'get'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: localhost:8080\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2025-04-06 12:52:54.078: Sending: 'GET /realtor/get/1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\nContent-Length: 0\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 73c3dd71-82c0-494c-8378-78646f5b14bc\r\n\r\n'
+
+2025-04-06 12:52:54.091: Received: 'HTTP/1.1 404 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 16:52:54 GMT\r\n\r\n6a\r\n{"error":"Not Found","message":"Realtor Not Found","timestamp":"2025-04-06T12:52:54.0900618","status":404}\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-3
+
+	Request: 1 (Remaining candidate combinations: 2)
+	Request hash: 2f5eee9548eee1076757edc10da9706d355c956e
+
+		- restler_static_string: 'POST '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'customer'
+		- restler_static_string: '/'
+		- restler_static_string: 'create'
+		- restler_static_string: '?'
+		- restler_static_string: 'firstName='
+		- restler_fuzzable_string: 'fuzzstring'
+		- restler_static_string: '&'
+		- restler_static_string: 'lastName='
+		- restler_fuzzable_string: 'fuzzstring'
+		- restler_static_string: '&'
+		- restler_static_string: 'ssn='
+		- restler_fuzzable_string: 'fuzzstring'
+		- restler_static_string: '&'
+		- restler_static_string: 'income='
+		- restler_fuzzable_number: '1.23'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: localhost:8080\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2025-04-06 12:52:54.100: Sending: 'POST /customer/create?firstName=fuzzstring&lastName=fuzzstring&ssn=fuzzstring&income=1.23 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\nContent-Length: 0\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 7cc81d8f-896d-4646-b834-cef94a4a5e56\r\n\r\n'
+
+2025-04-06 12:52:54.135: Received: 'HTTP/1.1 400 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 16:52:54 GMT\r\nConnection: close\r\n\r\n6a\r\n{"timestamp":"2025-04-06T16:52:54.131+00:00","status":400,"error":"Bad Request","path":"/customer/create"}\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-3
+
+	Request: 1 (Remaining candidate combinations: 1)
+	Request hash: 2f5eee9548eee1076757edc10da9706d355c956e
+
+		- restler_static_string: 'POST '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'customer'
+		- restler_static_string: '/'
+		- restler_static_string: 'create'
+		- restler_static_string: '?'
+		- restler_static_string: 'firstName='
+		- restler_fuzzable_string: 'fuzzstring'
+		- restler_static_string: '&'
+		- restler_static_string: 'lastName='
+		- restler_fuzzable_string: 'fuzzstring'
+		- restler_static_string: '&'
+		- restler_static_string: 'ssn='
+		- restler_fuzzable_string: 'fuzzstring'
+		- restler_static_string: '&'
+		- restler_static_string: 'income='
+		- restler_fuzzable_number: '1.23'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: localhost:8080\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2025-04-06 12:52:54.142: Sending: 'POST /customer/create?firstName=fuzzstring&lastName=fuzzstring&ssn=fuzzstring&income=1.23 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\nContent-Length: 0\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 00043fd5-e594-464d-90d8-016df5fd6a18\r\n\r\n'
+
+2025-04-06 12:52:54.143: Empty response received.  Re-creating connection and re-trying.
+2025-04-06 12:52:54.144: Sending: 'POST /customer/create?firstName=fuzzstring&lastName=fuzzstring&ssn=fuzzstring&income=1.23 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\nContent-Length: 0\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 00043fd5-e594-464d-90d8-016df5fd6a18\r\n\r\n'
+
+2025-04-06 12:52:54.148: Received: 'HTTP/1.1 400 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 16:52:54 GMT\r\nConnection: close\r\n\r\n6a\r\n{"timestamp":"2025-04-06T16:52:54.147+00:00","status":400,"error":"Bad Request","path":"/customer/create"}\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-4
+
+	Request: 1 (Remaining candidate combinations: 2)
+	Request hash: 3e62e8768b05c60e2c5b1e52458b4cf10ac63b44
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'customer'
+		- restler_static_string: '/'
+		- restler_static_string: 'get'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: localhost:8080\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2025-04-06 12:52:54.155: Sending: 'GET /customer/get/1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\nContent-Length: 0\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 6f2cd89b-1599-4f79-88b7-a82e51e30721\r\n\r\n'
+
+2025-04-06 12:52:54.156: Empty response received.  Re-creating connection and re-trying.
+2025-04-06 12:52:54.157: Sending: 'GET /customer/get/1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\nContent-Length: 0\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 6f2cd89b-1599-4f79-88b7-a82e51e30721\r\n\r\n'
+
+2025-04-06 12:52:54.171: Received: 'HTTP/1.1 200 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 16:52:54 GMT\r\n\r\n51\r\n{"id":1,"firstName":"John","lastName":"Doe","ssn":"123-45-6789","income":50000.0}\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-5
+
+	Request: 1 (Remaining candidate combinations: 2)
+	Request hash: 686085bd33fe41a3e05febd886b13cc596775f13
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'home'
+		- restler_static_string: '/'
+		- restler_static_string: 'get'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: localhost:8080\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2025-04-06 12:52:54.179: Sending: 'GET /home/get/1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\nContent-Length: 0\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: d4d3596b-6948-4ad5-a68b-1ce240397db2\r\n\r\n'
+
+2025-04-06 12:52:54.194: Received: 'HTTP/1.1 200 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 16:52:54 GMT\r\n\r\n6c\r\n{"id":1,"address":1,"street":"Main St","city":"Springfield","state":"IL","price":250000.0,"squareFeet":1500}\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-6
+
+	Request: 1 (Remaining candidate combinations: 2)
+	Request hash: 69c66231419258f45d1e4e1de7197c48987902b6
+
+		- restler_static_string: 'DELETE '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'purchase'
+		- restler_static_string: '/'
+		- restler_static_string: 'delete'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: localhost:8080\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2025-04-06 12:52:54.202: Sending: 'DELETE /purchase/delete/1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\nContent-Length: 0\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 04049978-9c04-4697-b8d8-3d7d314bea7d\r\n\r\n'
+
+2025-04-06 12:52:54.223: Received: 'HTTP/1.1 404 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 16:52:54 GMT\r\n\r\n6b\r\n{"error":"Not Found","message":"Purchase Not Found","timestamp":"2025-04-06T12:52:54.2214498","status":404}\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-6
+
+	Request: 1 (Remaining candidate combinations: 1)
+	Request hash: 69c66231419258f45d1e4e1de7197c48987902b6
+
+		- restler_static_string: 'DELETE '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'purchase'
+		- restler_static_string: '/'
+		- restler_static_string: 'delete'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: localhost:8080\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2025-04-06 12:52:54.229: Sending: 'DELETE /purchase/delete/1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\nContent-Length: 0\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 27cb9039-cc4e-43cb-987c-956930ebc849\r\n\r\n'
+
+2025-04-06 12:52:54.249: Received: 'HTTP/1.1 404 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 16:52:54 GMT\r\n\r\n6b\r\n{"error":"Not Found","message":"Purchase Not Found","timestamp":"2025-04-06T12:52:54.2489164","status":404}\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-7
+
+	Request: 1 (Remaining candidate combinations: 2)
+	Request hash: 7e436fbcce462ef0f7211688711bc463d384cebf
+
+		- restler_static_string: 'POST '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'home'
+		- restler_static_string: '/'
+		- restler_static_string: 'create'
+		- restler_static_string: '?'
+		- restler_static_string: 'address='
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '&'
+		- restler_static_string: 'street='
+		- restler_fuzzable_string: 'fuzzstring'
+		- restler_static_string: '&'
+		- restler_static_string: 'city='
+		- restler_fuzzable_string: 'fuzzstring'
+		- restler_static_string: '&'
+		- restler_static_string: 'state='
+		- restler_fuzzable_string: 'fuzzstring'
+		- restler_static_string: '&'
+		- restler_static_string: 'price='
+		- restler_fuzzable_number: '1.23'
+		- restler_static_string: '&'
+		- restler_static_string: 'squareFeet='
+		- restler_fuzzable_int: '1'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: localhost:8080\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2025-04-06 12:52:54.258: Sending: 'POST /home/create?address=1&street=fuzzstring&city=fuzzstring&state=fuzzstring&price=1.23&squareFeet=1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\nContent-Length: 0\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 4e318ede-9c44-4fff-a7da-b5120623e0cc\r\n\r\n'
+
+2025-04-06 12:52:54.262: Received: 'HTTP/1.1 400 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 16:52:54 GMT\r\nConnection: close\r\n\r\n66\r\n{"timestamp":"2025-04-06T16:52:54.262+00:00","status":400,"error":"Bad Request","path":"/home/create"}\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-7
+
+	Request: 1 (Remaining candidate combinations: 1)
+	Request hash: 7e436fbcce462ef0f7211688711bc463d384cebf
+
+		- restler_static_string: 'POST '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'home'
+		- restler_static_string: '/'
+		- restler_static_string: 'create'
+		- restler_static_string: '?'
+		- restler_static_string: 'address='
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '&'
+		- restler_static_string: 'street='
+		- restler_fuzzable_string: 'fuzzstring'
+		- restler_static_string: '&'
+		- restler_static_string: 'city='
+		- restler_fuzzable_string: 'fuzzstring'
+		- restler_static_string: '&'
+		- restler_static_string: 'state='
+		- restler_fuzzable_string: 'fuzzstring'
+		- restler_static_string: '&'
+		- restler_static_string: 'price='
+		- restler_fuzzable_number: '1.23'
+		- restler_static_string: '&'
+		- restler_static_string: 'squareFeet='
+		- restler_fuzzable_int: '1'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: localhost:8080\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2025-04-06 12:52:54.270: Sending: 'POST /home/create?address=1&street=fuzzstring&city=fuzzstring&state=fuzzstring&price=1.23&squareFeet=1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\nContent-Length: 0\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 1c755e14-03ab-41ff-8ff6-f6ba55927252\r\n\r\n'
+
+2025-04-06 12:52:54.271: Empty response received.  Re-creating connection and re-trying.
+2025-04-06 12:52:54.273: Sending: 'POST /home/create?address=1&street=fuzzstring&city=fuzzstring&state=fuzzstring&price=1.23&squareFeet=1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\nContent-Length: 0\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 1c755e14-03ab-41ff-8ff6-f6ba55927252\r\n\r\n'
+
+2025-04-06 12:52:54.278: Received: 'HTTP/1.1 400 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 16:52:54 GMT\r\nConnection: close\r\n\r\n66\r\n{"timestamp":"2025-04-06T16:52:54.277+00:00","status":400,"error":"Bad Request","path":"/home/create"}\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-8
+
+	Request: 1 (Remaining candidate combinations: 2)
+	Request hash: 97195992896dca5b73a3b97108de090ffba7ac8d
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'purchase'
+		- restler_static_string: '/'
+		- restler_static_string: 'get'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: localhost:8080\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2025-04-06 12:52:54.288: Sending: 'GET /purchase/get/1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\nContent-Length: 0\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: dd519372-b441-418e-b834-fd0de77e26e2\r\n\r\n'
+
+2025-04-06 12:52:54.290: Empty response received.  Re-creating connection and re-trying.
+2025-04-06 12:52:54.291: Sending: 'GET /purchase/get/1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\nContent-Length: 0\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: dd519372-b441-418e-b834-fd0de77e26e2\r\n\r\n'
+
+2025-04-06 12:52:54.304: Received: 'HTTP/1.1 404 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 16:52:54 GMT\r\n\r\n6b\r\n{"error":"Not Found","message":"Purchase Not Found","timestamp":"2025-04-06T12:52:54.3030973","status":404}\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-8
+
+	Request: 1 (Remaining candidate combinations: 1)
+	Request hash: 97195992896dca5b73a3b97108de090ffba7ac8d
+
+		- restler_static_string: 'GET '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'purchase'
+		- restler_static_string: '/'
+		- restler_static_string: 'get'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: localhost:8080\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2025-04-06 12:52:54.309: Sending: 'GET /purchase/get/1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\nContent-Length: 0\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 6eea0cf0-60ad-4dcb-9ee6-04b3b0a80a3b\r\n\r\n'
+
+2025-04-06 12:52:54.322: Received: 'HTTP/1.1 404 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 16:52:54 GMT\r\n\r\n6b\r\n{"error":"Not Found","message":"Purchase Not Found","timestamp":"2025-04-06T12:52:54.3215199","status":404}\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-9
+
+	Request: 1 (Remaining candidate combinations: 2)
+	Request hash: b4ff73ea9ad098359baefa2d6809db17d896b96e
+
+		- restler_static_string: 'DELETE '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'home'
+		- restler_static_string: '/'
+		- restler_static_string: 'delete'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: localhost:8080\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2025-04-06 12:52:54.331: Sending: 'DELETE /home/delete/1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\nContent-Length: 0\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: d47061b2-1544-4753-95f2-fbe99846ea3a\r\n\r\n'
+
+2025-04-06 12:52:54.354: Received: 'HTTP/1.1 204 \r\nDate: Sun, 06 Apr 2025 16:52:54 GMT\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-10
+
+	Request: 1 (Remaining candidate combinations: 2)
+	Request hash: c0cbe9f5c5d62a1b96efc6aa0d740a9255cc4a65
+
+		- restler_static_string: 'DELETE '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'customer'
+		- restler_static_string: '/'
+		- restler_static_string: 'delete'
+		- restler_static_string: '/'
+		- restler_fuzzable_int: '1'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: localhost:8080\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2025-04-06 12:52:54.362: Sending: 'DELETE /customer/delete/1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\nContent-Length: 0\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 1564f86e-7d97-4d6e-ad63-6bc8bf4a1cdc\r\n\r\n'
+
+2025-04-06 12:52:54.385: Received: 'HTTP/1.1 204 \r\nDate: Sun, 06 Apr 2025 16:52:54 GMT\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-11
+
+	Request: 1 (Remaining candidate combinations: 2)
+	Request hash: ce0f3631ee3582c32b4cca941b4071d82516fff1
+
+		- restler_static_string: 'POST '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'realtor'
+		- restler_static_string: '/'
+		- restler_static_string: 'create'
+		- restler_static_string: '?'
+		- restler_static_string: 'employeenum='
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '&'
+		- restler_static_string: 'firstName='
+		- restler_fuzzable_string: 'fuzzstring'
+		- restler_static_string: '&'
+		- restler_static_string: 'lastName='
+		- restler_fuzzable_string: 'fuzzstring'
+		- restler_static_string: '&'
+		- restler_static_string: 'commissionRate='
+		- restler_fuzzable_number: '1.23'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: localhost:8080\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2025-04-06 12:52:54.392: Sending: 'POST /realtor/create?employeenum=1&firstName=fuzzstring&lastName=fuzzstring&commissionRate=1.23 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\nContent-Length: 0\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 43a43f39-ae44-447d-9f0d-c41a95ebf2fd\r\n\r\n'
+
+2025-04-06 12:52:54.395: Received: 'HTTP/1.1 400 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 16:52:54 GMT\r\nConnection: close\r\n\r\n69\r\n{"timestamp":"2025-04-06T16:52:54.395+00:00","status":400,"error":"Bad Request","path":"/realtor/create"}\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-11
+
+	Request: 1 (Remaining candidate combinations: 1)
+	Request hash: ce0f3631ee3582c32b4cca941b4071d82516fff1
+
+		- restler_static_string: 'POST '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'realtor'
+		- restler_static_string: '/'
+		- restler_static_string: 'create'
+		- restler_static_string: '?'
+		- restler_static_string: 'employeenum='
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '&'
+		- restler_static_string: 'firstName='
+		- restler_fuzzable_string: 'fuzzstring'
+		- restler_static_string: '&'
+		- restler_static_string: 'lastName='
+		- restler_fuzzable_string: 'fuzzstring'
+		- restler_static_string: '&'
+		- restler_static_string: 'commissionRate='
+		- restler_fuzzable_number: '1.23'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: localhost:8080\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2025-04-06 12:52:54.401: Sending: 'POST /realtor/create?employeenum=1&firstName=fuzzstring&lastName=fuzzstring&commissionRate=1.23 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\nContent-Length: 0\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: f84ad363-2d57-42cd-b21b-2657aef1d2d4\r\n\r\n'
+
+2025-04-06 12:52:54.402: Empty response received.  Re-creating connection and re-trying.
+2025-04-06 12:52:54.403: Sending: 'POST /realtor/create?employeenum=1&firstName=fuzzstring&lastName=fuzzstring&commissionRate=1.23 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\nContent-Length: 0\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: f84ad363-2d57-42cd-b21b-2657aef1d2d4\r\n\r\n'
+
+2025-04-06 12:52:54.407: Received: 'HTTP/1.1 400 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 16:52:54 GMT\r\nConnection: close\r\n\r\n69\r\n{"timestamp":"2025-04-06T16:52:54.407+00:00","status":400,"error":"Bad Request","path":"/realtor/create"}\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-12
+
+	Request: 1 (Remaining candidate combinations: 2)
+	Request hash: d11558dd093aba5c0743136491d060c2cba54775
+
+		- restler_static_string: 'POST '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'purchase'
+		- restler_static_string: '/'
+		- restler_static_string: 'create'
+		- restler_static_string: '?'
+		- restler_static_string: 'customerId='
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '&'
+		- restler_static_string: 'realtorId='
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '&'
+		- restler_static_string: 'homeId='
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '&'
+		- restler_static_string: 'loan='
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '&'
+		- restler_static_string: 'downPayment='
+		- restler_fuzzable_int: '1'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: localhost:8080\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2025-04-06 12:52:54.418: Sending: 'POST /purchase/create?customerId=1&realtorId=1&homeId=1&loan=1&downPayment=1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\nContent-Length: 0\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 06533602-c391-4f60-a263-806567a9be24\r\n\r\n'
+
+2025-04-06 12:52:54.419: Empty response received.  Re-creating connection and re-trying.
+2025-04-06 12:52:54.421: Sending: 'POST /purchase/create?customerId=1&realtorId=1&homeId=1&loan=1&downPayment=1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\nContent-Length: 0\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 06533602-c391-4f60-a263-806567a9be24\r\n\r\n'
+
+2025-04-06 12:52:54.431: Received: 'HTTP/1.1 404 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 16:52:54 GMT\r\n\r\n6a\r\n{"error":"Not Found","message":"Realtor Not Found","timestamp":"2025-04-06T12:52:54.4306952","status":404}\r\n0\r\n\r\n'
+
+
+Generation-1: Rendering Sequence-12
+
+	Request: 1 (Remaining candidate combinations: 1)
+	Request hash: d11558dd093aba5c0743136491d060c2cba54775
+
+		- restler_static_string: 'POST '
+		- restler_static_string: ''
+		- restler_static_string: '/'
+		- restler_static_string: 'purchase'
+		- restler_static_string: '/'
+		- restler_static_string: 'create'
+		- restler_static_string: '?'
+		- restler_static_string: 'customerId='
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '&'
+		- restler_static_string: 'realtorId='
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '&'
+		- restler_static_string: 'homeId='
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '&'
+		- restler_static_string: 'loan='
+		- restler_fuzzable_int: '1'
+		- restler_static_string: '&'
+		- restler_static_string: 'downPayment='
+		- restler_fuzzable_int: '1'
+		- restler_static_string: ' HTTP/1.1\r\n'
+		- restler_static_string: 'Accept: application/json\r\n'
+		- restler_static_string: 'Host: localhost:8080\r\n'
+		+ restler_refreshable_authentication_token: [token_auth_method, token_refresh_interval, ...]
+		- restler_static_string: '\r\n'
+
+2025-04-06 12:52:54.438: Sending: 'POST /purchase/create?customerId=1&realtorId=1&homeId=1&loan=1&downPayment=1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\nContent-Length: 0\r\nUser-Agent: restler/9.3.1\r\nx-restler-sequence-id: 94a4ecc4-3a0d-4fbb-8352-ab181dfc994b\r\n\r\n'
+
+2025-04-06 12:52:54.448: Received: 'HTTP/1.1 404 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 16:52:54 GMT\r\n\r\n69\r\n{"error":"Not Found","message":"Realtor Not Found","timestamp":"2025-04-06T12:52:54.447767","status":404}\r\n0\r\n\r\n'
+

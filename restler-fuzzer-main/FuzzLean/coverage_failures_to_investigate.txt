@@ -15,13 +15,13 @@ Number of blocked dependent requests: 0
 	+++ Combination 1 +++:
 	Request sequence: 
 	> GET /realtor/get/1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\n\r\n
-	< HTTP/1.1 404 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 15:43:37 GMT\r\n\r\n6a\r\n{"error":"Not Found","message":"Realtor Not Found","timestamp":"2025-04-06T11:43:37.7522186","status":404}\r\n0\r\n\r\n
+	< HTTP/1.1 404 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 16:53:57 GMT\r\n\r\n6a\r\n{"error":"Not Found","message":"Realtor Not Found","timestamp":"2025-04-06T12:53:57.1807378","status":404}\r\n0\r\n\r\n
 
 
 	+++ Combination 2 +++:
 	Request sequence: 
 	> GET /realtor/get/1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\n\r\n
-	< HTTP/1.1 404 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 15:43:38 GMT\r\n\r\n6a\r\n{"error":"Not Found","message":"Realtor Not Found","timestamp":"2025-04-06T11:43:38.4466743","status":404}\r\n0\r\n\r\n
+	< HTTP/1.1 404 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 16:53:57 GMT\r\n\r\n6a\r\n{"error":"Not Found","message":"Realtor Not Found","timestamp":"2025-04-06T12:53:57.9417248","status":404}\r\n0\r\n\r\n
 
 
 -----------------------------------------------
@@ -31,13 +31,13 @@ Number of blocked dependent requests: 0
 	+++ Combination 1 +++:
 	Request sequence: 
 	> POST /customer/create?firstName=fuzzstring&lastName=fuzzstring&ssn=fuzzstring&income=1.23 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\n\r\n
-	< HTTP/1.1 400 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 15:43:38 GMT\r\nConnection: close\r\n\r\n6a\r\n{"timestamp":"2025-04-06T15:43:38.545+00:00","status":400,"error":"Bad Request","path":"/customer/create"}\r\n0\r\n\r\n
+	< HTTP/1.1 400 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 16:53:57 GMT\r\nConnection: close\r\n\r\n6a\r\n{"timestamp":"2025-04-06T16:53:57.976+00:00","status":400,"error":"Bad Request","path":"/customer/create"}\r\n0\r\n\r\n
 
 
 	+++ Combination 2 +++:
 	Request sequence: 
 	> POST /customer/create?firstName=fuzzstring&lastName=fuzzstring&ssn=fuzzstring&income=1.23 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\n\r\n
-	< HTTP/1.1 400 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 15:43:40 GMT\r\nConnection: close\r\n\r\n6a\r\n{"timestamp":"2025-04-06T15:43:40.457+00:00","status":400,"error":"Bad Request","path":"/customer/create"}\r\n0\r\n\r\n
+	< HTTP/1.1 400 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 16:54:00 GMT\r\nConnection: close\r\n\r\n6a\r\n{"timestamp":"2025-04-06T16:54:00.237+00:00","status":400,"error":"Bad Request","path":"/customer/create"}\r\n0\r\n\r\n
 
 
 -----------------------------------------------
@@ -47,13 +47,13 @@ Number of blocked dependent requests: 0
 	+++ Combination 1 +++:
 	Request sequence: 
 	> DELETE /purchase/delete/1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\n\r\n
-	< HTTP/1.1 404 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 15:43:43 GMT\r\n\r\n6b\r\n{"error":"Not Found","message":"Purchase Not Found","timestamp":"2025-04-06T11:43:43.3995232","status":404}\r\n0\r\n\r\n
+	< HTTP/1.1 404 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 16:54:03 GMT\r\n\r\n6b\r\n{"error":"Not Found","message":"Purchase Not Found","timestamp":"2025-04-06T12:54:03.4480762","status":404}\r\n0\r\n\r\n
 
 
 	+++ Combination 2 +++:
 	Request sequence: 
 	> DELETE /purchase/delete/1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\n\r\n
-	< HTTP/1.1 404 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 15:43:44 GMT\r\n\r\n6b\r\n{"error":"Not Found","message":"Purchase Not Found","timestamp":"2025-04-06T11:43:44.1856631","status":404}\r\n0\r\n\r\n
+	< HTTP/1.1 404 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 16:54:04 GMT\r\n\r\n6b\r\n{"error":"Not Found","message":"Purchase Not Found","timestamp":"2025-04-06T12:54:04.3845294","status":404}\r\n0\r\n\r\n
 
 
 -----------------------------------------------
@@ -63,13 +63,13 @@ Number of blocked dependent requests: 0
 	+++ Combination 1 +++:
 	Request sequence: 
 	> POST /home/create?address=1&street=fuzzstring&city=fuzzstring&state=fuzzstring&price=1.23&squareFeet=1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\n\r\n
-	< HTTP/1.1 400 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 15:43:44 GMT\r\nConnection: close\r\n\r\n66\r\n{"timestamp":"2025-04-06T15:43:44.215+00:00","status":400,"error":"Bad Request","path":"/home/create"}\r\n0\r\n\r\n
+	< HTTP/1.1 400 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 16:54:04 GMT\r\nConnection: close\r\n\r\n66\r\n{"timestamp":"2025-04-06T16:54:04.416+00:00","status":400,"error":"Bad Request","path":"/home/create"}\r\n0\r\n\r\n
 
 
 	+++ Combination 2 +++:
 	Request sequence: 
 	> POST /home/create?address=1&street=fuzzstring&city=fuzzstring&state=fuzzstring&price=1.23&squareFeet=1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\n\r\n
-	< HTTP/1.1 400 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 15:43:46 GMT\r\nConnection: close\r\n\r\n66\r\n{"timestamp":"2025-04-06T15:43:46.705+00:00","status":400,"error":"Bad Request","path":"/home/create"}\r\n0\r\n\r\n
+	< HTTP/1.1 400 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 16:54:07 GMT\r\nConnection: close\r\n\r\n66\r\n{"timestamp":"2025-04-06T16:54:07.195+00:00","status":400,"error":"Bad Request","path":"/home/create"}\r\n0\r\n\r\n
 
 
 -----------------------------------------------
@@ -79,13 +79,13 @@ Number of blocked dependent requests: 0
 	+++ Combination 1 +++:
 	Request sequence: 
 	> GET /purchase/get/1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\n\r\n
-	< HTTP/1.1 404 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 15:43:49 GMT\r\n\r\n6b\r\n{"error":"Not Found","message":"Purchase Not Found","timestamp":"2025-04-06T11:43:49.2452214","status":404}\r\n0\r\n\r\n
+	< HTTP/1.1 404 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 16:54:09 GMT\r\n\r\n6b\r\n{"error":"Not Found","message":"Purchase Not Found","timestamp":"2025-04-06T12:54:09.9473416","status":404}\r\n0\r\n\r\n
 
 
 	+++ Combination 2 +++:
 	Request sequence: 
 	> GET /purchase/get/1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\n\r\n
-	< HTTP/1.1 404 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 15:43:49 GMT\r\n\r\n6b\r\n{"error":"Not Found","message":"Purchase Not Found","timestamp":"2025-04-06T11:43:49.8362728","status":404}\r\n0\r\n\r\n
+	< HTTP/1.1 404 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 16:54:10 GMT\r\n\r\n6b\r\n{"error":"Not Found","message":"Purchase Not Found","timestamp":"2025-04-06T12:54:10.6226531","status":404}\r\n0\r\n\r\n
 
 
 -----------------------------------------------
@@ -95,13 +95,13 @@ Number of blocked dependent requests: 0
 	+++ Combination 1 +++:
 	Request sequence: 
 	> POST /realtor/create?employeenum=1&firstName=fuzzstring&lastName=fuzzstring&commissionRate=1.23 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\n\r\n
-	< HTTP/1.1 400 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 15:43:51 GMT\r\nConnection: close\r\n\r\n69\r\n{"timestamp":"2025-04-06T15:43:51.411+00:00","status":400,"error":"Bad Request","path":"/realtor/create"}\r\n0\r\n\r\n
+	< HTTP/1.1 400 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 16:54:12 GMT\r\nConnection: close\r\n\r\n69\r\n{"timestamp":"2025-04-06T16:54:12.313+00:00","status":400,"error":"Bad Request","path":"/realtor/create"}\r\n0\r\n\r\n
 
 
 	+++ Combination 2 +++:
 	Request sequence: 
 	> POST /realtor/create?employeenum=1&firstName=fuzzstring&lastName=fuzzstring&commissionRate=1.23 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\n\r\n
-	< HTTP/1.1 400 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 15:43:52 GMT\r\nConnection: close\r\n\r\n69\r\n{"timestamp":"2025-04-06T15:43:52.998+00:00","status":400,"error":"Bad Request","path":"/realtor/create"}\r\n0\r\n\r\n
+	< HTTP/1.1 400 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 16:54:14 GMT\r\nConnection: close\r\n\r\n69\r\n{"timestamp":"2025-04-06T16:54:14.061+00:00","status":400,"error":"Bad Request","path":"/realtor/create"}\r\n0\r\n\r\n
 
 
 -----------------------------------------------
@@ -111,12 +111,12 @@ Number of blocked dependent requests: 0
 	+++ Combination 1 +++:
 	Request sequence: 
 	> POST /purchase/create?customerId=1&realtorId=1&homeId=1&loan=1&downPayment=1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\n\r\n
-	< HTTP/1.1 404 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 15:43:54 GMT\r\n\r\n6a\r\n{"error":"Not Found","message":"Realtor Not Found","timestamp":"2025-04-06T11:43:54.6244609","status":404}\r\n0\r\n\r\n
+	< HTTP/1.1 404 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 16:54:15 GMT\r\n\r\n6a\r\n{"error":"Not Found","message":"Realtor Not Found","timestamp":"2025-04-06T12:54:15.8607232","status":404}\r\n0\r\n\r\n
 
 
 	+++ Combination 2 +++:
 	Request sequence: 
 	> POST /purchase/create?customerId=1&realtorId=1&homeId=1&loan=1&downPayment=1 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\n\r\n
-	< HTTP/1.1 404 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 15:43:57 GMT\r\n\r\n6a\r\n{"error":"Not Found","message":"Realtor Not Found","timestamp":"2025-04-06T11:43:57.4035031","status":404}\r\n0\r\n\r\n
+	< HTTP/1.1 404 \r\nContent-Type: application/json\r\nTransfer-Encoding: chunked\r\nDate: Sun, 06 Apr 2025 16:54:18 GMT\r\n\r\n6a\r\n{"error":"Not Found","message":"Realtor Not Found","timestamp":"2025-04-06T12:54:18.8678488","status":404}\r\n0\r\n\r\n
 
 

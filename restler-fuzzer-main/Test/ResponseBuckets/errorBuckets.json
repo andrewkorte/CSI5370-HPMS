@@ -1,28 +1,7 @@
 {
   "0": {},
   "400": {
-    "261dc3b9-85d7-4fa6-866f-e9b2e8b1f270": [
-      {
-        "request": {
-          "RequestData": {
-            "method": "POST",
-            "path": "/customer/create",
-            "query": "firstName=fuzzstring&income=1.23&lastName=fuzzstring&ssn=fuzzstring",
-            "body": ""
-          }
-        },
-        "response": {
-          "ResponseData": {
-            "code": 400,
-            "codeDescription": "",
-            "content": "6a\r\n{\"timestamp\":\"2025-04-06T15:38:38.292+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/customer/create\"}\r\n0\r\n\r\n",
-            "isFailure": true,
-            "isBug": false
-          }
-        }
-      }
-    ],
-    "31310d94-0910-44ec-af2e-cb3b7a7c1bfc": [
+    "01ca7c72-ca5f-4594-89b8-46a5de3f8f4d": [
       {
         "request": {
           "RequestData": {
@@ -36,35 +15,14 @@
           "ResponseData": {
             "code": 400,
             "codeDescription": "",
-            "content": "69\r\n{\"timestamp\":\"2025-04-06T15:38:38.522+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/realtor/create\"}\r\n0\r\n\r\n",
+            "content": "69\r\n{\"timestamp\":\"2025-04-06T16:52:54.407+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/realtor/create\"}\r\n0\r\n\r\n",
             "isFailure": true,
             "isBug": false
           }
         }
       }
     ],
-    "572976fa-77ef-4e46-a846-491d6e219568": [
-      {
-        "request": {
-          "RequestData": {
-            "method": "POST",
-            "path": "/home/create",
-            "query": "address=1&city=fuzzstring&price=1.23&squareFeet=1&state=fuzzstring&street=fuzzstring",
-            "body": ""
-          }
-        },
-        "response": {
-          "ResponseData": {
-            "code": 400,
-            "codeDescription": "",
-            "content": "66\r\n{\"timestamp\":\"2025-04-06T15:38:38.418+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/home/create\"}\r\n0\r\n\r\n",
-            "isFailure": true,
-            "isBug": false
-          }
-        }
-      }
-    ],
-    "5a0bf1a2-1d3a-43ff-a6e6-723b666ecc1a": [
+    "271b3599-b9d0-4277-a59b-dd2bbe9f6058": [
       {
         "request": {
           "RequestData": {
@@ -78,20 +36,20 @@
           "ResponseData": {
             "code": 400,
             "codeDescription": "",
-            "content": "6a\r\n{\"timestamp\":\"2025-04-06T15:38:38.305+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/customer/create\"}\r\n0\r\n\r\n",
+            "content": "6a\r\n{\"timestamp\":\"2025-04-06T16:52:54.147+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/customer/create\"}\r\n0\r\n\r\n",
             "isFailure": true,
             "isBug": false
           }
         }
       }
     ],
-    "667173bf-c527-42db-8b75-bbc2b247fa8a": [
+    "68c776c2-9c93-4a77-b30f-8b95f6c26e10": [
       {
         "request": {
           "RequestData": {
             "method": "POST",
-            "path": "/home/create",
-            "query": "address=1&city=fuzzstring&price=1.23&squareFeet=1&state=fuzzstring&street=fuzzstring",
+            "path": "/customer/create",
+            "query": "firstName=fuzzstring&income=1.23&lastName=fuzzstring&ssn=fuzzstring",
             "body": ""
           }
         },
@@ -99,14 +57,14 @@
           "ResponseData": {
             "code": 400,
             "codeDescription": "",
-            "content": "66\r\n{\"timestamp\":\"2025-04-06T15:38:38.407+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/home/create\"}\r\n0\r\n\r\n",
+            "content": "6a\r\n{\"timestamp\":\"2025-04-06T16:52:54.131+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/customer/create\"}\r\n0\r\n\r\n",
             "isFailure": true,
             "isBug": false
           }
         }
       }
     ],
-    "8072fed2-e20f-4482-a7ba-911126d7b98a": [
+    "9ee7a3b2-9454-4e8f-8a3f-7614120d8ebd": [
       {
         "request": {
           "RequestData": {
@@ -120,7 +78,49 @@
           "ResponseData": {
             "code": 400,
             "codeDescription": "",
-            "content": "69\r\n{\"timestamp\":\"2025-04-06T15:38:38.510+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/realtor/create\"}\r\n0\r\n\r\n",
+            "content": "69\r\n{\"timestamp\":\"2025-04-06T16:52:54.395+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/realtor/create\"}\r\n0\r\n\r\n",
+            "isFailure": true,
+            "isBug": false
+          }
+        }
+      }
+    ],
+    "ba4c81f0-e34e-4c29-a1a1-51d2f2da5a71": [
+      {
+        "request": {
+          "RequestData": {
+            "method": "POST",
+            "path": "/home/create",
+            "query": "address=1&city=fuzzstring&price=1.23&squareFeet=1&state=fuzzstring&street=fuzzstring",
+            "body": ""
+          }
+        },
+        "response": {
+          "ResponseData": {
+            "code": 400,
+            "codeDescription": "",
+            "content": "66\r\n{\"timestamp\":\"2025-04-06T16:52:54.262+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/home/create\"}\r\n0\r\n\r\n",
+            "isFailure": true,
+            "isBug": false
+          }
+        }
+      }
+    ],
+    "e42a1c29-eaf0-4ed3-a4cb-3b1c0e2433d5": [
+      {
+        "request": {
+          "RequestData": {
+            "method": "POST",
+            "path": "/home/create",
+            "query": "address=1&city=fuzzstring&price=1.23&squareFeet=1&state=fuzzstring&street=fuzzstring",
+            "body": ""
+          }
+        },
+        "response": {
+          "ResponseData": {
+            "code": 400,
+            "codeDescription": "",
+            "content": "66\r\n{\"timestamp\":\"2025-04-06T16:52:54.277+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/home/create\"}\r\n0\r\n\r\n",
             "isFailure": true,
             "isBug": false
           }
@@ -129,13 +129,13 @@
     ]
   },
   "404": {
-    "1dba5168-4878-4ddd-b332-66931adf711a": [
+    "b7f50a59-7694-4705-9fb6-f289b3f21969": [
       {
         "request": {
           "RequestData": {
-            "method": "GET",
-            "path": "/purchase/get/1",
-            "query": "",
+            "method": "POST",
+            "path": "/purchase/create",
+            "query": "customerId=1&downPayment=1&homeId=1&loan=1&realtorId=1",
             "body": ""
           }
         },
@@ -143,7 +143,26 @@
           "ResponseData": {
             "code": 404,
             "codeDescription": "",
-            "content": "6a\r\n{\"error\":\"Not Found\",\"message\":\"Purchase Not Found\",\"timestamp\":\"2025-04-06T11:38:38.454713\",\"status\":404}\r\n0\r\n\r\n",
+            "content": "69\r\n{\"error\":\"Not Found\",\"message\":\"Realtor Not Found\",\"timestamp\":\"2025-04-06T12:52:54.447767\",\"status\":404}\r\n0\r\n\r\n",
+            "isFailure": true,
+            "isBug": false
+          }
+        }
+      },
+      {
+        "request": {
+          "RequestData": {
+            "method": "POST",
+            "path": "/purchase/create",
+            "query": "customerId=1&downPayment=1&homeId=1&loan=1&realtorId=1",
+            "body": ""
+          }
+        },
+        "response": {
+          "ResponseData": {
+            "code": 404,
+            "codeDescription": "",
+            "content": "6a\r\n{\"error\":\"Not Found\",\"message\":\"Realtor Not Found\",\"timestamp\":\"2025-04-06T12:52:54.4306952\",\"status\":404}\r\n0\r\n\r\n",
             "isFailure": true,
             "isBug": false
           }
@@ -153,7 +172,7 @@
         "request": {
           "RequestData": {
             "method": "GET",
-            "path": "/purchase/get/1",
+            "path": "/realtor/get/1",
             "query": "",
             "body": ""
           }
@@ -162,7 +181,7 @@
           "ResponseData": {
             "code": 404,
             "codeDescription": "",
-            "content": "6b\r\n{\"error\":\"Not Found\",\"message\":\"Purchase Not Found\",\"timestamp\":\"2025-04-06T11:38:38.4386942\",\"status\":404}\r\n0\r\n\r\n",
+            "content": "6a\r\n{\"error\":\"Not Found\",\"message\":\"Realtor Not Found\",\"timestamp\":\"2025-04-06T12:52:54.0900618\",\"status\":404}\r\n0\r\n\r\n",
             "isFailure": true,
             "isBug": false
           }
@@ -171,8 +190,8 @@
       {
         "request": {
           "RequestData": {
-            "method": "DELETE",
-            "path": "/purchase/delete/1",
+            "method": "GET",
+            "path": "/realtor/get/1",
             "query": "",
             "body": ""
           }
@@ -181,39 +200,20 @@
           "ResponseData": {
             "code": 404,
             "codeDescription": "",
-            "content": "6b\r\n{\"error\":\"Not Found\",\"message\":\"Purchase Not Found\",\"timestamp\":\"2025-04-06T11:38:38.3931688\",\"status\":404}\r\n0\r\n\r\n",
-            "isFailure": true,
-            "isBug": false
-          }
-        }
-      },
-      {
-        "request": {
-          "RequestData": {
-            "method": "DELETE",
-            "path": "/purchase/delete/1",
-            "query": "",
-            "body": ""
-          }
-        },
-        "response": {
-          "ResponseData": {
-            "code": 404,
-            "codeDescription": "",
-            "content": "6b\r\n{\"error\":\"Not Found\",\"message\":\"Purchase Not Found\",\"timestamp\":\"2025-04-06T11:38:38.3694142\",\"status\":404}\r\n0\r\n\r\n",
+            "content": "6a\r\n{\"error\":\"Not Found\",\"message\":\"Realtor Not Found\",\"timestamp\":\"2025-04-06T12:52:54.0709584\",\"status\":404}\r\n0\r\n\r\n",
             "isFailure": true,
             "isBug": false
           }
         }
       }
     ],
-    "8f3c1b44-748a-4401-bbd2-4da93e1ee4ab": [
+    "cc9f60ad-a908-4f73-9797-9b7a5f1e7779": [
       {
         "request": {
           "RequestData": {
-            "method": "POST",
-            "path": "/purchase/create",
-            "query": "customerId=1&downPayment=1&homeId=1&loan=1&realtorId=1",
+            "method": "GET",
+            "path": "/purchase/get/1",
+            "query": "",
             "body": ""
           }
         },
@@ -221,26 +221,7 @@
           "ResponseData": {
             "code": 404,
             "codeDescription": "",
-            "content": "6a\r\n{\"error\":\"Not Found\",\"message\":\"Realtor Not Found\",\"timestamp\":\"2025-04-06T11:38:38.5580989\",\"status\":404}\r\n0\r\n\r\n",
-            "isFailure": true,
-            "isBug": false
-          }
-        }
-      },
-      {
-        "request": {
-          "RequestData": {
-            "method": "POST",
-            "path": "/purchase/create",
-            "query": "customerId=1&downPayment=1&homeId=1&loan=1&realtorId=1",
-            "body": ""
-          }
-        },
-        "response": {
-          "ResponseData": {
-            "code": 404,
-            "codeDescription": "",
-            "content": "6a\r\n{\"error\":\"Not Found\",\"message\":\"Realtor Not Found\",\"timestamp\":\"2025-04-06T11:38:38.5423888\",\"status\":404}\r\n0\r\n\r\n",
+            "content": "6b\r\n{\"error\":\"Not Found\",\"message\":\"Purchase Not Found\",\"timestamp\":\"2025-04-06T12:52:54.3215199\",\"status\":404}\r\n0\r\n\r\n",
             "isFailure": true,
             "isBug": false
           }
@@ -250,7 +231,7 @@
         "request": {
           "RequestData": {
             "method": "GET",
-            "path": "/realtor/get/1",
+            "path": "/purchase/get/1",
             "query": "",
             "body": ""
           }
@@ -259,7 +240,7 @@
           "ResponseData": {
             "code": 404,
             "codeDescription": "",
-            "content": "6a\r\n{\"error\":\"Not Found\",\"message\":\"Realtor Not Found\",\"timestamp\":\"2025-04-06T11:38:38.1934102\",\"status\":404}\r\n0\r\n\r\n",
+            "content": "6b\r\n{\"error\":\"Not Found\",\"message\":\"Purchase Not Found\",\"timestamp\":\"2025-04-06T12:52:54.3030973\",\"status\":404}\r\n0\r\n\r\n",
             "isFailure": true,
             "isBug": false
           }
@@ -268,8 +249,8 @@
       {
         "request": {
           "RequestData": {
-            "method": "GET",
-            "path": "/realtor/get/1",
+            "method": "DELETE",
+            "path": "/purchase/delete/1",
             "query": "",
             "body": ""
           }
@@ -278,7 +259,26 @@
           "ResponseData": {
             "code": 404,
             "codeDescription": "",
-            "content": "6a\r\n{\"error\":\"Not Found\",\"message\":\"Realtor Not Found\",\"timestamp\":\"2025-04-06T11:38:38.1749568\",\"status\":404}\r\n0\r\n\r\n",
+            "content": "6b\r\n{\"error\":\"Not Found\",\"message\":\"Purchase Not Found\",\"timestamp\":\"2025-04-06T12:52:54.2489164\",\"status\":404}\r\n0\r\n\r\n",
+            "isFailure": true,
+            "isBug": false
+          }
+        }
+      },
+      {
+        "request": {
+          "RequestData": {
+            "method": "DELETE",
+            "path": "/purchase/delete/1",
+            "query": "",
+            "body": ""
+          }
+        },
+        "response": {
+          "ResponseData": {
+            "code": 404,
+            "codeDescription": "",
+            "content": "6b\r\n{\"error\":\"Not Found\",\"message\":\"Purchase Not Found\",\"timestamp\":\"2025-04-06T12:52:54.2214498\",\"status\":404}\r\n0\r\n\r\n",
             "isFailure": true,
             "isBug": false
           }

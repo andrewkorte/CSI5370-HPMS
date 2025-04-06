@@ -1,0 +1,490 @@
+{
+  "info": {
+    "name": "HPMS API Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "version": "1.0.0",
+    "_postman_id": "hpms-api-20250406165906"
+  },
+  "item": [
+    {
+      "name": "Realtor - Create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/realtor/create",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "realtor",
+            "create"
+          ],
+          "query": [
+            {
+              "key": "employeenum",
+              "value": "1006"
+            },
+            {
+              "key": "firstName",
+              "value": "John"
+            },
+            {
+              "key": "lastName",
+              "value": "Doe"
+            },
+            {
+              "key": "commissionRate",
+              "value": "0.05"
+            }
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "var jsonData = pm.response.json();",
+              "pm.environment.set(\"realtorid\", jsonData.realtorid);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Realtor - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/realtor/get/{{realtorid}}",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "realtor",
+            "get",
+            "{{realtorid}}"
+          ],
+          "query": []
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Realtor - Delete",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/realtor/delete/{{realtorid}}",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "realtor",
+            "delete",
+            "{{realtorid}}"
+          ],
+          "query": []
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 204\", function () {",
+              "    pm.response.to.have.status(204);",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Customer - Create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/customer/create",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "customer",
+            "create"
+          ],
+          "query": [
+            {
+              "key": "firstName",
+              "value": "Alice"
+            },
+            {
+              "key": "lastName",
+              "value": "Smith"
+            },
+            {
+              "key": "ssn",
+              "value": "12-345-6789"
+            },
+            {
+              "key": "income",
+              "value": "75000"
+            }
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "var jsonData = pm.response.json();",
+              "pm.environment.set(\"customerid\", jsonData.customerid);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Customer - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/customer/get/{{customerid}}",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "customer",
+            "get",
+            "{{customerid}}"
+          ],
+          "query": []
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Customer - Delete",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/customer/delete/{{customerid}}",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "customer",
+            "delete",
+            "{{customerid}}"
+          ],
+          "query": []
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 204\", function () {",
+              "    pm.response.to.have.status(204);",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Home - Create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/home/create",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "home",
+            "create"
+          ],
+          "query": [
+            {
+              "key": "address",
+              "value": "456"
+            },
+            {
+              "key": "street",
+              "value": "Maple"
+            },
+            {
+              "key": "city",
+              "value": "Springfield"
+            },
+            {
+              "key": "state",
+              "value": "IL"
+            },
+            {
+              "key": "price",
+              "value": "250000"
+            },
+            {
+              "key": "squareFeet",
+              "value": "1800"
+            }
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "var jsonData = pm.response.json();",
+              "pm.environment.set(\"homeid\", jsonData.homeid);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Home - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/home/get/{{homeid}}",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "home",
+            "get",
+            "{{homeid}}"
+          ],
+          "query": []
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Home - Delete",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/home/delete/{{homeid}}",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "home",
+            "delete",
+            "{{homeid}}"
+          ],
+          "query": []
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 204\", function () {",
+              "    pm.response.to.have.status(204);",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Purchase - Create",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/purchase/create",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "purchase",
+            "create"
+          ],
+          "query": [
+            {
+              "key": "customerId",
+              "value": "{{customerid}}"
+            },
+            {
+              "key": "realtorId",
+              "value": "{{realtorid}}"
+            },
+            {
+              "key": "homeId",
+              "value": "{{homeid}}"
+            },
+            {
+              "key": "loan",
+              "value": "200000"
+            },
+            {
+              "key": "downPayment",
+              "value": "50000"
+            }
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "var jsonData = pm.response.json();",
+              "pm.environment.set(\"purchaseid\", jsonData.purchaseid);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Purchase - Get",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/purchase/get/{{purchaseid}}",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "purchase",
+            "get",
+            "{{purchaseid}}"
+          ],
+          "query": []
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Purchase - Delete",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/purchase/delete/{{purchaseid}}",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "purchase",
+            "delete",
+            "{{purchaseid}}"
+          ],
+          "query": []
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 204\", function () {",
+              "    pm.response.to.have.status(204);",
+              "});"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

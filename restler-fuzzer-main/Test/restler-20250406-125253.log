@@ -1,0 +1,32 @@
+Restler Information: 0 : Starting task Test...
+    DateTime=2025-04-06T16:52:53.3921928Z
+Restler Information: 0 : Launching 'python.exe --version'
+    DateTime=2025-04-06T16:52:53.7551201Z
+Restler Information: 0 : Process execution terminated in 00:00:00.0159809 with exit code 0x0: 'python.exe --version'
+    DateTime=2025-04-06T16:52:53.7823602Z
+Restler Information: 0 : (30544) python.exe --version exited with code: 0
+    DateTime=2025-04-06T16:52:53.7855586Z
+Restler Information: 0 : Launching 'python.exe -B "C:\Users\Andrew\Desktop\School\CSI5370\CSI5370-HPMS\restler-fuzzer-main\restler_bin\restler\../engine/restler.py" --restler_grammar "C:\Users\Andrew\Desktop\School\CSI5370\CSI5370-HPMS\restler-fuzzer-main\Compile\grammar.py" --custom_mutations "C:\Users\Andrew\Desktop\School\CSI5370\CSI5370-HPMS\restler-fuzzer-main\Compile\dict.json" --set_version 9.3.1    --no_ssl   --settings "C:\Users\Andrew\Desktop\School\CSI5370\CSI5370-HPMS\restler-fuzzer-main\Compile\engine_settings.json"     --include_user_agent --no_tokens_in_logs t --garbage_collection_interval 30 --fuzzing_mode directed-smoke-test'
+    DateTime=2025-04-06T16:52:53.7931573Z
+Restler Information: 0 : Process execution terminated in 00:00:00.6783787 with exit code 0x0: 'python.exe -B "C:\Users\Andrew\Desktop\School\CSI5370\CSI5370-HPMS\restler-fuzzer-main\restler_bin\restler\../engine/restler.py" --restler_grammar "C:\Users\Andrew\Desktop\School\CSI5370\CSI5370-HPMS\restler-fuzzer-main\Compile\grammar.py" --custom_mutations "C:\Users\Andrew\Desktop\School\CSI5370\CSI5370-HPMS\restler-fuzzer-main\Compile\dict.json" --set_version 9.3.1    --no_ssl   --settings "C:\Users\Andrew\Desktop\School\CSI5370\CSI5370-HPMS\restler-fuzzer-main\Compile\engine_settings.json"     --include_user_agent --no_tokens_in_logs t --garbage_collection_interval 30 --fuzzing_mode directed-smoke-test'
+    DateTime=2025-04-06T16:52:54.4716708Z
+Restler Information: 0 : (29168) python.exe -B "C:\Users\Andrew\Desktop\School\CSI5370\CSI5370-HPMS\restler-fuzzer-main\restler_bin\restler\../engine/restler.py" --restler_grammar "C:\Users\Andrew\Desktop\School\CSI5370\CSI5370-HPMS\restler-fuzzer-main\Compile\grammar.py" --custom_mutations "C:\Users\Andrew\Desktop\School\CSI5370\CSI5370-HPMS\restler-fuzzer-main\Compile\dict.json" --set_version 9.3.1    --no_ssl   --settings "C:\Users\Andrew\Desktop\School\CSI5370\CSI5370-HPMS\restler-fuzzer-main\Compile\engine_settings.json"     --include_user_agent --no_tokens_in_logs t --garbage_collection_interval 30 --fuzzing_mode directed-smoke-test exited with code: 0
+    DateTime=2025-04-06T16:52:54.4717298Z
+Restler Information: 0 : Launching 'dotnet "C:\Users\Andrew\Desktop\School\CSI5370\CSI5370-HPMS\restler-fuzzer-main\restler_bin\restler\../resultsAnalyzer/Restler.ResultsAnalyzer.dll" analyze "C:\Users\Andrew\Desktop\School\CSI5370\CSI5370-HPMS\restler-fuzzer-main\Test" --output_dir "C:\Users\Andrew\Desktop\School\CSI5370\CSI5370-HPMS\restler-fuzzer-main\Test\ResponseBuckets" --dictionary_file "C:\Users\Andrew\Desktop\School\CSI5370\CSI5370-HPMS\restler-fuzzer-main\Compile\dict.json" --max_instances_per_bucket 10'
+    DateTime=2025-04-06T16:52:54.4778221Z
+Restler Information: 0 : Process execution terminated in 00:00:00.2460484 with exit code 0x0: 'dotnet "C:\Users\Andrew\Desktop\School\CSI5370\CSI5370-HPMS\restler-fuzzer-main\restler_bin\restler\../resultsAnalyzer/Restler.ResultsAnalyzer.dll" analyze "C:\Users\Andrew\Desktop\School\CSI5370\CSI5370-HPMS\restler-fuzzer-main\Test" --output_dir "C:\Users\Andrew\Desktop\School\CSI5370\CSI5370-HPMS\restler-fuzzer-main\Test\ResponseBuckets" --dictionary_file "C:\Users\Andrew\Desktop\School\CSI5370\CSI5370-HPMS\restler-fuzzer-main\Compile\dict.json" --max_instances_per_bucket 10'
+    DateTime=2025-04-06T16:52:54.7239345Z
+Restler Information: 0 : (252) dotnet "C:\Users\Andrew\Desktop\School\CSI5370\CSI5370-HPMS\restler-fuzzer-main\restler_bin\restler\../resultsAnalyzer/Restler.ResultsAnalyzer.dll" analyze "C:\Users\Andrew\Desktop\School\CSI5370\CSI5370-HPMS\restler-fuzzer-main\Test" --output_dir "C:\Users\Andrew\Desktop\School\CSI5370\CSI5370-HPMS\restler-fuzzer-main\Test\ResponseBuckets" --dictionary_file "C:\Users\Andrew\Desktop\School\CSI5370\CSI5370-HPMS\restler-fuzzer-main\Compile\dict.json" --max_instances_per_bucket 10 exited with code: 0
+    DateTime=2025-04-06T16:52:54.7239793Z
+Restler Information: 0 : Request coverage (successful / total): 5 / 12
+    DateTime=2025-04-06T16:52:54.7775783Z
+Restler Information: 0 : Attempted requests: 12 / 12
+    DateTime=2025-04-06T16:52:54.7776621Z
+Restler Information: 0 : No bugs were found.
+    DateTime=2025-04-06T16:52:54.7786755Z
+Restler Information: 0 : See 'coverage_failures_to_investigate.txt' to investigate API coverage.
+    DateTime=2025-04-06T16:52:54.8187833Z
+Restler Information: 0 : Task Test succeeded.
+    DateTime=2025-04-06T16:52:54.8202994Z
+Restler Information: 0 : Collecting logs...
+    DateTime=2025-04-06T16:52:54.9340103Z
