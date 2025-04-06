@@ -1,0 +1,419 @@
+{
+    "156ae1eebc2424515b9612adc4c363c8f36dc6a1_1": {
+        "verb": "DELETE",
+        "endpoint": "/realtor/delete/{realtorid}",
+        "verb_endpoint": "DELETE /realtor/delete/{realtorid}",
+        "valid": 1,
+        "matching_prefix": [],
+        "invalid_due_to_sequence_failure": 0,
+        "invalid_due_to_resource_failure": 0,
+        "invalid_due_to_parser_failure": 0,
+        "invalid_due_to_500": 0,
+        "status_code": "204",
+        "status_text": "",
+        "error_message": null,
+        "request_order": 0,
+        "sample_request": {
+            "request_sent_timestamp": null,
+            "response_received_timestamp": "2025-04-06 15:38:38",
+            "request_verb": "DELETE",
+            "request_uri": "/realtor/delete/1",
+            "request_headers": [
+                "Accept: application/json",
+                "Host: localhost:8080"
+            ],
+            "request_body": null,
+            "response_status_code": "204",
+            "response_status_text": "",
+            "response_headers": [
+                "Date: Sun, 06 Apr 2025 15:38:38 GMT"
+            ],
+            "response_body": ""
+        },
+        "tracked_parameters": {}
+    },
+    "1c306955e12240bec9918d41c2b35d8941bf8234_1": {
+        "verb": "GET",
+        "endpoint": "/realtor/get/{realtorid}",
+        "verb_endpoint": "GET /realtor/get/{realtorid}",
+        "valid": 0,
+        "matching_prefix": [],
+        "invalid_due_to_sequence_failure": 0,
+        "invalid_due_to_resource_failure": 0,
+        "invalid_due_to_parser_failure": 0,
+        "invalid_due_to_500": 0,
+        "status_code": "404",
+        "status_text": "",
+        "error_message": "6a\r\n{\"error\":\"Not Found\",\"message\":\"Realtor Not Found\",\"timestamp\":\"2025-04-06T11:38:38.1749568\",\"status\":404}\r\n0",
+        "request_order": 1,
+        "sample_request": {
+            "request_sent_timestamp": null,
+            "response_received_timestamp": "2025-04-06 15:38:38",
+            "request_verb": "GET",
+            "request_uri": "/realtor/get/1",
+            "request_headers": [
+                "Accept: application/json",
+                "Host: localhost:8080"
+            ],
+            "request_body": null,
+            "response_status_code": "404",
+            "response_status_text": "",
+            "response_headers": [
+                "Content-Type: application/json",
+                "Transfer-Encoding: chunked",
+                "Date: Sun, 06 Apr 2025 15:38:38 GMT"
+            ],
+            "response_body": "6a\r\n{\"error\":\"Not Found\",\"message\":\"Realtor Not Found\",\"timestamp\":\"2025-04-06T11:38:38.1749568\",\"status\":404}\r\n0"
+        },
+        "tracked_parameters": {}
+    },
+    "2f5eee9548eee1076757edc10da9706d355c956e_1": {
+        "verb": "POST",
+        "endpoint": "/customer/create",
+        "verb_endpoint": "POST /customer/create",
+        "valid": 0,
+        "matching_prefix": [],
+        "invalid_due_to_sequence_failure": 0,
+        "invalid_due_to_resource_failure": 0,
+        "invalid_due_to_parser_failure": 0,
+        "invalid_due_to_500": 0,
+        "status_code": "400",
+        "status_text": "",
+        "error_message": "6a\r\n{\"timestamp\":\"2025-04-06T15:38:38.292+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/customer/create\"}\r\n0",
+        "request_order": 2,
+        "sample_request": {
+            "request_sent_timestamp": null,
+            "response_received_timestamp": "2025-04-06 15:38:38",
+            "request_verb": "POST",
+            "request_uri": "/customer/create?firstName=fuzzstring&lastName=fuzzstring&ssn=fuzzstring&income=1.23",
+            "request_headers": [
+                "Accept: application/json",
+                "Host: localhost:8080"
+            ],
+            "request_body": null,
+            "response_status_code": "400",
+            "response_status_text": "",
+            "response_headers": [
+                "Content-Type: application/json",
+                "Transfer-Encoding: chunked",
+                "Date: Sun, 06 Apr 2025 15:38:38 GMT",
+                "Connection: close"
+            ],
+            "response_body": "6a\r\n{\"timestamp\":\"2025-04-06T15:38:38.292+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/customer/create\"}\r\n0"
+        },
+        "tracked_parameters": {}
+    },
+    "3e62e8768b05c60e2c5b1e52458b4cf10ac63b44_1": {
+        "verb": "GET",
+        "endpoint": "/customer/get/{customerid}",
+        "verb_endpoint": "GET /customer/get/{customerid}",
+        "valid": 1,
+        "matching_prefix": [],
+        "invalid_due_to_sequence_failure": 0,
+        "invalid_due_to_resource_failure": 0,
+        "invalid_due_to_parser_failure": 0,
+        "invalid_due_to_500": 0,
+        "status_code": "200",
+        "status_text": "",
+        "error_message": null,
+        "request_order": 3,
+        "sample_request": {
+            "request_sent_timestamp": null,
+            "response_received_timestamp": "2025-04-06 15:38:38",
+            "request_verb": "GET",
+            "request_uri": "/customer/get/1",
+            "request_headers": [
+                "Accept: application/json",
+                "Host: localhost:8080"
+            ],
+            "request_body": null,
+            "response_status_code": "200",
+            "response_status_text": "",
+            "response_headers": [
+                "Content-Type: application/json",
+                "Transfer-Encoding: chunked",
+                "Date: Sun, 06 Apr 2025 15:38:38 GMT"
+            ],
+            "response_body": "51\r\n{\"id\":1,\"firstName\":\"John\",\"lastName\":\"Doe\",\"ssn\":\"123-45-6789\",\"income\":50000.0}\r\n0"
+        },
+        "tracked_parameters": {}
+    },
+    "686085bd33fe41a3e05febd886b13cc596775f13_1": {
+        "verb": "GET",
+        "endpoint": "/home/get/{homeid}",
+        "verb_endpoint": "GET /home/get/{homeid}",
+        "valid": 1,
+        "matching_prefix": [],
+        "invalid_due_to_sequence_failure": 0,
+        "invalid_due_to_resource_failure": 0,
+        "invalid_due_to_parser_failure": 0,
+        "invalid_due_to_500": 0,
+        "status_code": "200",
+        "status_text": "",
+        "error_message": null,
+        "request_order": 4,
+        "sample_request": {
+            "request_sent_timestamp": null,
+            "response_received_timestamp": "2025-04-06 15:38:38",
+            "request_verb": "GET",
+            "request_uri": "/home/get/1",
+            "request_headers": [
+                "Accept: application/json",
+                "Host: localhost:8080"
+            ],
+            "request_body": null,
+            "response_status_code": "200",
+            "response_status_text": "",
+            "response_headers": [
+                "Content-Type: application/json",
+                "Transfer-Encoding: chunked",
+                "Date: Sun, 06 Apr 2025 15:38:38 GMT"
+            ],
+            "response_body": "6c\r\n{\"id\":1,\"address\":1,\"street\":\"Main St\",\"city\":\"Springfield\",\"state\":\"IL\",\"price\":250000.0,\"squareFeet\":1500}\r\n0"
+        },
+        "tracked_parameters": {}
+    },
+    "69c66231419258f45d1e4e1de7197c48987902b6_1": {
+        "verb": "DELETE",
+        "endpoint": "/purchase/delete/{purchaseid}",
+        "verb_endpoint": "DELETE /purchase/delete/{purchaseid}",
+        "valid": 0,
+        "matching_prefix": [],
+        "invalid_due_to_sequence_failure": 0,
+        "invalid_due_to_resource_failure": 0,
+        "invalid_due_to_parser_failure": 0,
+        "invalid_due_to_500": 0,
+        "status_code": "404",
+        "status_text": "",
+        "error_message": "6b\r\n{\"error\":\"Not Found\",\"message\":\"Purchase Not Found\",\"timestamp\":\"2025-04-06T11:38:38.3694142\",\"status\":404}\r\n0",
+        "request_order": 5,
+        "sample_request": {
+            "request_sent_timestamp": null,
+            "response_received_timestamp": "2025-04-06 15:38:38",
+            "request_verb": "DELETE",
+            "request_uri": "/purchase/delete/1",
+            "request_headers": [
+                "Accept: application/json",
+                "Host: localhost:8080"
+            ],
+            "request_body": null,
+            "response_status_code": "404",
+            "response_status_text": "",
+            "response_headers": [
+                "Content-Type: application/json",
+                "Transfer-Encoding: chunked",
+                "Date: Sun, 06 Apr 2025 15:38:38 GMT"
+            ],
+            "response_body": "6b\r\n{\"error\":\"Not Found\",\"message\":\"Purchase Not Found\",\"timestamp\":\"2025-04-06T11:38:38.3694142\",\"status\":404}\r\n0"
+        },
+        "tracked_parameters": {}
+    },
+    "7e436fbcce462ef0f7211688711bc463d384cebf_1": {
+        "verb": "POST",
+        "endpoint": "/home/create",
+        "verb_endpoint": "POST /home/create",
+        "valid": 0,
+        "matching_prefix": [],
+        "invalid_due_to_sequence_failure": 0,
+        "invalid_due_to_resource_failure": 0,
+        "invalid_due_to_parser_failure": 0,
+        "invalid_due_to_500": 0,
+        "status_code": "400",
+        "status_text": "",
+        "error_message": "66\r\n{\"timestamp\":\"2025-04-06T15:38:38.407+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/home/create\"}\r\n0",
+        "request_order": 6,
+        "sample_request": {
+            "request_sent_timestamp": null,
+            "response_received_timestamp": "2025-04-06 15:38:38",
+            "request_verb": "POST",
+            "request_uri": "/home/create?address=1&street=fuzzstring&city=fuzzstring&state=fuzzstring&price=1.23&squareFeet=1",
+            "request_headers": [
+                "Accept: application/json",
+                "Host: localhost:8080"
+            ],
+            "request_body": null,
+            "response_status_code": "400",
+            "response_status_text": "",
+            "response_headers": [
+                "Content-Type: application/json",
+                "Transfer-Encoding: chunked",
+                "Date: Sun, 06 Apr 2025 15:38:38 GMT",
+                "Connection: close"
+            ],
+            "response_body": "66\r\n{\"timestamp\":\"2025-04-06T15:38:38.407+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/home/create\"}\r\n0"
+        },
+        "tracked_parameters": {}
+    },
+    "97195992896dca5b73a3b97108de090ffba7ac8d_1": {
+        "verb": "GET",
+        "endpoint": "/purchase/get/{purchaseid}",
+        "verb_endpoint": "GET /purchase/get/{purchaseid}",
+        "valid": 0,
+        "matching_prefix": [],
+        "invalid_due_to_sequence_failure": 0,
+        "invalid_due_to_resource_failure": 0,
+        "invalid_due_to_parser_failure": 0,
+        "invalid_due_to_500": 0,
+        "status_code": "404",
+        "status_text": "",
+        "error_message": "6b\r\n{\"error\":\"Not Found\",\"message\":\"Purchase Not Found\",\"timestamp\":\"2025-04-06T11:38:38.4386942\",\"status\":404}\r\n0",
+        "request_order": 7,
+        "sample_request": {
+            "request_sent_timestamp": null,
+            "response_received_timestamp": "2025-04-06 15:38:38",
+            "request_verb": "GET",
+            "request_uri": "/purchase/get/1",
+            "request_headers": [
+                "Accept: application/json",
+                "Host: localhost:8080"
+            ],
+            "request_body": null,
+            "response_status_code": "404",
+            "response_status_text": "",
+            "response_headers": [
+                "Content-Type: application/json",
+                "Transfer-Encoding: chunked",
+                "Date: Sun, 06 Apr 2025 15:38:38 GMT"
+            ],
+            "response_body": "6b\r\n{\"error\":\"Not Found\",\"message\":\"Purchase Not Found\",\"timestamp\":\"2025-04-06T11:38:38.4386942\",\"status\":404}\r\n0"
+        },
+        "tracked_parameters": {}
+    },
+    "b4ff73ea9ad098359baefa2d6809db17d896b96e_1": {
+        "verb": "DELETE",
+        "endpoint": "/home/delete/{homeid}",
+        "verb_endpoint": "DELETE /home/delete/{homeid}",
+        "valid": 1,
+        "matching_prefix": [],
+        "invalid_due_to_sequence_failure": 0,
+        "invalid_due_to_resource_failure": 0,
+        "invalid_due_to_parser_failure": 0,
+        "invalid_due_to_500": 0,
+        "status_code": "204",
+        "status_text": "",
+        "error_message": null,
+        "request_order": 8,
+        "sample_request": {
+            "request_sent_timestamp": null,
+            "response_received_timestamp": "2025-04-06 15:38:38",
+            "request_verb": "DELETE",
+            "request_uri": "/home/delete/1",
+            "request_headers": [
+                "Accept: application/json",
+                "Host: localhost:8080"
+            ],
+            "request_body": null,
+            "response_status_code": "204",
+            "response_status_text": "",
+            "response_headers": [
+                "Date: Sun, 06 Apr 2025 15:38:38 GMT"
+            ],
+            "response_body": ""
+        },
+        "tracked_parameters": {}
+    },
+    "c0cbe9f5c5d62a1b96efc6aa0d740a9255cc4a65_1": {
+        "verb": "DELETE",
+        "endpoint": "/customer/delete/{customerid}",
+        "verb_endpoint": "DELETE /customer/delete/{customerid}",
+        "valid": 1,
+        "matching_prefix": [],
+        "invalid_due_to_sequence_failure": 0,
+        "invalid_due_to_resource_failure": 0,
+        "invalid_due_to_parser_failure": 0,
+        "invalid_due_to_500": 0,
+        "status_code": "204",
+        "status_text": "",
+        "error_message": null,
+        "request_order": 9,
+        "sample_request": {
+            "request_sent_timestamp": null,
+            "response_received_timestamp": "2025-04-06 15:38:38",
+            "request_verb": "DELETE",
+            "request_uri": "/customer/delete/1",
+            "request_headers": [
+                "Accept: application/json",
+                "Host: localhost:8080"
+            ],
+            "request_body": null,
+            "response_status_code": "204",
+            "response_status_text": "",
+            "response_headers": [
+                "Date: Sun, 06 Apr 2025 15:38:38 GMT"
+            ],
+            "response_body": ""
+        },
+        "tracked_parameters": {}
+    },
+    "ce0f3631ee3582c32b4cca941b4071d82516fff1_1": {
+        "verb": "POST",
+        "endpoint": "/realtor/create",
+        "verb_endpoint": "POST /realtor/create",
+        "valid": 0,
+        "matching_prefix": [],
+        "invalid_due_to_sequence_failure": 0,
+        "invalid_due_to_resource_failure": 0,
+        "invalid_due_to_parser_failure": 0,
+        "invalid_due_to_500": 0,
+        "status_code": "400",
+        "status_text": "",
+        "error_message": "69\r\n{\"timestamp\":\"2025-04-06T15:38:38.510+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/realtor/create\"}\r\n0",
+        "request_order": 10,
+        "sample_request": {
+            "request_sent_timestamp": null,
+            "response_received_timestamp": "2025-04-06 15:38:38",
+            "request_verb": "POST",
+            "request_uri": "/realtor/create?employeenum=1&firstName=fuzzstring&lastName=fuzzstring&commissionRate=1.23",
+            "request_headers": [
+                "Accept: application/json",
+                "Host: localhost:8080"
+            ],
+            "request_body": null,
+            "response_status_code": "400",
+            "response_status_text": "",
+            "response_headers": [
+                "Content-Type: application/json",
+                "Transfer-Encoding: chunked",
+                "Date: Sun, 06 Apr 2025 15:38:38 GMT",
+                "Connection: close"
+            ],
+            "response_body": "69\r\n{\"timestamp\":\"2025-04-06T15:38:38.510+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/realtor/create\"}\r\n0"
+        },
+        "tracked_parameters": {}
+    },
+    "d11558dd093aba5c0743136491d060c2cba54775_1": {
+        "verb": "POST",
+        "endpoint": "/purchase/create",
+        "verb_endpoint": "POST /purchase/create",
+        "valid": 0,
+        "matching_prefix": [],
+        "invalid_due_to_sequence_failure": 0,
+        "invalid_due_to_resource_failure": 0,
+        "invalid_due_to_parser_failure": 0,
+        "invalid_due_to_500": 0,
+        "status_code": "404",
+        "status_text": "",
+        "error_message": "6a\r\n{\"error\":\"Not Found\",\"message\":\"Realtor Not Found\",\"timestamp\":\"2025-04-06T11:38:38.5423888\",\"status\":404}\r\n0",
+        "request_order": 11,
+        "sample_request": {
+            "request_sent_timestamp": null,
+            "response_received_timestamp": "2025-04-06 15:38:38",
+            "request_verb": "POST",
+            "request_uri": "/purchase/create?customerId=1&realtorId=1&homeId=1&loan=1&downPayment=1",
+            "request_headers": [
+                "Accept: application/json",
+                "Host: localhost:8080"
+            ],
+            "request_body": null,
+            "response_status_code": "404",
+            "response_status_text": "",
+            "response_headers": [
+                "Content-Type: application/json",
+                "Transfer-Encoding: chunked",
+                "Date: Sun, 06 Apr 2025 15:38:38 GMT"
+            ],
+            "response_body": "6a\r\n{\"error\":\"Not Found\",\"message\":\"Realtor Not Found\",\"timestamp\":\"2025-04-06T11:38:38.5423888\",\"status\":404}\r\n0"
+        },
+        "tracked_parameters": {}
+    }
+}

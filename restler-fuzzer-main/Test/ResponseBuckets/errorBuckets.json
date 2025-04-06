@@ -1,7 +1,7 @@
 {
   "0": {},
   "400": {
-    "4385344f-0702-4d69-b608-5abfe31cecf4": [
+    "261dc3b9-85d7-4fa6-866f-e9b2e8b1f270": [
       {
         "request": {
           "RequestData": {
@@ -15,56 +15,14 @@
           "ResponseData": {
             "code": 400,
             "codeDescription": "",
-            "content": "6a\r\n{\"timestamp\":\"2025-03-26T23:31:51.259+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/customer/create\"}\r\n0\r\n\r\n",
+            "content": "6a\r\n{\"timestamp\":\"2025-04-06T15:38:38.292+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/customer/create\"}\r\n0\r\n\r\n",
             "isFailure": true,
             "isBug": false
           }
         }
       }
     ],
-    "5cd4167b-d8a3-488b-bd29-ac4ff55f7065": [
-      {
-        "request": {
-          "RequestData": {
-            "method": "POST",
-            "path": "/home/create",
-            "query": "address=1&city=fuzzstring&price=1.23&squareFeet=1&state=fuzzstring&street=fuzzstring",
-            "body": ""
-          }
-        },
-        "response": {
-          "ResponseData": {
-            "code": 400,
-            "codeDescription": "",
-            "content": "66\r\n{\"timestamp\":\"2025-03-26T23:31:51.384+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/home/create\"}\r\n0\r\n\r\n",
-            "isFailure": true,
-            "isBug": false
-          }
-        }
-      }
-    ],
-    "6b95bf38-8b6c-4b89-9758-3f0beda2ed14": [
-      {
-        "request": {
-          "RequestData": {
-            "method": "POST",
-            "path": "/home/create",
-            "query": "address=1&city=fuzzstring&price=1.23&squareFeet=1&state=fuzzstring&street=fuzzstring",
-            "body": ""
-          }
-        },
-        "response": {
-          "ResponseData": {
-            "code": 400,
-            "codeDescription": "",
-            "content": "66\r\n{\"timestamp\":\"2025-03-26T23:31:51.373+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/home/create\"}\r\n0\r\n\r\n",
-            "isFailure": true,
-            "isBug": false
-          }
-        }
-      }
-    ],
-    "d6567c99-7bf0-4aa7-9dca-da1122687ab0": [
+    "31310d94-0910-44ec-af2e-cb3b7a7c1bfc": [
       {
         "request": {
           "RequestData": {
@@ -78,20 +36,20 @@
           "ResponseData": {
             "code": 400,
             "codeDescription": "",
-            "content": "69\r\n{\"timestamp\":\"2025-03-26T23:31:51.476+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/realtor/create\"}\r\n0\r\n\r\n",
+            "content": "69\r\n{\"timestamp\":\"2025-04-06T15:38:38.522+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/realtor/create\"}\r\n0\r\n\r\n",
             "isFailure": true,
             "isBug": false
           }
         }
       }
     ],
-    "e5b66602-127e-460c-82cf-8316a0cd184a": [
+    "572976fa-77ef-4e46-a846-491d6e219568": [
       {
         "request": {
           "RequestData": {
             "method": "POST",
-            "path": "/realtor/create",
-            "query": "commissionRate=1.23&employeenum=1&firstName=fuzzstring&lastName=fuzzstring",
+            "path": "/home/create",
+            "query": "address=1&city=fuzzstring&price=1.23&squareFeet=1&state=fuzzstring&street=fuzzstring",
             "body": ""
           }
         },
@@ -99,14 +57,14 @@
           "ResponseData": {
             "code": 400,
             "codeDescription": "",
-            "content": "69\r\n{\"timestamp\":\"2025-03-26T23:31:51.487+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/realtor/create\"}\r\n0\r\n\r\n",
+            "content": "66\r\n{\"timestamp\":\"2025-04-06T15:38:38.418+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/home/create\"}\r\n0\r\n\r\n",
             "isFailure": true,
             "isBug": false
           }
         }
       }
     ],
-    "fabc9195-7994-44a2-bee4-78b118160b78": [
+    "5a0bf1a2-1d3a-43ff-a6e6-723b666ecc1a": [
       {
         "request": {
           "RequestData": {
@@ -120,7 +78,49 @@
           "ResponseData": {
             "code": 400,
             "codeDescription": "",
-            "content": "6a\r\n{\"timestamp\":\"2025-03-26T23:31:51.238+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/customer/create\"}\r\n0\r\n\r\n",
+            "content": "6a\r\n{\"timestamp\":\"2025-04-06T15:38:38.305+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/customer/create\"}\r\n0\r\n\r\n",
+            "isFailure": true,
+            "isBug": false
+          }
+        }
+      }
+    ],
+    "667173bf-c527-42db-8b75-bbc2b247fa8a": [
+      {
+        "request": {
+          "RequestData": {
+            "method": "POST",
+            "path": "/home/create",
+            "query": "address=1&city=fuzzstring&price=1.23&squareFeet=1&state=fuzzstring&street=fuzzstring",
+            "body": ""
+          }
+        },
+        "response": {
+          "ResponseData": {
+            "code": 400,
+            "codeDescription": "",
+            "content": "66\r\n{\"timestamp\":\"2025-04-06T15:38:38.407+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/home/create\"}\r\n0\r\n\r\n",
+            "isFailure": true,
+            "isBug": false
+          }
+        }
+      }
+    ],
+    "8072fed2-e20f-4482-a7ba-911126d7b98a": [
+      {
+        "request": {
+          "RequestData": {
+            "method": "POST",
+            "path": "/realtor/create",
+            "query": "commissionRate=1.23&employeenum=1&firstName=fuzzstring&lastName=fuzzstring",
+            "body": ""
+          }
+        },
+        "response": {
+          "ResponseData": {
+            "code": 400,
+            "codeDescription": "",
+            "content": "69\r\n{\"timestamp\":\"2025-04-06T15:38:38.510+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/realtor/create\"}\r\n0\r\n\r\n",
             "isFailure": true,
             "isBug": false
           }
@@ -129,7 +129,7 @@
     ]
   },
   "404": {
-    "7e7edc95-1edd-475f-856b-d74e4635f225": [
+    "1dba5168-4878-4ddd-b332-66931adf711a": [
       {
         "request": {
           "RequestData": {
@@ -143,7 +143,7 @@
           "ResponseData": {
             "code": 404,
             "codeDescription": "",
-            "content": "6b\r\n{\"error\":\"Not Found\",\"message\":\"Purchase Not Found\",\"timestamp\":\"2025-03-26T19:31:51.4188574\",\"status\":404}\r\n0\r\n\r\n",
+            "content": "6a\r\n{\"error\":\"Not Found\",\"message\":\"Purchase Not Found\",\"timestamp\":\"2025-04-06T11:38:38.454713\",\"status\":404}\r\n0\r\n\r\n",
             "isFailure": true,
             "isBug": false
           }
@@ -162,7 +162,7 @@
           "ResponseData": {
             "code": 404,
             "codeDescription": "",
-            "content": "6b\r\n{\"error\":\"Not Found\",\"message\":\"Purchase Not Found\",\"timestamp\":\"2025-03-26T19:31:51.4029591\",\"status\":404}\r\n0\r\n\r\n",
+            "content": "6b\r\n{\"error\":\"Not Found\",\"message\":\"Purchase Not Found\",\"timestamp\":\"2025-04-06T11:38:38.4386942\",\"status\":404}\r\n0\r\n\r\n",
             "isFailure": true,
             "isBug": false
           }
@@ -181,7 +181,7 @@
           "ResponseData": {
             "code": 404,
             "codeDescription": "",
-            "content": "6b\r\n{\"error\":\"Not Found\",\"message\":\"Purchase Not Found\",\"timestamp\":\"2025-03-26T19:31:51.3572968\",\"status\":404}\r\n0\r\n\r\n",
+            "content": "6b\r\n{\"error\":\"Not Found\",\"message\":\"Purchase Not Found\",\"timestamp\":\"2025-04-06T11:38:38.3931688\",\"status\":404}\r\n0\r\n\r\n",
             "isFailure": true,
             "isBug": false
           }
@@ -200,14 +200,14 @@
           "ResponseData": {
             "code": 404,
             "codeDescription": "",
-            "content": "6b\r\n{\"error\":\"Not Found\",\"message\":\"Purchase Not Found\",\"timestamp\":\"2025-03-26T19:31:51.3340144\",\"status\":404}\r\n0\r\n\r\n",
+            "content": "6b\r\n{\"error\":\"Not Found\",\"message\":\"Purchase Not Found\",\"timestamp\":\"2025-04-06T11:38:38.3694142\",\"status\":404}\r\n0\r\n\r\n",
             "isFailure": true,
             "isBug": false
           }
         }
       }
     ],
-    "e1c81c63-1bd5-43de-a698-9babc9e90aae": [
+    "8f3c1b44-748a-4401-bbd2-4da93e1ee4ab": [
       {
         "request": {
           "RequestData": {
@@ -221,7 +221,7 @@
           "ResponseData": {
             "code": 404,
             "codeDescription": "",
-            "content": "6a\r\n{\"error\":\"Not Found\",\"message\":\"Realtor Not Found\",\"timestamp\":\"2025-03-26T19:31:51.5232263\",\"status\":404}\r\n0\r\n\r\n",
+            "content": "6a\r\n{\"error\":\"Not Found\",\"message\":\"Realtor Not Found\",\"timestamp\":\"2025-04-06T11:38:38.5580989\",\"status\":404}\r\n0\r\n\r\n",
             "isFailure": true,
             "isBug": false
           }
@@ -240,7 +240,7 @@
           "ResponseData": {
             "code": 404,
             "codeDescription": "",
-            "content": "6a\r\n{\"error\":\"Not Found\",\"message\":\"Realtor Not Found\",\"timestamp\":\"2025-03-26T19:31:51.5079269\",\"status\":404}\r\n0\r\n\r\n",
+            "content": "6a\r\n{\"error\":\"Not Found\",\"message\":\"Realtor Not Found\",\"timestamp\":\"2025-04-06T11:38:38.5423888\",\"status\":404}\r\n0\r\n\r\n",
             "isFailure": true,
             "isBug": false
           }
@@ -259,7 +259,7 @@
           "ResponseData": {
             "code": 404,
             "codeDescription": "",
-            "content": "69\r\n{\"error\":\"Not Found\",\"message\":\"Realtor Not Found\",\"timestamp\":\"2025-03-26T19:31:51.134284\",\"status\":404}\r\n0\r\n\r\n",
+            "content": "6a\r\n{\"error\":\"Not Found\",\"message\":\"Realtor Not Found\",\"timestamp\":\"2025-04-06T11:38:38.1934102\",\"status\":404}\r\n0\r\n\r\n",
             "isFailure": true,
             "isBug": false
           }
@@ -278,7 +278,7 @@
           "ResponseData": {
             "code": 404,
             "codeDescription": "",
-            "content": "6a\r\n{\"error\":\"Not Found\",\"message\":\"Realtor Not Found\",\"timestamp\":\"2025-03-26T19:31:51.0987064\",\"status\":404}\r\n0\r\n\r\n",
+            "content": "6a\r\n{\"error\":\"Not Found\",\"message\":\"Realtor Not Found\",\"timestamp\":\"2025-04-06T11:38:38.1749568\",\"status\":404}\r\n0\r\n\r\n",
             "isFailure": true,
             "isBug": false
           }

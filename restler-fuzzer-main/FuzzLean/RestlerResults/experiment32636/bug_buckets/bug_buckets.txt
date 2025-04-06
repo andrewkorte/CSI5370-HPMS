@@ -1,7 +1,0 @@
-InvalidValueChecker_503: 1
-Total Buckets: 1
--------------
-InvalidValueChecker_503 - Bug was reproduced - InvalidValueChecker_503_1.replay.txt
-Hash: InvalidValueChecker_503_1a5fc0c4f897b7d8fd8e28deeb93e001c8188235
-POST /realtor/create?employeenum=1&firstName=fuzzstring&lastName=fuzzstring&commissionRate=1.23 HTTP/1.1\r\nAccept: application/json\r\nHost: localhost:8080\r\nauthentication_token_tag\r\n
---------------------------------------------------------------------------------

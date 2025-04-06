@@ -7,58 +7,6 @@
           "method": "Post"
         },
         "ResourceReference": {
-          "QueryResource": "lastName"
-        },
-        "ContainerName": "create",
-        "PathContainerName": "create",
-        "CandidateTypeNames": [
-          "create"
-        ],
-        "AccessPathParts": {
-          "path": []
-        },
-        "ResourceName": "lastName",
-        "ProducerParameterName": "name",
-        "IsNestedBodyResource": false,
-        "PrimitiveType": "String"
-      },
-      "parameterKind": "Query"
-    }
-  },
-  {
-    "consumer": {
-      "id": {
-        "RequestId": {
-          "endpoint": "/customer/create",
-          "method": "Post"
-        },
-        "ResourceReference": {
-          "QueryResource": "ssn"
-        },
-        "ContainerName": "create",
-        "PathContainerName": "create",
-        "CandidateTypeNames": [
-          "create"
-        ],
-        "AccessPathParts": {
-          "path": []
-        },
-        "ResourceName": "ssn",
-        "ProducerParameterName": "ssn",
-        "IsNestedBodyResource": false,
-        "PrimitiveType": "String"
-      },
-      "parameterKind": "Query"
-    }
-  },
-  {
-    "consumer": {
-      "id": {
-        "RequestId": {
-          "endpoint": "/customer/create",
-          "method": "Post"
-        },
-        "ResourceReference": {
           "QueryResource": "firstName"
         },
         "ContainerName": "create",
@@ -99,6 +47,58 @@
         "ProducerParameterName": "income",
         "IsNestedBodyResource": false,
         "PrimitiveType": "Number"
+      },
+      "parameterKind": "Query"
+    }
+  },
+  {
+    "consumer": {
+      "id": {
+        "RequestId": {
+          "endpoint": "/customer/create",
+          "method": "Post"
+        },
+        "ResourceReference": {
+          "QueryResource": "lastName"
+        },
+        "ContainerName": "create",
+        "PathContainerName": "create",
+        "CandidateTypeNames": [
+          "create"
+        ],
+        "AccessPathParts": {
+          "path": []
+        },
+        "ResourceName": "lastName",
+        "ProducerParameterName": "name",
+        "IsNestedBodyResource": false,
+        "PrimitiveType": "String"
+      },
+      "parameterKind": "Query"
+    }
+  },
+  {
+    "consumer": {
+      "id": {
+        "RequestId": {
+          "endpoint": "/customer/create",
+          "method": "Post"
+        },
+        "ResourceReference": {
+          "QueryResource": "ssn"
+        },
+        "ContainerName": "create",
+        "PathContainerName": "create",
+        "CandidateTypeNames": [
+          "create"
+        ],
+        "AccessPathParts": {
+          "path": []
+        },
+        "ResourceName": "ssn",
+        "ProducerParameterName": "ssn",
+        "IsNestedBodyResource": false,
+        "PrimitiveType": "String"
       },
       "parameterKind": "Query"
     }
@@ -259,7 +259,7 @@
           "method": "Post"
         },
         "ResourceReference": {
-          "QueryResource": "price"
+          "QueryResource": "squareFeet"
         },
         "ContainerName": "create",
         "PathContainerName": "create",
@@ -269,10 +269,10 @@
         "AccessPathParts": {
           "path": []
         },
-        "ResourceName": "price",
-        "ProducerParameterName": "price",
+        "ResourceName": "squareFeet",
+        "ProducerParameterName": "feet",
         "IsNestedBodyResource": false,
-        "PrimitiveType": "Number"
+        "PrimitiveType": "Int"
       },
       "parameterKind": "Query"
     }
@@ -311,7 +311,7 @@
           "method": "Post"
         },
         "ResourceReference": {
-          "QueryResource": "squareFeet"
+          "QueryResource": "price"
         },
         "ContainerName": "create",
         "PathContainerName": "create",
@@ -321,10 +321,10 @@
         "AccessPathParts": {
           "path": []
         },
-        "ResourceName": "squareFeet",
-        "ProducerParameterName": "feet",
+        "ResourceName": "price",
+        "ProducerParameterName": "price",
         "IsNestedBodyResource": false,
-        "PrimitiveType": "Int"
+        "PrimitiveType": "Number"
       },
       "parameterKind": "Query"
     }
@@ -407,7 +407,7 @@
           "method": "Post"
         },
         "ResourceReference": {
-          "QueryResource": "homeId"
+          "QueryResource": "loan"
         },
         "ContainerName": "create",
         "PathContainerName": "create",
@@ -417,8 +417,8 @@
         "AccessPathParts": {
           "path": []
         },
-        "ResourceName": "homeId",
-        "ProducerParameterName": "id",
+        "ResourceName": "loan",
+        "ProducerParameterName": "loan",
         "IsNestedBodyResource": false,
         "PrimitiveType": "Int"
       },
@@ -433,7 +433,7 @@
           "method": "Post"
         },
         "ResourceReference": {
-          "QueryResource": "loan"
+          "QueryResource": "homeId"
         },
         "ContainerName": "create",
         "PathContainerName": "create",
@@ -443,8 +443,8 @@
         "AccessPathParts": {
           "path": []
         },
-        "ResourceName": "loan",
-        "ProducerParameterName": "loan",
+        "ResourceName": "homeId",
+        "ProducerParameterName": "id",
         "IsNestedBodyResource": false,
         "PrimitiveType": "Int"
       },
@@ -607,7 +607,7 @@
           "method": "Post"
         },
         "ResourceReference": {
-          "QueryResource": "commissionRate"
+          "QueryResource": "firstName"
         },
         "ContainerName": "create",
         "PathContainerName": "create",
@@ -617,10 +617,10 @@
         "AccessPathParts": {
           "path": []
         },
-        "ResourceName": "commissionRate",
-        "ProducerParameterName": "rate",
+        "ResourceName": "firstName",
+        "ProducerParameterName": "name",
         "IsNestedBodyResource": false,
-        "PrimitiveType": "Number"
+        "PrimitiveType": "String"
       },
       "parameterKind": "Query"
     }
@@ -659,6 +659,32 @@
           "method": "Post"
         },
         "ResourceReference": {
+          "QueryResource": "commissionRate"
+        },
+        "ContainerName": "create",
+        "PathContainerName": "create",
+        "CandidateTypeNames": [
+          "create"
+        ],
+        "AccessPathParts": {
+          "path": []
+        },
+        "ResourceName": "commissionRate",
+        "ProducerParameterName": "rate",
+        "IsNestedBodyResource": false,
+        "PrimitiveType": "Number"
+      },
+      "parameterKind": "Query"
+    }
+  },
+  {
+    "consumer": {
+      "id": {
+        "RequestId": {
+          "endpoint": "/realtor/create",
+          "method": "Post"
+        },
+        "ResourceReference": {
           "QueryResource": "employeenum"
         },
         "ContainerName": "create",
@@ -673,32 +699,6 @@
         "ProducerParameterName": "employeenum",
         "IsNestedBodyResource": false,
         "PrimitiveType": "Int"
-      },
-      "parameterKind": "Query"
-    }
-  },
-  {
-    "consumer": {
-      "id": {
-        "RequestId": {
-          "endpoint": "/realtor/create",
-          "method": "Post"
-        },
-        "ResourceReference": {
-          "QueryResource": "firstName"
-        },
-        "ContainerName": "create",
-        "PathContainerName": "create",
-        "CandidateTypeNames": [
-          "create"
-        ],
-        "AccessPathParts": {
-          "path": []
-        },
-        "ResourceName": "firstName",
-        "ProducerParameterName": "name",
-        "IsNestedBodyResource": false,
-        "PrimitiveType": "String"
       },
       "parameterKind": "Query"
     }
