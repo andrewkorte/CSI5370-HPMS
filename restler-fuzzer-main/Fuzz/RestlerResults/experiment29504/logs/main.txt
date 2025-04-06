@@ -1,0 +1,320 @@
+Random seed: 12345
+Setting fuzzing schemes: bfs-cheap
+2025-04-05 12:02:29.631: Going to fuzz a set with 12 requests
+2025-04-05 12:02:29.631: Request-0: Value Combinations: 2
+2025-04-05 12:02:29.631: Request-1: Value Combinations: 2
+2025-04-05 12:02:29.631: Request-2: Value Combinations: 2
+2025-04-05 12:02:29.631: Request-3: Value Combinations: 2
+2025-04-05 12:02:29.631: Request-4: Value Combinations: 2
+2025-04-05 12:02:29.631: Request-5: Value Combinations: 2
+2025-04-05 12:02:29.631: Request-6: Value Combinations: 2
+2025-04-05 12:02:29.631: Request-7: Value Combinations: 2
+2025-04-05 12:02:29.631: Request-8: Value Combinations: 2
+2025-04-05 12:02:29.631: Request-9: Value Combinations: 2
+2025-04-05 12:02:29.631: Request-10: Value Combinations: 2
+2025-04-05 12:02:29.631: Request-11: Value Combinations: 2
+2025-04-05 12:02:29.631: Avg. Value Combinations per Request: 2
+2025-04-05 12:02:29.631: Median Value Combinations per Request: 2.0
+2025-04-05 12:02:29.631: Min Value Combinations per Request: 2
+2025-04-05 12:02:29.631: Max Value Combinations per Request: 2
+2025-04-05 12:02:29.631: Total dependencies: 0
+
+2025-04-05 12:02:29.634: Generation: 1 / Sequences Collection Size: 12 
+(After bfs-cheap Extend)
+
+2025-04-05 12:02:45.613: Generation: 1 / Sequences Collection Size: 8 
+(After bfs-cheap Render)
+
+2025-04-05 12:02:45.613: Final Swagger spec coverage: 8 / 12
+2025-04-05 12:02:45.613: Rendered requests: 12 / 12
+2025-04-05 12:02:45.613: Rendered requests with "valid" status codes: 8 / 12
+2025-04-05 12:02:45.613: Num fully valid requests (no resource creation failures): 8
+2025-04-05 12:02:45.613: Num requests not rendered due to invalid sequence re-renders: 0
+2025-04-05 12:02:45.613: Num invalid requests caused by failed resource creations: 0
+2025-04-05 12:02:45.613: Total Creations of Dyn Objects: 0
+2025-04-05 12:02:45.613: Total Requests Sent: {'gc': 0, 'main_driver': 16, 'LeakageRuleChecker': 0, 'ResourceHierarchyChecker': 0, 'UseAfterFreeChecker': 0, 'InvalidDynamicObjectChecker': 0, 'PayloadBodyChecker': 0, 'ExamplesChecker': 0, 'InvalidValueChecker': 0}
+2025-04-05 12:02:45.613: Bug Buckets: {'InvalidValueChecker_503': 2}
+2025-04-05 12:02:45.616: Generation: 2 / Sequences Collection Size: 96 
+(After bfs-cheap Extend)
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Error: Invalid rendering occurred during valid sequence re-rendering.
+
+Exhausted collection...
+2025-04-05 12:02:48.868: Generation: 2 / Sequences Collection Size: 0 
+(After bfs-cheap Render)
+
+2025-04-05 12:02:48.868: Final Swagger spec coverage: 8 / 12
+2025-04-05 12:02:48.868: Rendered requests: 12 / 12
+2025-04-05 12:02:48.868: Rendered requests with "valid" status codes: 8 / 12
+2025-04-05 12:02:48.868: Num fully valid requests (no resource creation failures): 8
+2025-04-05 12:02:48.868: Num requests not rendered due to invalid sequence re-renders: 0
+2025-04-05 12:02:48.868: Num invalid requests caused by failed resource creations: 0
+2025-04-05 12:02:48.868: Total Creations of Dyn Objects: 0
+2025-04-05 12:02:48.868: Total Requests Sent: {'gc': 0, 'main_driver': 16, 'LeakageRuleChecker': 0, 'ResourceHierarchyChecker': 0, 'UseAfterFreeChecker': 0, 'InvalidDynamicObjectChecker': 0, 'PayloadBodyChecker': 0, 'ExamplesChecker': 0, 'InvalidValueChecker': 0}
+2025-04-05 12:02:48.868: Bug Buckets: {'InvalidValueChecker_503': 2}
+
+Testing completed -- below are the final stats:
+
+2025-04-05 12:02:48.871: Final Swagger spec coverage: 8 / 12
+2025-04-05 12:02:48.871: Rendered requests: 12 / 12
+2025-04-05 12:02:48.871: Rendered requests with "valid" status codes: 8 / 12
+2025-04-05 12:02:48.871: Num fully valid requests (no resource creation failures): 8
+2025-04-05 12:02:48.871: Num requests not rendered due to invalid sequence re-renders: 0
+2025-04-05 12:02:48.871: Num invalid requests caused by failed resource creations: 0
+2025-04-05 12:02:48.871: Total Creations of Dyn Objects: 0
+2025-04-05 12:02:48.871: Total Requests Sent: {'gc': 0, 'main_driver': 16, 'LeakageRuleChecker': 0, 'ResourceHierarchyChecker': 0, 'UseAfterFreeChecker': 0, 'InvalidDynamicObjectChecker': 0, 'PayloadBodyChecker': 0, 'ExamplesChecker': 0, 'InvalidValueChecker': 0}
+2025-04-05 12:02:48.871: Bug Buckets: {'InvalidValueChecker_503': 2}

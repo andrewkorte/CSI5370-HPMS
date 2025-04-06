@@ -1,0 +1,308 @@
+[4/6/2025 11:27:33 AM] Generating grammar...
+[4/6/2025 11:27:33 AM] Getting requests...
+[4/6/2025 11:27:33 AM] Getting dependencies...
+[4/6/2025 11:27:33 AM] Getting path consumers...
+[4/6/2025 11:27:33 AM] Getting query consumers...
+[4/6/2025 11:27:33 AM] Getting header consumers...
+[4/6/2025 11:27:33 AM] Getting body consumers...
+[4/6/2025 11:27:33 AM] Getting producers...
+[4/6/2025 11:27:33 AM] Done processing producers
+[4/6/2025 11:27:33 AM] Compute dependencies
+[4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/purchase/delete/{purchaseid}"
+  xMsPath = None
+  method = Delete }
+[4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/realtor/create"
+  xMsPath = None
+  method = Post }
+[4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/customer/create"
+  xMsPath = None
+  method = Post }
+[4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/purchase/delete/{purchaseid}"
+  xMsPath = None
+  method = Delete }
+[4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/home/get/{homeid}"
+  xMsPath = None
+  method = Get }
+[[[4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/purchase/create"
+  xMsPath = None
+  method = Post }4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/home/get/{homeid}"
+  xMsPath = None
+  method = Get }
+
+[[4/6/2025 11:27:33 AM] 4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/realtor/create"
+  xMsPath = None
+  method = Post }[
+4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/customer/create"
+  xMsPath = None
+  method = Post }
+[4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/home/get/{homeid}"
+  xMsPath = None
+  method = Get }[4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/customer/create"
+  xMsPath = None
+  method = Post }
+
+[4/6/2025 11:27:33 AM4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/purchase/delete/{purchaseid}"
+  xMsPath = None
+  method = Delete }
+] Done dependencies for request { endpoint = "/purchase/delete/{purchaseid}"
+  xMsPath = None
+  method = Delete }
+[4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/realtor/create"
+  xMsPath = None
+  method = Post }
+Second pass dependencies for request { endpoint = "/customer/create"
+  xMsPath = None
+  method = Post }
+[[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/realtor/create"
+  xMsPath = None
+  method = Post }
+4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/realtor/create"
+  xMsPath = None
+  method = Post }
+[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/customer/create"
+  xMsPath = None
+  method = Post }
+[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/home/get/{homeid}"
+  xMsPath = None
+  method = Get }[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/purchase/create"
+  xMsPath = None
+  method = Post }
+
+[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/purchase/delete/{purchaseid}"
+  xMsPath = None
+  method = Delete }
+[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/home/get/{homeid}"
+  xMsPath = None
+  method = Get }
+[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/home/get/{homeid}"
+  xMsPath = None
+  method = Get }
+[4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/home/create"
+  xMsPath = None
+  method = Post }
+[[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/purchase/delete/{purchaseid}"
+  xMsPath = None
+  method = Delete }
+[4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/customer/get/{customerid}"
+  xMsPath = None
+  method = Get }
+4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/customer/create"
+  xMsPath = None
+  method = Post }
+[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/realtor/create"
+  xMsPath = None
+  method = Post }
+[4/6/2025 11:27:33 AM[4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/purchase/create"
+  xMsPath = None
+  method = Post }
+] Second pass dependencies for request { endpoint = "/realtor/get/{realtorid}"
+  xMsPath = None
+  method = Get }
+[4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/home/delete/{homeid}"
+  xMsPath = None
+  method = Delete }
+[4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/customer/get/{customerid}"
+  xMsPath = None
+  method = Get }
+[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/customer/get/{customerid}"
+  xMsPath = None
+  method = Get }
+[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/home/create"
+  xMsPath = None
+  method = Post }
+[[4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/home/delete/{homeid}"
+  xMsPath = None
+  method = Delete }4/6/2025 11:27:33 AM
+] Second pass dependencies for request { endpoint = "/realtor/get/{realtorid}"
+  xMsPath = None
+  method = Get }
+[[[4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/home/delete/{homeid}"
+  xMsPath = None
+  method = Delete }[4/6/2025 11:27:33 AM] 4/6/2025 11:27:33 AM[4/6/2025 11:27:33 AM] ] Second pass dependencies for request { endpoint = "/purchase/create"
+  xMsPath = None
+  method = Post }Second pass dependencies for request { endpoint = "/realtor/delete/{realtorid}"
+  xMsPath = None
+  method = Delete }
+
+[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/customer/get/{customerid}"
+  xMsPath = None
+  method = Get }4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/home/delete/{homeid}"
+  xMsPath = None
+  method = Delete }
+Second pass dependencies for request { endpoint = "/customer/get/{customerid}"
+  xMsPath = None
+  method = Get }
+
+[
+[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/realtor/get/{realtorid}"
+  xMsPath = None
+  method = Get }
+4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/purchase/create"
+  xMsPath = None
+  method = Post }
+[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/realtor/get/{realtorid}"
+  xMsPath = None
+  method = Get }
+[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/realtor/delete/{realtorid}"
+  xMsPath = None
+  method = Delete }
+[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/home/delete/{homeid}"
+  xMsPath = None
+  method = Delete }
+[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/purchase/create"
+  xMsPath = None
+  method = Post }
+[4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/customer/delete/{customerid}"
+  xMsPath = None
+  method = Delete }
+[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/customer/get/{customerid}"
+  xMsPath = None
+  method = Get }
+[4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/realtor/delete/{realtorid}"
+  xMsPath = None
+  method = Delete }
+[4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/home/create"
+  xMsPath = None
+  method = Post }
+[4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/purchase/get/{purchaseid}"
+  xMsPath = None
+  method = Get }
+[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/customer/delete/{customerid}"
+  xMsPath = None
+  method = Delete }
+[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/home/delete/{homeid}"
+  xMsPath = None
+  method = Delete }
+[4/6/2025 11:27:33 AM] [4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/home/create"
+  xMsPath = None
+  method = Post }Second pass dependencies for request { endpoint = "/purchase/get/{purchaseid}"
+  xMsPath = None
+  method = Get }
+
+[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/home/create"
+  xMsPath = None
+  method = Post }
+[[4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/realtor/get/{realtorid}"
+  xMsPath = None
+  method = Get }
+4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/customer/delete/{customerid}"
+  xMsPath = None
+  method = Delete }
+[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/purchase/get/{purchaseid}"
+  xMsPath = None
+  method = Get }
+[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/realtor/delete/{realtorid}"
+  xMsPath = None
+  method = Delete }
+[4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/realtor/delete/{realtorid}"
+  xMsPath = None
+  method = Delete }
+[[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/purchase/get/{purchaseid}"
+  xMsPath = None
+  method = Get }4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/realtor/get/{realtorid}"
+  xMsPath = None
+  method = Get }
+
+[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/home/create"
+  xMsPath = None
+  method = Post }
+[4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/customer/delete/{customerid}"
+  xMsPath = None
+  method = Delete }
+[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/customer/delete/{customerid}"
+  xMsPath = None
+  method = Delete }
+[4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/purchase/get/{purchaseid}"
+  xMsPath = None
+  method = Get }
+[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/realtor/delete/{realtorid}"
+  xMsPath = None
+  method = Delete }
+[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/customer/delete/{customerid}"
+  xMsPath = None
+  method = Delete }
+[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/purchase/get/{purchaseid}"
+  xMsPath = None
+  method = Get }
+[4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/customer/get/{customerid}"
+  xMsPath = None
+  method = Get }
+[4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/realtor/get/{realtorid}"
+  xMsPath = None
+  method = Get }
+[4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/home/delete/{homeid}"
+  xMsPath = None
+  method = Delete }
+[4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/customer/create"
+  xMsPath = None
+  method = Post }
+[4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/purchase/create"
+  xMsPath = None
+  method = Post }
+[4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/purchase/delete/{purchaseid}"
+  xMsPath = None
+  method = Delete }
+[4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/realtor/create"
+  xMsPath = None
+  method = Post }
+[4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/home/get/{homeid}"
+  xMsPath = None
+  method = Get }
+[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/customer/get/{customerid}"
+  xMsPath = None
+  method = Get }
+[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/purchase/delete/{purchaseid}"
+  xMsPath = None
+  method = Delete }
+[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/home/delete/{homeid}"
+  xMsPath = None
+  method = Delete }
+[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/purchase/create"
+  xMsPath = None
+  method = Post }
+[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/realtor/get/{realtorid}"
+  xMsPath = None
+  method = Get }
+[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/home/get/{homeid}"
+  xMsPath = None
+  method = Get }
+[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/realtor/create"
+  xMsPath = None
+  method = Post }
+[4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/realtor/delete/{realtorid}"
+  xMsPath = None
+  method = Delete }
+[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/customer/create"
+  xMsPath = None
+  method = Post }
+[4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/customer/delete/{customerid}"
+  xMsPath = None
+  method = Delete }
+[4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/purchase/get/{purchaseid}"
+  xMsPath = None
+  method = Get }
+[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/realtor/delete/{realtorid}"
+  xMsPath = None
+  method = Delete }
+[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/customer/delete/{customerid}"
+  xMsPath = None
+  method = Delete }
+[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/purchase/get/{purchaseid}"
+  xMsPath = None
+  method = Get }
+[4/6/2025 11:27:33 AM] Second pass dependencies for request { endpoint = "/home/create"
+  xMsPath = None
+  method = Post }
+[4/6/2025 11:27:33 AM] Done dependencies for request { endpoint = "/home/create"
+  xMsPath = None
+  method = Post }
+[4/6/2025 11:27:33 AM] Assigning equality constraints...
+[4/6/2025 11:27:33 AM] Getting ordering constraints...
+[4/6/2025 11:27:33 AM] Dependency analysis completed.
+[4/6/2025 11:27:33 AM] Generating request primitives...
+Writing new dictionary to C:\Users\Andrew\Desktop\School\CSI5370\CSI5370-HPMS\Compile\dict.json
+[4/6/2025 11:27:33 AM] Generating python grammar...
+[4/6/2025 11:27:33 AM] Get requests
+[4/6/2025 11:27:33 AM] Done get requests
+[4/6/2025 11:27:33 AM] Done generating python grammar.
+Workflow completed.  See C:\Users\Andrew\Desktop\School\CSI5370\CSI5370-HPMS\Compile for REST-ler grammar.
