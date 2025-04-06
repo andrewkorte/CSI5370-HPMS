@@ -10,6 +10,8 @@ Project for CSI5370 Software Verification and Testing
 - Python 3.12 (see link to restler-fuzzer for link to get download link: https://github.com/microsoft/restler-fuzzer?tab=readme-ov-file)
 - .NET 8 (see link to restler-fuzzer for link to get download link: https://github.com/microsoft/restler-fuzzer?tab=readme-ov-file)
 
+# You will need to clone the repo from GitHub https://github.com/andrewkorte/CSI5370-HPMS
+
 
 ## Creating Database image and Start it
 - Start from root of project
