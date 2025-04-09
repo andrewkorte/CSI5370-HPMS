@@ -1,6 +1,8 @@
 # CSI5370-HPMS
 Project for CSI5370 Software Verification and Testing
 
+# Please Be Advised: There are bugs in the code that are meant to be there. This will cause some unit tests to fail. Please comment them out to run tests successfully
+
 ## Software Stack (Need these to run project)
 - Jetbrains Intellij
 - Docker Desktop
